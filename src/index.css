@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom 360° Y-axis spin animation */
+@keyframes spin-y {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.group:hover .group-hover\:spin-y-360 {
+  animation: spin-y 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+.special-card .shadow-md {
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.2); /* subtle blue glow */
+}
+.special-card {
+  background: linear-gradient(135deg, #ebf4ff, #ffffff);
+}

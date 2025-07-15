@@ -131,7 +131,7 @@ const Testimonial = () => {
           </p>
         </motion.div>
 
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-7xl mx-auto">
           <div
             className="overflow-hidden"
             onMouseEnter={() => setIsHovered(true)}

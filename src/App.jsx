@@ -9,6 +9,8 @@ import ProjectsServices from './components/sections/ProjectsServices';
 import Training from './components/sections/Training';
 import Team from './components/sections/Team';
 import Contact from './components/sections/Contact';
+import FAQ from './components/sections/FAQ';
+
 import backgroundImage from './assets/background_2.jpg';
 
 const App = () => {
@@ -31,8 +33,10 @@ const App = () => {
           <Team />
         </div>
       </div>
-      <Contact />
-      <Footer />
+        <Contact />
+        <FAQ />
+        <Footer />
+
     </div>
   );
 };

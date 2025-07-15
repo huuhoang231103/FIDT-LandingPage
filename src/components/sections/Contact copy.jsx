@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
-import emailjs from "@emailjs/browser";
-import QRImage from "../../assets/QR.jpeg";
+import QRImage from "../../assets/QR.jpeg"; // ⬅️ Import ảnh QR
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,10 +13,9 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({}); // ⬅️ Thêm state lỗi
 
   useEffect(() => {
-    emailjs.init("r-qP7uvMUVSnzEp2p"); // 🔑 Public Key
     setIsVisible(true);
   }, []);
 
@@ -37,30 +35,17 @@ const Contact = () => {
     setErrors({});
     setIsSubmitting(true);
 
-    try {
-        await emailjs.send(
-          "service_y2323",
-          "template_z6xtmul",
-          {
-            name: formData.name,
-            email: formData.email,
-            message: formData.message,
-            subscribe: formData.subscribe ? "Yes" : "No"
-          },
-          "UmBUKKHWlnOou5h7c"
-        );
+    // Giả lập gửi dữ liệu
+    await new Promise(resolve => setTimeout(resolve, 2000));
 
-
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', message: '', subscribe: false });
-
-      setTimeout(() => setIsSubmitted(false), 3000);
-    } catch (error) {
-      console.error("Email send error:", error);
-      alert("Error sending message. Please try again.");
-    }
-
+    console.log('Form submitted:', formData);
     setIsSubmitting(false);
+    setIsSubmitted(true);
+
+    setTimeout(() => {
+      setFormData({ name: '', email: '', message: '', subscribe: false });
+      setIsSubmitted(false);
+    }, 3000);
   };
 
   const handleChange = (e) => {
@@ -94,6 +79,14 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 left-10 w-20 h-20 bg-blue-500 rounded-full animate-pulse"></div>
+        <div className="absolute top-32 right-20 w-16 h-16 bg-purple-500 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-green-500 rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-32 right-1/3 w-24 h-24 bg-yellow-500 rounded-full animate-pulse" style={{ animationDelay: '3s' }}></div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -116,7 +109,7 @@ const Contact = () => {
             </h3>
             <div className="space-y-6">
               {contactItems.map((item, index) => (
-                <div
+                <div 
                   key={index}
                   className="flex items-center group hover:bg-white hover:shadow-lg rounded-xl p-4 transition-all duration-300 cursor-pointer transform hover:scale-105"
                   style={{ animationDelay: item.delay }}
@@ -152,6 +145,7 @@ const Contact = () => {
                 />
               </div>
             </div>
+
 
             {/* Online status */}
             <div className="mt-12 relative">
@@ -233,7 +227,9 @@ const Contact = () => {
                 }`}
               >
                 <div className="flex items-center justify-center space-x-2">
-                  {isSubmitting && <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>}
+                  {isSubmitting && (
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  )}
                   {isSubmitted ? (
                     <>
                       <CheckCircle className="w-5 h-5" />

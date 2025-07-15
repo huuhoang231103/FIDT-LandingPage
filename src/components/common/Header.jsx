@@ -19,6 +19,7 @@ const Header = () => {
     { name: 'Services', href: '#services' },
     { name: 'Training', href: '#training' },
     { name: 'Team', href: '#team' },
+    { name: 'FAQ', href: '#faq' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -31,7 +32,17 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="text-2xl font-bold text-white">FIDT</div>
+          <motion.div
+            initial={{ x: -30, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+            className={`text-2xl font-bold transition-colors duration-300 ${
+              isScrolled ? 'text-blue-600' : 'text-white'
+            }`}
+          >
+            FIDT
+          </motion.div>
+
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">

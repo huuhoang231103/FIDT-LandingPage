@@ -29,10 +29,8 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section
-      id="why-choose"
-      className="py-16 md:py-24 bg-gradient-to-r from-blue-50 to-white"
-    >
+    <section id="why-choose" className="scroll-mt-24 py-16 md:py-24">
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">

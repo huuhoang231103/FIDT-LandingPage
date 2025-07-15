@@ -26,7 +26,7 @@ const Header = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="text-2xl font-bold text-blue-600">FIDT</div>
+          <div className="text-2xl font-bold text-blue-400">FIDT</div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
@@ -51,7 +51,7 @@ const Header = () => {
       {/* Mobile Sidebar */}
       <div className={`fixed inset-0 z-50 transition-transform duration-300 md:hidden ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} flex`}>
         {/* Sidebar */}
-        <div className="w-64 bg-black text-white p-6 flex flex-col">
+        <div className="w-64 bg-blue-900 text-white p-6 flex flex-col">
           <div className="flex justify-between items-center mb-6">
             <div className="text-2xl font-bold text-blue-500">FIDT</div>
             <button onClick={() => setIsMenuOpen(false)}>

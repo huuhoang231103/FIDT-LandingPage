@@ -9,18 +9,28 @@ import ProjectsServices from './components/sections/ProjectsServices';
 import Training from './components/sections/Training';
 import Team from './components/sections/Team';
 import Contact from './components/sections/Contact';
+import backgroundImage from './assets/background_2.jpg';
 
 const App = () => {
   return (
     <div className="min-h-screen">
       <Header />
       <Hero />
-      <About />
-      <WhyChooseUs />
-      <Testimonial />
-      <ProjectsServices />
-      <Training />
-      <Team />
+      <div 
+        className="bg-cover bg-center bg-fixed relative"
+        style={{
+          backgroundImage: `url(${backgroundImage})`
+        }}
+      >
+        <div className="bg-blue-100 bg-opacity-80">
+          <About />
+          <WhyChooseUs />
+          <Testimonial />
+          <ProjectsServices />
+          <Training />
+          <Team />
+        </div>
+      </div>
       <Contact />
       <Footer />
     </div>

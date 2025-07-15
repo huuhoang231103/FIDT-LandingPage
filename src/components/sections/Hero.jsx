@@ -3,7 +3,7 @@ import { ArrowRight, Play, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative bg-gradient-to-br from-blue-800 via-blue-700 to-indigo-800 min-h-screen flex items-center">
+    <section id="home" className="relative bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-800 min-h-screen flex items-center">
       <div className="absolute inset-0 bg-black/20"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center max-w-4xl mx-auto">

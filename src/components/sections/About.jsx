@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Users } from "lucide-react";
+import { motion } from "framer-motion";
 
 const About = () => {
   const stats = [
@@ -33,7 +34,12 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               About <span className="text-blue-600">FIDT</span>
             </h2>
@@ -50,19 +56,32 @@ const About = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center transition-transform transform hover:scale-105">
+                <motion.div
+                  key={index}
+                  className="text-center transition-transform transform hover:scale-105"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 * index, duration: 0.6 }}
+                  viewport={{ once: true }}
+                >
                   <div className="text-4xl font-bold text-blue-600 mb-2">
                     {counts[index]}
                     {stat.suffix}
                   </div>
                   <div className="text-gray-700">{stat.label}</div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Content */}
-          <div className="relative">
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <div className="bg-blue-100 shadow-lg rounded-lg p-8 h-96 flex items-center justify-center transition-transform transform hover:scale-105">
               <div className="text-center">
                 <div className="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
@@ -74,7 +93,7 @@ const About = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

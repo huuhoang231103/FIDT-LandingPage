@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
-import QRImage from "../../assets/QR.jpeg";
+import { SendMail } from "../../utils/SendMail";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -36,15 +37,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("http://localhost/FIDT-LANDINGPAGE/backend/contact_handler.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
-
-      const result = await response.json();
+      const result = await SendMail(formData);
 
       if (result.success) {
         setIsSubmitting(false);
@@ -76,20 +69,17 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "+84 123 456 789",
-      delay: "0ms"
+      value: "+84 123 456 789"
     },
     {
       icon: Mail,
       title: "Email",
-      value: "contact@fidt.com",
-      delay: "200ms"
+      value: "contact@fidt.com"
     },
     {
       icon: MapPin,
       title: "Address",
-      value: "Đà Lạt, Lâm Đồng Province, Vietnam",
-      delay: "400ms"
+      value: "Đà Lạt, Lâm Đồng Province, Vietnam"
     }
   ];
 
@@ -125,25 +115,6 @@ const Contact = () => {
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div className="mt-6">
-              <div className="flex items-center group hover:bg-white hover:shadow-lg rounded-xl p-4 transition-all duration-300 cursor-pointer transform hover:scale-105">
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl mr-4 transform group-hover:rotate-12 transition-transform duration-300">
-                  <MapPin className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">QR Code</p>
-                  <p className="text-gray-600">Scan to connect with us!</p>
-                </div>
-              </div>
-              <div className="mt-4 flex justify-center">
-                <img
-                  src={QRImage}
-                  alt="QR Code"
-                  className="w-32 h-32 rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
             </div>
 
             <div className="mt-12 relative">

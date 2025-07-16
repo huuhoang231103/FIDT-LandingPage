@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const apiBase = import.meta.env.BASE_URL + "services/api";
+// Gọi đúng URL backend thực tế
+const apiBase = "http://localhost/FIDT-LandingPage_Demo/backend/api";
 
 export const SendMail = async (data) => {
   try {

@@ -10,7 +10,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-blue-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
@@ -35,6 +35,7 @@ const Footer = () => {
               <li><a href="#training" className="text-gray-400 hover:text-blue-400 transition-colors">Training</a></li>
               <li><a href="#team" className="text-gray-400 hover:text-blue-400 transition-colors">Team</a></li>
               <li><a href="#contact" className="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
+              <li><a href="#FAQ" className="text-gray-400 hover:text-blue-400 transition-colors">FAQ</a></li>
             </ul>
           </div>
 

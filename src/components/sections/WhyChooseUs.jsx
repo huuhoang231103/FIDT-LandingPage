@@ -1,31 +1,37 @@
-import { Award, Clock, CheckCircle, Users } from "react-feather";
+import { Users, MessageSquare, Globe, Heart, ThumbsUp } from "react-feather";
 import { motion } from "framer-motion";
 
-const WhyChooseUs = () => {
+const WhyChooseHana = () => {
   const reasons = [
     {
-      icon: <Award className="w-12 h-12 text-blue-600" />,
-      title: "Expert Team",
-      description:
-        "Our highly skilled professionals bring years of industry experience and cutting-edge expertise to every project.",
-    },
-    {
-      icon: <Clock className="w-12 h-12 text-blue-600" />,
-      title: "Timely Delivery",
-      description:
-        "We pride ourselves on delivering projects on time and within budget, ensuring your business stays on track.",
-    },
-    {
-      icon: <CheckCircle className="w-12 h-12 text-blue-600" />,
-      title: "Quality Assurance",
-      description:
-        "Rigorous testing and quality control processes ensure that every solution meets the highest standards.",
-    },
-    {
       icon: <Users className="w-12 h-12 text-blue-600" />,
-      title: "24/7 Support",
+      title: "Kinh nghiệm thực chiến",
       description:
-        "Our dedicated support team is available around the clock to assist you with any questions or issues.",
+        "Ms. Hana Trần từng đồng hành cùng nhiều doanh nhân, CEO và startup tại Việt Nam, mang lại kinh nghiệm tư vấn đa lĩnh vực.",
+    },
+    {
+      icon: <MessageSquare className="w-12 h-12 text-blue-600" />,
+      title: "Phong cách tư vấn thực tế",
+      description:
+        "Phong cách làm việc thẳng thắn, thực tế và định hướng hành động. Không lý thuyết suông mà tập trung giải quyết vấn đề cụ thể.",
+    },
+    {
+      icon: <Globe className="w-12 h-12 text-blue-600" />,
+      title: "Hiểu thị trường Việt Nam",
+      description:
+        "Có cái nhìn sát thực tế thị trường, văn hóa doanh nghiệp Việt Nam – một lợi thế rõ ràng so với mô hình tư vấn nước ngoài.",
+    },
+    {
+      icon: <Heart className="w-12 h-12 text-blue-600" />,
+      title: "Khả năng truyền cảm hứng",
+      description:
+        "Ngoài tư vấn, cô còn là diễn giả truyền cảm hứng, giúp nhiều cá nhân vượt qua khủng hoảng hoặc mất phương hướng.",
+    },
+    {
+      icon: <ThumbsUp className="w-12 h-12 text-blue-600" />,
+      title: "Uy tín & phản hồi tích cực",
+      description:
+        "Nhận được đánh giá tích cực từ học viên, doanh nghiệp, thường xuyên xuất hiện tại các talkshow, hội thảo uy tín.",
     },
   ];
 
@@ -40,15 +46,14 @@ const WhyChooseUs = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Why Choose <span className="text-blue-600">FIDT</span>?
+            Tại sao chọn <span className="text-blue-600">Ms. Hana Trần?</span>
           </h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            We combine technical excellence with business insights to deliver
-            solutions that drive real results.
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            Uy tín – Kinh nghiệm – Truyền cảm hứng. Tư vấn đi vào thực tiễn, giúp bạn thay đổi rõ rệt.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {reasons.map((reason, index) => (
             <motion.div
               key={index}
@@ -78,4 +83,4 @@ const WhyChooseUs = () => {
   );
 };
 
-export default WhyChooseUs;
+export default WhyChooseHana;

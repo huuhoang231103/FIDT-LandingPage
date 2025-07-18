@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import avatar from '../../assets/avatar/avatar.jpg';
 
 const TeamSection = () => {
     return (
@@ -34,10 +35,11 @@ const TeamSection = () => {
                         {/* Avatar */}
                         <div className="flex-shrink-0">
                             <img
-                                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dd30ddc7-d91a-4aed-a6ac-1fa2fdb8a2f1.png"
-                                alt="Portrait of Mai Hân"
-                                className="rounded-full border-4 border-blue-200 w-40 h-40 object-cover"
+                            src={avatar}
+                            alt="Portrait of Mai Hân"
+                            className="rounded-full border-4 border-blue-200 w-40 h-40 object-cover"
                             />
+
                         </div>
 
                         {/* Content */}

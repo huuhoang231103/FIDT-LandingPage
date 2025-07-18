@@ -7,7 +7,7 @@ const About = () => {
     { target: 500, suffix: "+", label: "Projects Completed" },
     { target: 100, suffix: "+", label: "Happy Clients" },
     { target: 50, suffix: "+", label: "Team Members" },
-    { target: 5, suffix: "+", label: "Years Experience" },
+    { target: 15, suffix: "+", label: "Years Experience" },
   ];
 
   const [counts, setCounts] = useState(stats.map(() => 0));
@@ -41,16 +41,23 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              About <span className="text-blue-600">FIDT</span>
+              Về <span className="text-blue-600">Mai Hân</span>
             </h2>
+
             <p className="text-lg text-gray-700 mb-6">
-              FIDT is a leading technology solutions company dedicated to empowering businesses
-              through innovative digital transformation. We specialize in cutting-edge software
-              development, comprehensive training programs, and strategic consulting services.
+              Chị Mai Hân là một trong những Hội viên Chuyên gia tiêu biểu đầu tiên của Hiệp hội Tài chính Việt Nam (VFCA). 
+              Hiện là Cố vấn Tài chính tại Công ty CP Tư vấn đầu tư và Quản lý Tài sản FIDT, chị đã tư vấn cho hơn 300 khách hàng cá nhân, với giá trị tài sản đang quản lý hơn 900 tỉ đồng.
             </p>
+
+            <p className="text-gray-700 mb-6">
+              🥇 Danh hiệu “Ngôi sao Toàn năng 2024” – Team leader đạt KPI cao nhất FIDT<br />
+              🥇 Danh hiệu “Financial Planner xuất sắc 2023” tại FIDT<br />
+              🥇 Danh hiệu “Financial Planner cống hiến 2022–2024” – với số lượng khách hàng và NAV quản lý cao nhất
+            </p>
+
             <p className="text-gray-700 mb-8">
-              Our mission is to bridge the gap between technology and business success,
-              helping organizations adapt to the digital age while maintaining their competitive edge.
+              📕 Chị là cộng tác viên chuyên mục Tài chính cá nhân trên các báo lớn: VnExpress, Lao Động, VietnamFinance, Dân trí, aFamily, Tiếp Thị Gia Đình, Zing, CafeF...<br />
+              🎤 Chị cũng là diễn giả tại các workshop Tài chính cá nhân ở các trường đại học, doanh nghiệp, và giảng viên học phần "Hoạch định thuế TNCN" tại FIDT.
             </p>
 
             {/* Stats */}
@@ -87,9 +94,9 @@ const About = () => {
                 <div className="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
                   <Users className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900">Our Vision</h3>
+                <h3 className="text-2xl font-semibold text-gray-900">Tầm nhìn</h3>
                 <p className="text-gray-600 mt-2">
-                  Leading the digital transformation revolution
+                  Dẫn đầu trong lĩnh vực hoạch định tài chính cá nhân tại Việt Nam
                 </p>
               </div>
             </div>

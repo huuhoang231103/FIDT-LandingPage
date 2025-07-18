@@ -5,58 +5,44 @@ import { motion } from "framer-motion";
 const Testimonial = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      position: "CEO, TechCorp",
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b332c8ee?w=150&h=150&fit=crop&crop=face",
+      name: "Nguyễn Thị Mai",
+      position: "32 tuổi, Nhân viên văn phòng",
+      image: "https://randomuser.me/api/portraits/women/45.jpg",
       rating: 5,
-      text: "FIDT transformed our business operations completely. Their expertise and dedication to quality are unmatched in the industry.",
+      text: `Trước khi gặp Ms. Hana Trần, tôi khá mơ hồ về tình hình tài chính của bản thân – chi tiêu không kiểm soát, không biết nên tiết kiệm bao nhiêu hay đầu tư vào đâu cho hợp lý.
+      Sau buổi tư vấn, tôi thật sự bất ngờ vì sự chuyên nghiệp và tận tâm của chị Hana. Chị không chỉ giúp tôi đánh giá lại toàn bộ thu chi, tài sản và nợ hiện tại, mà còn hướng dẫn cách xây dựng kế hoạch tài chính phù hợp với mục tiêu cá nhân trong ngắn hạn và dài hạn.
+      Tôi đặc biệt ấn tượng với cách chị Hana phân tích rất cụ thể, dễ hiểu, và đưa ra những giải pháp thiết thực, không áp đặt – hoàn toàn dựa trên mong muốn và khả năng của tôi.
+      Sau buổi tư vấn, tôi cảm thấy an tâm hơn rất nhiều và có định hướng rõ ràng hơn trong việc quản lý tiền bạc, tích lũy và chuẩn bị cho tương lai.
+      Cảm ơn chị Hana vì sự đồng hành và những lời khuyên quý báu!`,
     },
     {
-      name: "Michael Chen",
-      position: "CTO, InnovateLab",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+      name: "Trần Đức Minh",
+      position: "24 tuổi, Nhân viên IT",
+      image: "https://randomuser.me/api/portraits/men/76.jpg",
       rating: 5,
-      text: "Working with FIDT was a game-changer for our development process. They delivered beyond our expectations and on time.",
+      text: `Tôi là người mới đi làm được hơn 1 năm, thu nhập cũng tạm ổn nhưng lúc nào cũng cảm thấy không đủ, cuối tháng là cháy túi.
+      Nhờ buổi tư vấn với chị Hana Trần, tôi mới hiểu rõ mình đang tiêu tiền như thế nào, và lý do vì sao dù có thu nhập nhưng lại không tích lũy được gì.
+      Chị đã giúp tôi thiết lập một kế hoạch quản lý thu chi đơn giản, dễ áp dụng, đồng thời đưa ra những lời khuyên thực tế về việc xây dựng quỹ dự phòng, bảo hiểm, và bắt đầu đầu tư với số vốn nhỏ.
+      Điều tôi quý nhất là chị luôn lắng nghe kỹ lưỡng, không đánh giá hay ép buộc, mà chỉ đưa ra những lựa chọn để tôi tự quyết định theo điều kiện và mục tiêu riêng của mình.
+      Sau 3 tháng áp dụng theo hướng dẫn, tôi đã có khoản tiết kiệm đầu tiên trong đời! Cảm ơn chị Hana rất nhiều!`,
     },
     {
-      name: "Emily Rodriguez",
-      position: "Founder, StartupX",
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+      name: "Lê Thảo & Nguyễn Phong",
+      position: "35 tuổi, Gia đình",
+      image: "https://randomuser.me/api/portraits/lego/5.jpg",
       rating: 5,
-      text: "The training programs provided by FIDT elevated our team's skills to the next level. Highly professional service.",
-    },
-    {
-      name: "David Kim",
-      position: "VP Marketing, GrowthCo",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-      rating: 5,
-      text: "FIDT's strategic approach helped us achieve 200% growth in just 6 months. Their dedication is remarkable.",
-    },
-    {
-      name: "Lisa Wang",
-      position: "Product Manager, TechFlow",
-      image:
-        "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&h=150&fit=crop&crop=face",
-      rating: 5,
-      text: "The level of professionalism and expertise at FIDT is outstanding. They truly understand business needs.",
-    },
-    {
-      name: "James Wilson",
-      position: "Director, Innovation Labs",
-      image:
-        "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face",
-      rating: 5,
-      text: "FIDT provided exceptional consulting services that transformed our workflow and improved our efficiency significantly.",
+      text: `Gia đình tôi có hai con nhỏ, thu nhập hai vợ chồng cũng ổn định nhưng luôn cảm thấy áp lực vì nhiều khoản chi: học phí, nhà cửa, sức khỏe... Chúng tôi từng nghĩ rằng việc lập kế hoạch tài chính chỉ dành cho người nhiều tiền.
+      Sau khi được chị Hana Trần tư vấn, vợ chồng tôi mới ‘vỡ ra’ rằng tài chính cá nhân không liên quan đến việc kiếm bao nhiêu, mà là cách mình dùng tiền như thế nào.
+      Chị Hana rất nhẹ nhàng nhưng sâu sắc, giúp chúng tôi nhìn rõ tình hình tài chính của gia đình, sắp xếp lại thứ tự ưu tiên, xây dựng các quỹ dự phòng và mục tiêu dài hạn như quỹ học vấn cho con, quỹ hưu trí,...
+      Nhờ có chị, hai vợ chồng đã cùng nhau ngồi xuống, nói chuyện tài chính một cách thoải mái và đồng lòng hơn. Một trải nghiệm thực sự ý nghĩa và thay đổi tư duy!`,
     },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [expandedIndexes, setExpandedIndexes] = useState([]);
+
   const intervalTime = 4000;
 
   useEffect(() => {
@@ -79,10 +65,15 @@ const Testimonial = () => {
           }
         });
       }, intervalTime);
-
       return () => clearInterval(interval);
     }
   }, [isHovered, testimonials.length, isMobile]);
+
+  const toggleExpand = (index) => {
+    setExpandedIndexes((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
+  };
 
   const nextTestimonial = () => {
     setCurrentIndex((prevIndex) => {
@@ -145,109 +136,97 @@ const Testimonial = () => {
                 }%)`,
               }}
             >
-              {isMobile
-                ? testimonials.map((testimonial, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 100,
-                        damping: 12,
-                      }}
-                      viewport={{ once: true, amount: 0.2 }}
-                      className="w-full flex-shrink-0 px-4"
-                    >
-                      <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                        <div className="flex items-center mb-6">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className="w-5 h-5 text-blue-500 fill-current"
+              {(isMobile
+                ? testimonials
+                : Array.from({ length: totalSlides }, (_, slideIndex) =>
+                    testimonials.slice(slideIndex * 2, slideIndex * 2 + 2)
+                  )
+              ).map((testimonialItem, index) => {
+                const cards = Array.isArray(testimonialItem)
+                  ? testimonialItem
+                  : [testimonialItem];
+                return (
+                  <div
+                    key={index}
+                    className={`w-full flex-shrink-0 ${
+                      isMobile ? "" : "grid grid-cols-2 gap-8"
+                    } px-4`}
+                  >
+                    {cards.map((testimonial, i) => {
+                      const globalIndex = index * 2 + i;
+                      const isExpanded = expandedIndexes.includes(globalIndex);
+                      const isLong = testimonial.text.length > 250;
+                      const displayText = isExpanded
+                        ? testimonial.text
+                        : isLong
+                        ? testimonial.text.slice(0, 250) + "..."
+                        : testimonial.text;
+
+                      return (
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 100,
+                            damping: 12,
+                          }}
+                          viewport={{ once: true, amount: 0.2 }}
+                          className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
+                        >
+                          <div className="flex items-center mb-4">
+                            <img
+                              src={testimonial.image}
+                              alt={testimonial.name}
+                              className="w-16 h-16 rounded-full object-cover mr-4"
                             />
-                          ))}
-                        </div>
-                        <p className="text-gray-600 mb-8 italic text-base leading-relaxed">
-                          "{testimonial.text}"
-                        </p>
-                        <div className="flex items-center">
-                          <img
-                            src={testimonial.image}
-                            alt={testimonial.name}
-                            className="w-16 h-16 rounded-full object-cover mr-4"
-                          />
-                          <div>
-                            <div className="font-semibold text-gray-900 text-lg mb-1">
-                              {testimonial.name}
-                            </div>
-                            <div className="text-gray-500 text-sm">
-                              {testimonial.position}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))
-                : Array.from({ length: totalSlides }, (_, slideIndex) => (
-                    <div
-                      key={slideIndex}
-                      className="w-full flex-shrink-0 grid grid-cols-2 gap-8 px-4"
-                    >
-                      {testimonials
-                        .slice(slideIndex * 2, slideIndex * 2 + 2)
-                        .map((testimonial, index) => (
-                          <motion.div
-                            key={slideIndex * 2 + index}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{
-                              type: "spring",
-                              stiffness: 100,
-                              damping: 12,
-                            }}
-                            viewport={{ once: true, amount: 0.2 }}
-                            className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
-                          >
-                            <div className="flex items-center mb-6">
-                              {[...Array(testimonial.rating)].map((_, i) => (
-                                <Star
-                                  key={i}
-                                  className="w-5 h-5 text-blue-500 fill-current"
-                                />
-                              ))}
-                            </div>
-                            <p className="text-gray-600 mb-8 italic text-base leading-relaxed">
-                              "{testimonial.text}"
-                            </p>
-                            <div className="flex items-center">
-                              <img
-                                src={testimonial.image}
-                                alt={testimonial.name}
-                                className="w-16 h-16 rounded-full object-cover mr-4"
-                              />
-                              <div>
-                                <div className="font-semibold text-gray-900 text-lg mb-1">
-                                  {testimonial.name}
-                                </div>
-                                <div className="text-gray-500 text-sm">
-                                  {testimonial.position}
-                                </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 text-lg mb-1">
+                                {testimonial.name}
+                              </div>
+                              <div className="text-gray-500 text-sm">
+                                {testimonial.position}
                               </div>
                             </div>
-                          </motion.div>
-                        ))}
-                    </div>
-                  ))}
+                          </div>
+
+                          <div className="flex items-center mb-4">
+                            {[...Array(testimonial.rating)].map((_, i) => (
+                              <Star
+                                key={i}
+                                className="w-5 h-5 text-blue-500 fill-current"
+                              />
+                            ))}
+                          </div>
+
+                          <p className="text-gray-600 italic text-base leading-relaxed">
+                            "{displayText}"
+                          </p>
+
+                          {isLong && (
+                            <button
+                              onClick={() => toggleExpand(globalIndex)}
+                              className="mt-2 text-blue-600 hover:underline text-sm font-medium"
+                            >
+                              {isExpanded ? "Thu gọn" : "Xem thêm"}
+                            </button>
+                          )}
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                );
+              })}
             </div>
 
             <div className="absolute top-0 left-0 h-full w-1/2 z-10 group">
               <button
                 onClick={prevTestimonial}
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 
-                  bg-white text-gray-700 p-2 rounded-full shadow-md border 
-                  transition-all duration-300 opacity-0 group-hover:opacity-100 
-                  hover:bg-blue-600 hover:text-white"
+                bg-white text-gray-700 p-2 rounded-full shadow-md border 
+                transition-all duration-300 opacity-0 group-hover:opacity-100 
+                hover:bg-blue-600 hover:text-white"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -257,9 +236,9 @@ const Testimonial = () => {
               <button
                 onClick={nextTestimonial}
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 
-                  bg-white text-gray-700 p-2 rounded-full shadow-md border 
-                  transition-all duration-300 opacity-0 group-hover:opacity-100 
-                  hover:bg-blue-600 hover:text-white"
+                bg-white text-gray-700 p-2 rounded-full shadow-md border 
+                transition-all duration-300 opacity-0 group-hover:opacity-100 
+                hover:bg-blue-600 hover:text-white"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>

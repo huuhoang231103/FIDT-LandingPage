@@ -160,7 +160,7 @@ const Contact = () => {
                   href={item.href}
                   target={item.href.startsWith('http') ? '_blank' : '_self'}
                   rel={item.href.startsWith('http') ? 'noopener noreferrer' : ''}
-                  className="flex items-center group hover:bg-white hover:shadow-lg rounded-xl p-4 transition-all duration-300 cursor-pointer transform hover:scale-105 block"
+                  className="flex items-center group hover:bg-white hover:shadow-lg rounded-xl p-4 transition-all duration-300 cursor-pointer transform hover:scale-105"
                 >
                   <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl mr-4 transform group-hover:rotate-12 transition-transform duration-300">
                     <item.icon className="w-6 h-6 text-white" />

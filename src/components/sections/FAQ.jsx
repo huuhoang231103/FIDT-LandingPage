@@ -29,7 +29,7 @@ const faqData = [
   }
 ];
 
-// Animation config for section appearance
+// Animation config
 const containerVariants = {
   hidden: {},
   visible: {
@@ -39,7 +39,6 @@ const containerVariants = {
   }
 };
 
-// Animation for each question box
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -50,15 +49,11 @@ const itemVariants = {
 };
 
 const FAQ = () => {
-  // Store multiple open indexes
   const [openIndexes, setOpenIndexes] = useState([]);
 
-  // Toggle each index on click
   const toggleIndex = (index) => {
     setOpenIndexes((prev) =>
-      prev.includes(index)
-        ? prev.filter((i) => i !== index)
-        : [...prev, index]
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
     );
   };
 
@@ -71,7 +66,6 @@ const FAQ = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      {/* Section heading with fade-in */}
       <motion.h1
         className="text-4xl font-bold text-center text-blue-600 mb-10"
         initial={{ opacity: 0, y: 20 }}
@@ -82,7 +76,6 @@ const FAQ = () => {
         FAQ
       </motion.h1>
 
-      {/* Render each FAQ item */}
       {faqData.map((item, index) => {
         const isOpen = openIndexes.includes(index);
 
@@ -92,23 +85,20 @@ const FAQ = () => {
             variants={itemVariants}
             className="mb-6 border border-gray-200 rounded-md shadow-sm bg-white"
           >
-            {/* Full clickable button for question */}
             <button
               onClick={() => toggleIndex(index)}
-              className="w-full px-6 pt-5 pb-3 flex justify-between items-start text-left focus:outline-none hover:bg-gray-50 transition-colors"
+              className="w-full px-4 md:px-6 pt-5 pb-3 flex items-center justify-between text-left gap-4 hover:bg-gray-50 transition-colors focus:outline-none"
             >
-              {/* Question text */}
               <div
-                className={`text-lg md:text-xl font-semibold ${
+                className={`text-base md:text-lg font-semibold flex-1 ${
                   isOpen ? "text-blue-600" : "text-black"
                 }`}
               >
                 {item.question}
               </div>
 
-              {/* Toggle icon */}
               <div
-                className={`w-7 h-7 flex items-center justify-center rounded-full border border-blue-600 transition-all duration-300 ${
+                className={`flex-shrink-0 aspect-square w-8 sm:w-9 flex items-center justify-center rounded-full border border-blue-600 transition-all duration-300 ${
                   isOpen ? "bg-blue-600 text-white" : "text-blue-600"
                 }`}
               >
@@ -116,7 +106,6 @@ const FAQ = () => {
               </div>
             </button>
 
-            {/* Answer section with animation */}
             <AnimatePresence initial={false}>
               {isOpen && (
                 <motion.div
@@ -126,7 +115,7 @@ const FAQ = () => {
                   exit={{ opacity: 0, scaleY: 0.95 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   style={{ transformOrigin: "top" }}
-                  className="px-6 pb-6 text-gray-700 text-base md:text-lg"
+                  className="px-4 md:px-6 pb-6 text-gray-700 text-sm md:text-base"
                 >
                   <hr className="border-t border-gray-200 my-3" />
                   <div className="whitespace-pre-line">{item.answer}</div>

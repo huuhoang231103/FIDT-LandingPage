@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
-import { SendMail } from "../../utils/SendMail";
-
+import { Phone, Mail, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,17 +13,57 @@ const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [errors, setErrors] = useState({});
+  const [submitError, setSubmitError] = useState('');
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
+  // API call function
+  const sendEmailToBackend = async (data) => {
+    try {
+      const response = await fetch('http://localhost:3001/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          subject: 'Contact Form Submission',
+          message: data.message,
+          subscribe: data.subscribe
+        })
+      });
+
+      const result = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(result.message || 'Failed to send email');
+      }
+
+      return result;
+    } catch (error) {
+      console.error('Backend API Error:', error);
+      throw error;
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Reset previous errors
+    setErrors({});
+    setSubmitError('');
+
+    // Validation
     const newErrors = {};
     if (!formData.name.trim()) newErrors.name = "Please enter your name.";
-    if (!formData.email.trim()) newErrors.email = "Please enter your email.";
+    if (!formData.email.trim()) {
+      newErrors.email = "Please enter your email.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address.";
+    }
     if (!formData.message.trim()) newErrors.message = "Please enter your message.";
 
     if (Object.keys(newErrors).length > 0) {
@@ -33,27 +71,31 @@ const Contact = () => {
       return;
     }
 
-    setErrors({});
     setIsSubmitting(true);
 
     try {
-      const result = await SendMail(formData);
+      // Call backend API
+      const result = await sendEmailToBackend(formData);
 
       if (result.success) {
-        setIsSubmitting(false);
         setIsSubmitted(true);
+        setFormData({ name: '', email: '', message: '', subscribe: false });
+        
+        // Reset success state after 5 seconds
         setTimeout(() => {
-          setFormData({ name: '', email: '', message: '', subscribe: false });
           setIsSubmitted(false);
-        }, 3000);
+        }, 5000);
       } else {
-        setIsSubmitting(false);
-        alert("Failed: " + result.message);
+        setSubmitError(result.message || 'Failed to send message');
       }
     } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitError(
+        error.message || 
+        'Unable to send message. Please check your connection and try again.'
+      );
+    } finally {
       setIsSubmitting(false);
-      alert("Error submitting form.");
-      console.error(error);
     }
   };
 
@@ -63,23 +105,34 @@ const Contact = () => {
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }));
+    
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
   };
 
   const contactItems = [
     {
       icon: Phone,
       title: "Phone",
-      value: "+84 123 456 789"
+      value: "+84 123 456 789",
+      href: "tel:+84123456789"
     },
     {
       icon: Mail,
       title: "Email",
-      value: "contact@fidt.com"
+      value: "contact@fidt.com",
+      href: "mailto:contact@fidt.com"
     },
     {
       icon: MapPin,
       title: "Address",
-      value: "Đà Lạt, Lâm Đồng Province, Vietnam"
+      value: "Đà Lạt, Lâm Đồng Province, Vietnam",
+      href: "https://maps.google.com/?q=Da+Lat,+Vietnam"
     }
   ];
 
@@ -102,9 +155,12 @@ const Contact = () => {
             </h3>
             <div className="space-y-6">
               {contactItems.map((item, index) => (
-                <div 
+                <a
                   key={index}
-                  className="flex items-center group hover:bg-white hover:shadow-lg rounded-xl p-4 transition-all duration-300 cursor-pointer transform hover:scale-105"
+                  href={item.href}
+                  target={item.href.startsWith('http') ? '_blank' : '_self'}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : ''}
+                  className="flex items-center group hover:bg-white hover:shadow-lg rounded-xl p-4 transition-all duration-300 cursor-pointer transform hover:scale-105 block"
                 >
                   <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl mr-4 transform group-hover:rotate-12 transition-transform duration-300">
                     <item.icon className="w-6 h-6 text-white" />
@@ -113,7 +169,7 @@ const Contact = () => {
                     <p className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">{item.title}</p>
                     <p className="text-gray-600">{item.value}</p>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
 
@@ -139,9 +195,12 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 ${
+                    errors.name ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="Enter your full name"
                 />
-                {errors.name && <p className="text-sm text-red-600 mt-1">{errors.name}</p>}
+                {errors.name && <p className="text-sm text-red-600 mt-1 flex items-center"><AlertCircle className="w-4 h-4 mr-1" />{errors.name}</p>}
               </div>
 
               <div>
@@ -152,9 +211,12 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 ${
+                    errors.email ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="Enter your email address"
                 />
-                {errors.email && <p className="text-sm text-red-600 mt-1">{errors.email}</p>}
+                {errors.email && <p className="text-sm text-red-600 mt-1 flex items-center"><AlertCircle className="w-4 h-4 mr-1" />{errors.email}</p>}
               </div>
 
               <div>
@@ -165,9 +227,12 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-colors duration-200 ${
+                    errors.message ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="Tell us about your project or inquiry..."
                 ></textarea>
-                {errors.message && <p className="text-sm text-red-600 mt-1">{errors.message}</p>}
+                {errors.message && <p className="text-sm text-red-600 mt-1 flex items-center"><AlertCircle className="w-4 h-4 mr-1" />{errors.message}</p>}
               </div>
 
               <div className="flex items-center">
@@ -184,15 +249,25 @@ const Contact = () => {
                 </label>
               </div>
 
+              {/* Error Message */}
+              {submitError && (
+                <div className="p-4 bg-red-50 border border-red-200 rounded-lg animate-[slideInUp_0.5s_ease-out]">
+                  <div className="flex items-center space-x-2 text-red-800">
+                    <AlertCircle className="w-5 h-5" />
+                    <span className="font-medium">{submitError}</span>
+                  </div>
+                </div>
+              )}
+
               <button
                 type="submit"
                 disabled={isSubmitting || isSubmitted}
                 className={`w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 ${
                   isSubmitted 
-                    ? 'bg-green-500 text-white'
+                    ? 'bg-green-500 text-white cursor-not-allowed'
                     : isSubmitting 
-                      ? 'bg-gray-400 text-white'
-                      : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
+                      ? 'bg-gray-400 text-white cursor-not-allowed'
+                      : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'
                 }`}
               >
                 <div className="flex items-center justify-center space-x-2">
@@ -213,6 +288,7 @@ const Contact = () => {
                 </div>
               </button>
 
+              {/* Success Message */}
               {isSubmitted && (
                 <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg animate-[slideInUp_0.5s_ease-out]">
                   <div className="flex items-center space-x-2 text-green-800">

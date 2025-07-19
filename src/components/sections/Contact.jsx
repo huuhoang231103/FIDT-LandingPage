@@ -118,20 +118,20 @@ const Contact = () => {
   const contactItems = [
     {
       icon: Phone,
-      title: "Phone",
-      value: "+84 123 456 789",
-      href: "tel:+84123456789"
+      title: "Số điện thoại",
+      value: "0936 903 949",
+      href: "tel:+84936903949"
     },
     {
       icon: Mail,
       title: "Email",
-      value: "contact@fidt.com",
-      href: "mailto:contact@fidt.com"
+      value: "hana@thinhvuongtaichinh.net",
+      href: "mailto:hana@thinhvuongtaichinh.net"
     },
     {
       icon: MapPin,
-      title: "Address",
-      value: "Đà Lạt, Lâm Đồng Province, Vietnam",
+      title: "địa chỉ",
+      value: "54 Tuệ Tĩnh, Phường Phú Thọ. Thành phố Hồ Chí Minh",
       href: "https://maps.google.com/?q=Da+Lat,+Vietnam"
     }
   ];
@@ -141,7 +141,7 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Get in <span className="text-blue-600 relative">Touch</span>
+            Liên hệ với <span className="text-blue-600 relative">chúng tôi</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Ready to start your project? Contact us today for a free consultation.

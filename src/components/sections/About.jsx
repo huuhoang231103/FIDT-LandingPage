@@ -41,7 +41,7 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Về <span className="text-blue-600">Mai Hân</span>
+              Về <span className="text-blue-600">Ms. Mai Hân</span>
             </h2>
 
             <p className="text-lg text-gray-700 mb-6">
@@ -96,7 +96,7 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-900">Tầm nhìn</h3>
                 <p className="text-gray-600 mt-2">
-                  Dẫn đầu trong lĩnh vực hoạch định tài chính cá nhân tại Việt Nam
+                  Trở thành chuyên gia tư vấn tài chính cá nhân được tin tưởng hàng đầu tại Việt Nam, góp phần nâng cao nhận thức tài chính cho cộng đồng và đồng hành cùng khách hàng trên hành trình xây dựng cuộc sống tự do tài chính, chủ động tương lai.
                 </p>
               </div>
             </div>

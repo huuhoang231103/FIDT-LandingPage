@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Menu, X } from 'lucide-react';
-import { motion } from 'framer-motion'; // ⬅️ Thêm dòng này
+import { Menu, X } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +20,7 @@ const Header = () => {
     { name: 'Training', href: '#training' },
     { name: 'Team', href: '#team' },
     { name: 'Contact', href: '#contact' },
-        { name: 'FAQ', href: '#faq' },
+    { name: 'FAQ', href: '#faq' },
   ];
 
   return (
@@ -28,29 +28,21 @@ const Header = () => {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <motion.div
-            initial={{ x: -30, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-            className={`text-2xl font-bold transition-colors duration-300 ${
-              isScrolled ? 'text-blue-600' : 'text-white'
-            }`}
-          >
-            FIDT
-          </motion.div>
-
-
+        <div className="flex justify-center items-center h-16 relative">
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navLinks.map(link => (
               <a
                 key={link.name}
                 href={link.href}
-                className={`font-medium transition-colors hover:text-blue-600 ${isScrolled ? 'text-gray-700' : 'text-white'}`}
+                className={`font-medium transition-colors hover:text-blue-600 ${
+                  isScrolled ? 'text-gray-700' : 'text-white'
+                }`}
               >
                 {link.name}
               </a>
@@ -58,18 +50,27 @@ const Header = () => {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden p-2" onClick={() => setIsMenuOpen(true)}>
-            <Menu className={`w-6 h-6 ${isScrolled ? 'text-gray-700' : 'text-white'}`} />
+          <button
+            className="md:hidden p-2 absolute right-0"
+            onClick={() => setIsMenuOpen(true)}
+          >
+            <Menu
+              className={`w-6 h-6 ${isScrolled ? 'text-gray-700' : 'text-white'}`}
+            />
           </button>
         </div>
       </div>
 
       {/* Mobile Sidebar */}
-      <div className={`fixed inset-0 z-50 transition-transform duration-300 md:hidden ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} flex`}>
+      <div
+        className={`fixed inset-0 z-50 transition-transform duration-300 md:hidden ${
+          isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        } flex`}
+      >
         {/* Sidebar */}
         <div className="w-64 bg-blue-900 text-white p-6 flex flex-col">
           <div className="flex justify-between items-center mb-6">
-            <div className="text-2xl font-bold text-blue-500">FIDT</div>
+            <div className="text-lg font-bold text-blue-500">Menu</div>
             <button onClick={() => setIsMenuOpen(false)}>
               <X className="w-6 h-6 text-white" />
             </button>
@@ -87,8 +88,10 @@ const Header = () => {
             ))}
           </nav>
           <div className="mt-6">
-            <p className="text-sm mb-1">📧 needhelp@tolak.com</p>
-            <p className="text-sm">📞 666 888 0000</p>
+            <p className="text-sm mb-1 flex items-center gap-2">
+              <span>📧</span> hana@thinhvuongtaichinh.net
+            </p>
+            <p className="text-sm">📞 0936903949</p>
             <div className="flex gap-3 mt-4 text-white">
               <i className="fab fa-facebook-f" />
               <i className="fab fa-twitter" />
@@ -99,7 +102,10 @@ const Header = () => {
         </div>
 
         {/* Overlay */}
-        <div className="flex-1 bg-black/40" onClick={() => setIsMenuOpen(false)} />
+        <div
+          className="flex-1 bg-black/40"
+          onClick={() => setIsMenuOpen(false)}
+        />
       </div>
     </motion.header>
   );

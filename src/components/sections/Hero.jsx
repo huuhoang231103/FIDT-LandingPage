@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 
-import img1 from '../../assets/Img_Slider/1.jpg';
+//import img1 from '../../assets/Img_Slider/1.jpg';
 import img2 from '../../assets/Img_Slider/2.jpg';
 import img3 from '../../assets/Img_Slider/3.jpg';
 import img4 from '../../assets/Img_Slider/4.jpg';
@@ -9,7 +9,7 @@ import img5 from '../../assets/Img_Slider/5.jpg';
 import img6 from '../../assets/Img_Slider/6.jpg';
 import img7 from '../../assets/Img_Slider/7.jpg';
 
-const backgrounds = [img1, img2, img3, img4, img5, img6, img7];
+const backgrounds = [img2, img3, img4, img5, img6, img7];
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -57,17 +57,18 @@ const Hero = () => {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              Transform Your Business with{' '}
-              <span className="text-blue-300">FIDT Solutions</span>
+              <span className="text-blue-500">Ms. Hana Trần</span> – Định hướng tài chính, dẫn lối tương lai
             </h1>
+
 
             <p
               className={`text-xl text-blue-100 mb-8 max-w-2xl mx-auto transition-all duration-1000 delay-300 hover:opacity-80 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              Leading technology solutions provider specializing in digital transformation, training, and innovative project development for businesses worldwide.
+              Ms. Hana Trần là một chuyên gia tài chính đáng tin cậy, giúp bạn hiểu rõ tài chính cá nhân và xây dựng tương lai vững chắc.
             </p>
+
 
             <div
               className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-1000 delay-500 ${

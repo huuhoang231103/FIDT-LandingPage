@@ -45,9 +45,12 @@ const WhyChooseHana = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Tại sao chọn <span className="text-blue-600">Ms. Hana Trần?</span>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+            <span className="block md:inline">Tại sao chọn </span>
+            <span className="block md:inline text-blue-600">Ms. Hana Trần?</span>
           </h2>
+
+
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Uy tín – Kinh nghiệm – Truyền cảm hứng. Tư vấn đi vào thực tiễn, giúp bạn thay đổi rõ rệt.
           </p>

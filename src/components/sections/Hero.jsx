@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 
-//import img1 from '../../assets/Img_Slider/1.jpg';
+import img1 from '../../assets/Img_Slider/1.jpg';
 import img2 from '../../assets/Img_Slider/2.jpg';
 import img3 from '../../assets/Img_Slider/3.jpg';
-import img4 from '../../assets/Img_Slider/4.jpg';
-import img5 from '../../assets/Img_Slider/5.jpg';
-import img6 from '../../assets/Img_Slider/6.jpg';
-import img7 from '../../assets/Img_Slider/7.jpg';
 
-const backgrounds = [img2, img3, img4, img5, img6, img7];
+const backgrounds = [img1, img2, img3];
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);

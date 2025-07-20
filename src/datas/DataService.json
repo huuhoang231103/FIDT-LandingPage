@@ -1,0 +1,40 @@
+{
+  "services": [
+    {
+      "title": "Gói Tư Vấn Mua BĐS Lần Đầu",
+      "category": "Cá nhân hoặc gia đình lần đầu sở hữu BĐS",
+      "description": "Rà soát tài chính, xác định mục tiêu phù hợp, đề xuất chiến lược mua BĐS an toàn.",
+      "fullDescription": "📌 Đối tượng:\n- Cá nhân hoặc gia đình lần đầu muốn sở hữu bất động sản\n\n📋 Nội dung:\n- Rà soát tài chính tổng thể\n- Thiết lập mục tiêu mua BĐS phù hợp\n- Xác định dòng tiền, khả năng vay mua nhà\n- Đề xuất chiến lược mua an toàn và hiệu quả\n\n💰 Chi phí: 5.000.000 VNĐ\n🎁 Tặng kèm: Template ngân sách 12 tháng"
+    },
+    {
+      "title": "Gói Tối Ưu Danh Mục BĐS",
+      "category": "Người đã sở hữu 2 BĐS trở lên",
+      "description": "Rà soát danh mục tài sản, phân tích hiệu suất và đề xuất tối ưu hoá danh mục.",
+      "fullDescription": "📌 Đối tượng:\n- Người đã sở hữu 2 BĐS trở lên\n\n📋 Nội dung:\n- Rà soát lại danh mục tài sản\n- Phân tích hiệu suất khai thác từng BĐS\n- Đề xuất cơ cấu lại tài sản để tối ưu hiệu quả đầu tư\n\n💰 Chi phí: 8.000.000 VNĐ\n🎁 Tặng kèm: Bảng tính hiệu suất BĐS"
+    },
+    {
+      "title": "Gói Phân Tích BĐS Trước Khi Mua",
+      "category": "Người đang phân vân trước khi ra quyết định mua",
+      "description": "Phân tích ưu nhược điểm BĐS cụ thể, hỗ trợ ra quyết định mua hay không.",
+      "fullDescription": "📌 Đối tượng:\n- Người đang cân nhắc mua 1 BĐS cụ thể\n\n📋 Nội dung:\n- Phân tích ưu/nhược điểm vị trí, pháp lý, giá trị\n- So sánh với các BĐS tương đương\n- Hỗ trợ ra quyết định nên mua hay không\n\n💰 Chi phí: 3.000.000 VNĐ"
+    },
+    {
+      "title": "Gói Định Hướng Đầu Tư Cho Người Mới",
+      "category": "Người mới muốn bắt đầu đầu tư BĐS",
+      "description": "Hướng dẫn kiến thức cơ bản, xác định phân khúc phù hợp và chiến lược đầu tư ban đầu.",
+      "fullDescription": "📌 Đối tượng:\n- Người mới bắt đầu tìm hiểu đầu tư BĐS\n\n📋 Nội dung:\n- Cung cấp kiến thức nền tảng đầu tư BĐS\n- Định hướng phân khúc phù hợp với tài chính và khẩu vị rủi ro\n- Đề xuất chiến lược đầu tư an toàn giai đoạn đầu\n\n💰 Chi phí: 4.000.000 VNĐ"
+    },
+    {
+      "title": "Gói Tư Vấn Tái Cấu Trúc Tài Chính",
+      "category": "Người gặp áp lực tài chính do đầu tư BĐS",
+      "description": "Phân tích tình trạng tài chính, đề xuất phương án xử lý nợ và tái cấu trúc danh mục.",
+      "fullDescription": "📌 Đối tượng:\n- Người đang gặp khó khăn tài chính vì đầu tư BĐS\n\n📋 Nội dung:\n- Phân tích chi tiết dòng tiền và nợ\n- Đề xuất giải pháp giảm áp lực tài chính\n- Cân nhắc bán/chuyển nhượng BĐS không hiệu quả\n\n💰 Chi phí: 6.000.000 VNĐ"
+    },
+    {
+      "title": "Gói Tư Vấn Cho Nhà Đầu Tư Muốn Chốt Lời",
+      "category": "Người muốn bán BĐS đã lời",
+      "description": "Phân tích thời điểm bán, tư vấn giá và phương án chốt lời tối ưu.",
+      "fullDescription": "📌 Đối tượng:\n- Nhà đầu tư đang sở hữu BĐS có lời và muốn chốt\n\n📋 Nội dung:\n- Đánh giá thị trường và thời điểm chốt lời\n- Tư vấn phương án bán hoặc tái đầu tư\n- Tối ưu lợi nhuận sau thuế/phí\n\n💰 Chi phí: 5.000.000 VNĐ"
+    }
+  ]
+}

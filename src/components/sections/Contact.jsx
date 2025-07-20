@@ -19,7 +19,6 @@ const Contact = () => {
     setIsVisible(true);
   }, []);
 
-  // API call function
   const sendEmailToBackend = async (data) => {
     try {
       const response = await fetch('http://localhost:3001/api/send-email', {
@@ -30,18 +29,14 @@ const Contact = () => {
         body: JSON.stringify({
           name: data.name,
           email: data.email,
-          subject: 'Contact Form Submission',
+          subject: 'Gửi từ biểu mẫu liên hệ',
           message: data.message,
           subscribe: data.subscribe
         })
       });
 
       const result = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(result.message || 'Failed to send email');
-      }
-
+      if (!response.ok) throw new Error(result.message || 'Không thể gửi email');
       return result;
     } catch (error) {
       console.error('Backend API Error:', error);
@@ -51,20 +46,17 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Reset previous errors
     setErrors({});
     setSubmitError('');
 
-    // Validation
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Please enter your name.";
+    if (!formData.name.trim()) newErrors.name = "Vui lòng nhập họ tên.";
     if (!formData.email.trim()) {
-      newErrors.email = "Please enter your email.";
+      newErrors.email = "Vui lòng nhập email.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address.";
+      newErrors.email = "Email không hợp lệ.";
     }
-    if (!formData.message.trim()) newErrors.message = "Please enter your message.";
+    if (!formData.message.trim()) newErrors.message = "Vui lòng nhập nội dung.";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -74,26 +66,20 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Call backend API
       const result = await sendEmailToBackend(formData);
 
       if (result.success) {
         setIsSubmitted(true);
         setFormData({ name: '', email: '', message: '', subscribe: false });
-        
-        // Reset success state after 5 seconds
         setTimeout(() => {
           setIsSubmitted(false);
         }, 5000);
       } else {
-        setSubmitError(result.message || 'Failed to send message');
+        setSubmitError(result.message || 'Không thể gửi tin nhắn');
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      setSubmitError(
-        error.message || 
-        'Unable to send message. Please check your connection and try again.'
-      );
+      setSubmitError(error.message || 'Không gửi được tin nhắn. Vui lòng kiểm tra kết nối và thử lại.');
     } finally {
       setIsSubmitting(false);
     }
@@ -105,8 +91,7 @@ const Contact = () => {
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }));
-    
-    // Clear error when user starts typing
+
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -130,8 +115,8 @@ const Contact = () => {
     },
     {
       icon: MapPin,
-      title: "địa chỉ",
-      value: "54 Tuệ Tĩnh, Phường Phú Thọ. Thành phố Hồ Chí Minh",
+      title: "Địa chỉ",
+      value: "54 Tuệ Tĩnh, Phường Phú Thọ, Thành phố Hồ Chí Minh",
       href: "https://maps.google.com/?q=Da+Lat,+Vietnam"
     }
   ];
@@ -144,14 +129,14 @@ const Contact = () => {
             Liên hệ với <span className="text-blue-600 relative">chúng tôi</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Ready to start your project? Contact us today for a free consultation.
+            Bạn đã sẵn sàng cho dự án mới? Liên hệ để được tư vấn miễn phí.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <h3 className="text-2xl font-bold text-gray-900 mb-8 relative">
-              Contact Information
+              Thông tin liên hệ
             </h3>
             <div className="space-y-6">
               {contactItems.map((item, index) => (
@@ -178,59 +163,52 @@ const Contact = () => {
               <div className="relative bg-white rounded-2xl p-6 shadow-xl">
                 <div className="flex items-center space-x-4">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium text-gray-700">We're online and ready to help!</span>
+                  <span className="text-sm font-medium text-gray-700">Chúng tôi đang trực tuyến để hỗ trợ bạn!</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Họ và tên</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 ${
-                    errors.name ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                  placeholder="Enter your full name"
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
+                  placeholder="Nhập họ tên của bạn"
                 />
                 {errors.name && <p className="text-sm text-red-600 mt-1 flex items-center"><AlertCircle className="w-4 h-4 mr-1" />{errors.name}</p>}
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                  placeholder="Enter your email address"
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                  placeholder="Nhập địa chỉ email"
                 />
                 {errors.email && <p className="text-sm text-red-600 mt-1 flex items-center"><AlertCircle className="w-4 h-4 mr-1" />{errors.email}</p>}
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Nội dung</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-colors duration-200 ${
-                    errors.message ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                  placeholder="Tell us about your project or inquiry..."
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-colors duration-200 ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
+                  placeholder="Nhập nội dung tin nhắn của bạn..."
                 ></textarea>
                 {errors.message && <p className="text-sm text-red-600 mt-1 flex items-center"><AlertCircle className="w-4 h-4 mr-1" />{errors.message}</p>}
               </div>
@@ -245,11 +223,10 @@ const Contact = () => {
                   className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                 />
                 <label htmlFor="subscribe" className="ml-2 block text-sm text-gray-700">
-                  Subscribe to our newsletter for updates
+                  Đăng ký nhận bản tin từ chúng tôi
                 </label>
               </div>
 
-              {/* Error Message */}
               {submitError && (
                 <div className="p-4 bg-red-50 border border-red-200 rounded-lg animate-[slideInUp_0.5s_ease-out]">
                   <div className="flex items-center space-x-2 text-red-800">
@@ -277,23 +254,22 @@ const Contact = () => {
                   {isSubmitted ? (
                     <>
                       <CheckCircle className="w-5 h-5" />
-                      <span>Message Sent!</span>
+                      <span>Đã gửi!</span>
                     </>
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
-                      <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                      <span>{isSubmitting ? 'Đang gửi...' : 'Gửi tin nhắn'}</span>
                     </>
                   )}
                 </div>
               </button>
 
-              {/* Success Message */}
               {isSubmitted && (
                 <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg animate-[slideInUp_0.5s_ease-out]">
                   <div className="flex items-center space-x-2 text-green-800">
                     <CheckCircle className="w-5 h-5" />
-                    <span className="font-medium">Thank you! We'll get back to you soon.</span>
+                    <span className="font-medium">Cảm ơn bạn! Chúng tôi sẽ phản hồi sớm nhất.</span>
                   </div>
                 </div>
               )}

@@ -15,8 +15,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <p className="text-white mb-6 max-w-md">
-              Transforming businesses through innovative technology solutions, comprehensive training, and strategic consulting services.
+              "Hana Trần – Định hướng tài chính, dẫn lối tương lai"<br />
+              Ms. Hana Trần là một chuyên gia tài chính đáng tin cậy
+              giúp bạn hiểu rõ tài chính cá nhân và xây dựng tương lai vững chắc.
             </p>
+
             <div className="flex space-x-4">
               {socialLinks.map((link, idx) => (
                 <a key={idx} href={link.href} className="text-white hover:text-blue-400 transition-colors">
@@ -31,14 +34,14 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#about" className="text-white hover:text-blue-400 transition-colors">About</a></li>
               <li><a href="#services" className="text-white hover:text-blue-400 transition-colors">Services</a></li>
-              <li><a href="#training" className="text-white hover:text-blue-400 transition-colors">Training</a></li>
+              {/* <li><a href="#training" className="text-white hover:text-blue-400 transition-colors">Training</a></li> */}
               <li><a href="#team" className="text-white hover:text-blue-400 transition-colors">Team</a></li>
               <li><a href="#contact" className="text-white hover:text-blue-400 transition-colors">Contact</a></li>
               <li><a href="#FAQ" className="text-white hover:text-blue-400 transition-colors">FAQ</a></li>
             </ul>
           </div>
 
-          <div>
+          {/* <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               <li><a href="#" className="text-white hover:text-blue-400 transition-colors">Web Development</a></li>
@@ -47,12 +50,12 @@ const Footer = () => {
               <li><a href="#" className="text-white hover:text-blue-400 transition-colors">Cloud Solutions</a></li>
               <li><a href="#" className="text-white hover:text-blue-400 transition-colors">Consulting</a></li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-gray-100 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-white text-sm mb-4 md:mb-0">© 2025 FIDT. All rights reserved.</div>
+            <div className="text-white text-sm mb-4 md:mb-0">© Copyright ThinhVuongTaiChinh.</div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-white hover:text-blue-400 transition-colors">Privacy Policy</a>
               <a href="#" className="text-white hover:text-blue-400 transition-colors">Terms of Service</a>

@@ -36,7 +36,7 @@ const TeamSection = () => {
                         <div className="flex-shrink-0">
                             <img
                             src={avatar}
-                            alt="Portrait of Mai Hân"
+                            alt="Portrait of Ms. Hana Trần"
                             className="rounded-full border-4 border-blue-200 w-40 h-40 object-cover"
                             />
 
@@ -44,15 +44,15 @@ const TeamSection = () => {
 
                         {/* Content */}
                         <div className="flex-1 text-center lg:text-left">
-                            <h3 className="text-3xl font-bold text-blue-900 mb-3">Mai Hân</h3>
+                            <h3 className="text-3xl font-bold text-blue-900 mb-3">Ms. Hana Trần</h3>
                             <p className="text-blue-600 font-semibold mb-6 text-2xl">CEO & Founder</p>
 
                             <div className="bg-white p-6 rounded-lg shadow-sm mb-6 border-l-4 border-blue-300 max-h-60 overflow-y-auto lg:max-h-none lg:overflow-visible">
                                 <p className="text-blue-800 text-lg leading-relaxed mb-4">
-                                    Chị Mai Hân là một trong những Hội viên Chuyên gia tiêu biểu đầu tiên của Hiệp hội Tài chính Việt Nam (VFCA). Bằng sự tận tâm trong việc phục vụ Khách hàng cũng như sự tâm huyết với lĩnh vực Hoạch định Tài chính cá nhân, chị Mai Hân đã nhận vinh danh vào các năm 2022-2024 cho sự đóng góp xuất sắc tại FIDT.
+                                    Chị Ms. Hana Trần là một trong những Hội viên Chuyên gia tiêu biểu đầu tiên của Hiệp hội Tài chính Việt Nam (VFCA). Bằng sự tận tâm trong việc phục vụ Khách hàng cũng như sự tâm huyết với lĩnh vực Hoạch định Tài chính cá nhân, chị Ms. Hana Trần đã nhận vinh danh vào các năm 2022-2024 cho sự đóng góp xuất sắc tại FIDT.
                                 </p>
                                 <p className="text-blue-800 text-lg leading-relaxed mb-4">
-                                    Với bề dày hoạt động trong lĩnh vực kế toán, thuế, tài chính cũng như là một nhà đầu tư cá nhân kinh nghiệm, chị Mai Hân có thế mạnh toàn diện trong cả Tài chính Doanh nghiệp và Tài chính Cá nhân. Đặc biệt, chị chuyên tâm phục vụ phân khúc khách hàng phụ nữ với vai trò một nhà Hoạch định Tài chính cá nhân, hỗ trợ lập kế hoạch tài chính cho mọi lứa tuổi.
+                                    Với bề dày hoạt động trong lĩnh vực kế toán, thuế, tài chính cũng như là một nhà đầu tư cá nhân kinh nghiệm, chị Ms. Hana Trần có thế mạnh toàn diện trong cả Tài chính Doanh nghiệp và Tài chính Cá nhân. Đặc biệt, chị chuyên tâm phục vụ phân khúc khách hàng phụ nữ với vai trò một nhà Hoạch định Tài chính cá nhân, hỗ trợ lập kế hoạch tài chính cho mọi lứa tuổi.
                                 </p>
                             </div>
 

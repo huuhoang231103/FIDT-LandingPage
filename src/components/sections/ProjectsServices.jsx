@@ -14,7 +14,7 @@ const ProjectsServices = () => {
   };
 
   return (
-    <section id="why-choose" className="scroll-mt-24 py-16 md:py-24">
+    <section id="services" className="scroll-mt-24 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
           <span className="text-blue-600">Sản phẩm và Dịch vụ</span> của chúng tôi

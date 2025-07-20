@@ -3,15 +3,22 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const ServiceCard = ({ title, category, description, fullDescription, isActive, onClick, onClose }) => {
   return (
-    <div className="relative cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-500 hover:shadow-2xl hover:scale-105 min-h-[400px] bg-white">
+    <div className="relative cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-500 hover:shadow-2xl hover:scale-105 min-h-[400px] bg-white group">
       {/* Nội dung mặc định - Tên dịch vụ */}
-      <div 
+      <div
         className={`absolute inset-0 p-6 flex flex-col justify-center items-center text-center transition-all duration-500 ${isActive ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
         onClick={onClick}
       >
         <div className="mb-6">
-          <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-            <div className="w-8 h-8 bg-blue-600 rounded-full"></div>
+          <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto relative">
+            {/* Chấm xanh chính */}
+            <div className="w-8 h-8 bg-blue-600 rounded-full relative z-10"></div>
+            
+            {/* Hiệu ứng chớp chóp - vòng 1 */}
+            <div className="absolute inset-0 bg-blue-500 rounded-full opacity-0 group-hover:opacity-40 group-hover:animate-ping"></div>
+            
+            {/* Hiệu ứng chớp chóp - vòng 2 */}
+            <div className="absolute inset-0 bg-blue-400 rounded-full opacity-0 group-hover:opacity-25 group-hover:animate-ping animation-delay-150"></div>
           </div>
         </div>
         <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 leading-tight">
@@ -23,7 +30,7 @@ const ServiceCard = ({ title, category, description, fullDescription, isActive, 
         <p className="text-gray-600 text-sm leading-relaxed mb-6">
           {description}
         </p>
-        <button 
+        <button
           onClick={(e) => {
             e.stopPropagation();
             onClick();
@@ -48,7 +55,7 @@ const ServiceCard = ({ title, category, description, fullDescription, isActive, 
                 {category}
               </p>
             </div>
-            <button 
+            <button
               onClick={onClose}
               className="ml-3 text-gray-400 hover:text-gray-600 transition-colors flex items-center gap-1 text-sm"
             >
@@ -56,14 +63,12 @@ const ServiceCard = ({ title, category, description, fullDescription, isActive, 
               <span className="hidden sm:inline text-xs">Quay lại</span>
             </button>
           </div>
-
           {/* Nội dung chi tiết */}
           <div className="flex-1 p-4 overflow-y-auto">
             <div className="text-gray-800 text-sm leading-relaxed whitespace-pre-wrap">
               {fullDescription}
             </div>
           </div>
-
           {/* Footer với CTA */}
           <div className="p-4 border-t border-gray-100 bg-gray-50">
             <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-4 rounded-lg transition-colors text-sm">
@@ -72,6 +77,33 @@ const ServiceCard = ({ title, category, description, fullDescription, isActive, 
           </div>
         </div>
       </div>
+
+      {/* CSS tùy chỉnh cho animation delays */}
+      <style jsx>{`
+        .animation-delay-150 {
+          animation-delay: 150ms;
+        }
+        
+        /* Tùy chỉnh animate-ping để nhanh và mượt hơn */
+        @keyframes custom-ping {
+          0% {
+            transform: scale(1);
+            opacity: 0.4;
+          }
+          50% {
+            transform: scale(1.15);
+            opacity: 0.2;
+          }
+          100% {
+            transform: scale(1.4);
+            opacity: 0;
+          }
+        }
+        
+        .group:hover .group-hover\\:animate-ping {
+          animation: custom-ping 0.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+      `}</style>
     </div>
   );
 };

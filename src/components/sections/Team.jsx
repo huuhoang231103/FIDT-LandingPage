@@ -44,7 +44,7 @@ Chuyên gia hoạch định tài chính giúp bạn chủ động tương lai.  
                         {/* Content */}
                         <div className="flex-1 text-center lg:text-left">
                             <h3 className="text-3xl font-bold text-blue-900 mb-3">Ms. Hana Trần</h3>
-                            <p className="text-blue-600 font-semibold mb-6 text-2xl">CEO & Founder</p>
+                            <p className="text-blue-600 font-semibold mb-6 text-2xl">Cố vấn tài chính</p>
 
                             <div className="bg-white p-6 rounded-lg shadow-sm mb-6 border-l-4 border-blue-300 max-h-60 overflow-y-auto lg:max-h-none lg:overflow-visible">
                                 <p className="text-blue-800 text-lg leading-relaxed mb-4">

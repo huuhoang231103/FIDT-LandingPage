@@ -16,11 +16,10 @@ const TeamSection = () => {
                     className="text-center mb-10"
                 >
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                        Meet Our <span className="text-white bg-gradient-to-r from-blue-600 to-blue-500 px-4 py-2 rounded-full shadow-md">CEO & Founder</span>
+                        Gặp gỡ <span className="text-white bg-gradient-to-r from-blue-600 to-blue-500 px-4 py-2 rounded-full shadow-md">Cố vấn tài chính</span>
                     </h2>
                     <p className="text-lg text-blue-800 max-w-xl mx-auto">
-                        Chuyên gia hoạch định tài chính cho phụ nữ hiện đại
-                    </p>
+Chuyên gia hoạch định tài chính giúp bạn chủ động tương lai.                    </p>
                 </motion.div>
 
                 {/* CEO Card with animation */}
@@ -52,8 +51,7 @@ const TeamSection = () => {
                                     Chị Ms. Hana Trần là một trong những Hội viên Chuyên gia tiêu biểu đầu tiên của Hiệp hội Tài chính Việt Nam (VFCA). Bằng sự tận tâm trong việc phục vụ Khách hàng cũng như sự tâm huyết với lĩnh vực Hoạch định Tài chính cá nhân, chị Ms. Hana Trần đã nhận vinh danh vào các năm 2022-2024 cho sự đóng góp xuất sắc tại FIDT.
                                 </p>
                                 <p className="text-blue-800 text-lg leading-relaxed mb-4">
-                                    Với bề dày hoạt động trong lĩnh vực kế toán, thuế, tài chính cũng như là một nhà đầu tư cá nhân kinh nghiệm, chị Ms. Hana Trần có thế mạnh toàn diện trong cả Tài chính Doanh nghiệp và Tài chính Cá nhân. Đặc biệt, chị chuyên tâm phục vụ phân khúc khách hàng phụ nữ với vai trò một nhà Hoạch định Tài chính cá nhân, hỗ trợ lập kế hoạch tài chính cho mọi lứa tuổi.
-                                </p>
+                                    Với bề dày hoạt động trong lĩnh vực kế toán, thuế, tài chính cũng như là một nhà đầu tư cá nhân giàu kinh nghiệm, chị Ms. Hana Trần có thế mạnh toàn diện trong cả Tài chính Doanh nghiệp và Tài chính Cá nhân. Đặc biệt, chị chuyên tâm phục vụ các cá nhân đang tìm kiếm giải pháp hoạch định tài chính phù hợp với từng giai đoạn cuộc sống, hỗ trợ xây dựng kế hoạch tài chính hiệu quả và bền vững.                                </p>
                             </div>
 
                             <div className="bg-blue-100 p-4 rounded-lg mb-6 border border-blue-200">

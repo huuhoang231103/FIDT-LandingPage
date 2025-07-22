@@ -1,40 +1,130 @@
 {
+  "consultant": {
+    "name": "Ms. Trần Thị Mai Hân",
+    "title": "Chuyên gia đồng hành tài chính",
+    "hotline": "09369 03949",
+    "email": "maihan.1104@gmail.com"
+  },
   "services": [
     {
-      "title": "Gói Tư Vấn Mua BĐS Lần Đầu",
-      "category": "Cá nhân hoặc gia đình lần đầu sở hữu BĐS",
-      "description": "Rà soát tài chính, xác định mục tiêu phù hợp, đề xuất chiến lược mua BĐS an toàn.",
-      "fullDescription": "📌 Đối tượng:\n- Cá nhân hoặc gia đình lần đầu muốn sở hữu bất động sản\n\n📋 Nội dung:\n- Rà soát tài chính tổng thể\n- Thiết lập mục tiêu mua BĐS phù hợp\n- Xác định dòng tiền, khả năng vay mua nhà\n- Đề xuất chiến lược mua an toàn và hiệu quả\n\n💰 Chi phí: 5.000.000 VNĐ\n🎁 Tặng kèm: Template ngân sách 12 tháng"
+      "name": "MUA BĐS ĐẦU TIÊN",
+      "duration": "1 buổi (60 phút)",
+      "target": "Cá nhân / Gia đình trẻ lập kế hoạch mua BĐS đầu tiên",
+      "highlights": [
+        "Rà soát toàn bộ tài chính cá nhân / gia đình",
+        "Thiết lập mục tiêu mua BĐS phù hợp với khả năng",
+        "Kết nối ngân hàng có gói vay tốt trên thị trường",
+        "Tư vấn rổ hàng BĐS miễn phí",
+        "Lập dòng tiền cho kế hoạch vay mua BĐS",
+        "Lập kế hoạch bảo vệ an toàn tài chính",
+        "Cố vấn tư duy tài chính lành mạnh và bền vững"
+      ],
+      "price": "5.000.000 VNĐ",
+      "bonus": "Template theo dõi ngân sách 12 tháng"
     },
     {
-      "title": "Gói Tối Ưu Danh Mục BĐS",
-      "category": "Người đã sở hữu 2 BĐS trở lên",
-      "description": "Rà soát danh mục tài sản, phân tích hiệu suất và đề xuất tối ưu hoá danh mục.",
-      "fullDescription": "📌 Đối tượng:\n- Người đã sở hữu 2 BĐS trở lên\n\n📋 Nội dung:\n- Rà soát lại danh mục tài sản\n- Phân tích hiệu suất khai thác từng BĐS\n- Đề xuất cơ cấu lại tài sản để tối ưu hiệu quả đầu tư\n\n💰 Chi phí: 8.000.000 VNĐ\n🎁 Tặng kèm: Bảng tính hiệu suất BĐS"
+      "name": "GỠ NÚT THẮT TÀI CHÍNH",
+      "duration": "1 buổi (60 phút)",
+      "target": "Cá nhân / Gia đình gặp vấn đề tài chính, kẹt vốn BĐS, áp lực nợ vay",
+      "highlights": [
+        "Rà soát toàn bộ tài chính cá nhân / gia đình",
+        "Nhận diện lỗ hổng tài chính",
+        "Xây dựng kế hoạch tiết kiệm, đầu tư",
+        "Thiết lập phương án xử lý nợ",
+        "Hướng dẫn thiết lập quỹ dự phòng & ngân sách cho bảo hiểm",
+        "Khuyến nghị phương án và hành động sát với vấn đề tài chính hiện có",
+        "Cố vấn tư duy tài chính lành mạnh và bền vững"
+      ],
+      "price": "5.000.000 VNĐ",
+      "bonus": "File Excel quản lý tài chính cá nhân"
     },
     {
-      "title": "Gói Phân Tích BĐS Trước Khi Mua",
-      "category": "Người đang phân vân trước khi ra quyết định mua",
-      "description": "Phân tích ưu nhược điểm BĐS cụ thể, hỗ trợ ra quyết định mua hay không.",
-      "fullDescription": "📌 Đối tượng:\n- Người đang cân nhắc mua 1 BĐS cụ thể\n\n📋 Nội dung:\n- Phân tích ưu/nhược điểm vị trí, pháp lý, giá trị\n- So sánh với các BĐS tương đương\n- Hỗ trợ ra quyết định nên mua hay không\n\n💰 Chi phí: 3.000.000 VNĐ"
+      "name": "KHAI MỞ TÀI CHÍNH",
+      "duration": "1 buổi (60 phút)",
+      "target": "Cá nhân / Gia đình chưa biết bắt đầu quản lý TCCN từ đâu",
+      "highlights": [
+        "Hướng dẫn quản lý chi tiêu đơn giản, hiệu quả",
+        "Thiết lập mục tiêu tài chính và đánh giá nguồn lực",
+        "Đánh giá Danh mục tài sản và khuyến nghị tái cơ cấu",
+        "Phương án bảo vệ an toàn tài chính"
+      ],
+      "price": "5.000.000 VNĐ",
+      "bonus": "File Excel theo dõi tiến độ tăng trưởng tài sản"
     },
     {
-      "title": "Gói Định Hướng Đầu Tư Cho Người Mới",
-      "category": "Người mới muốn bắt đầu đầu tư BĐS",
-      "description": "Hướng dẫn kiến thức cơ bản, xác định phân khúc phù hợp và chiến lược đầu tư ban đầu.",
-      "fullDescription": "📌 Đối tượng:\n- Người mới bắt đầu tìm hiểu đầu tư BĐS\n\n📋 Nội dung:\n- Cung cấp kiến thức nền tảng đầu tư BĐS\n- Định hướng phân khúc phù hợp với tài chính và khẩu vị rủi ro\n- Đề xuất chiến lược đầu tư an toàn giai đoạn đầu\n\n💰 Chi phí: 4.000.000 VNĐ"
+      "name": "TÀI CHÍNH CHỦ ĐỘNG",
+      "duration": "1 buổi (60 phút)",
+      "target": "Chủ Doanh nghiệp đang gặp vấn đề về tài chính",
+      "highlights": [
+        "Thăm khám sức khỏe tài chính của cá nhân và doanh nghiệp",
+        "Định hình vấn đề tài chính và nhu cầu tư vấn",
+        "Đánh giá nguồn lực và Định hướng cách thức xử lý vấn đề tài chính cụ thể",
+        "Quản trị rủi ro"
+      ],
+      "price": "5.000.000 VNĐ"
     },
     {
-      "title": "Gói Tư Vấn Tái Cấu Trúc Tài Chính",
-      "category": "Người gặp áp lực tài chính do đầu tư BĐS",
-      "description": "Phân tích tình trạng tài chính, đề xuất phương án xử lý nợ và tái cấu trúc danh mục.",
-      "fullDescription": "📌 Đối tượng:\n- Người đang gặp khó khăn tài chính vì đầu tư BĐS\n\n📋 Nội dung:\n- Phân tích chi tiết dòng tiền và nợ\n- Đề xuất giải pháp giảm áp lực tài chính\n- Cân nhắc bán/chuyển nhượng BĐS không hiệu quả\n\n💰 Chi phí: 6.000.000 VNĐ"
+      "name": "TÀI CHÍNH TOÀN DIỆN (12 THÁNG)",
+      "duration": "1 buổi chuyên sâu (120 phút/buổi) + group Zalo tư vấn + đánh giá định kỳ mỗi 6 tháng",
+      "target": "Cá nhân, gia đình mong muốn tăng trưởng tổng tài sản và củng cố pháp lý tài chính",
+      "highlights": [
+        "Rà soát toàn diện tài chính cá nhân/gia đình",
+        "Xác định mục tiêu tài chính ngắn - dài hạn và hồ sơ rủi ro",
+        "Chiến lược tài chính chủ động cho từng giai đoạn cuộc đời",
+        "Xây dựng kế hoạch tài chính dài hạn (đầu tư, tín dụng, thuế, bảo hiểm, ...)",
+        "Đồng hành thực thi kế hoạch tài chính",
+        "Tư vấn tối ưu thuế, tham vấn luật về hôn nhân gia đình, thừa kế",
+        "Cố vấn tư duy tài chính lành mạnh và bền vững"
+      ],
+      "price": "0.35% giá trị tài sản quản lý, thấp nhất 25.900.000 VNĐ"
     },
     {
-      "title": "Gói Tư Vấn Cho Nhà Đầu Tư Muốn Chốt Lời",
-      "category": "Người muốn bán BĐS đã lời",
-      "description": "Phân tích thời điểm bán, tư vấn giá và phương án chốt lời tối ưu.",
-      "fullDescription": "📌 Đối tượng:\n- Nhà đầu tư đang sở hữu BĐS có lời và muốn chốt\n\n📋 Nội dung:\n- Đánh giá thị trường và thời điểm chốt lời\n- Tư vấn phương án bán hoặc tái đầu tư\n- Tối ưu lợi nhuận sau thuế/phí\n\n💰 Chi phí: 5.000.000 VNĐ"
+      "name": "TÀI CHÍNH HẠNH PHÚC (CHO CẶP ĐÔI, VỢ CHỒNG)",
+      "duration": "2 buổi (90 phút/buổi)",
+      "target": "Vợ chồng mới cưới, cặp đôi muốn đồng hành tài chính bền vững",
+      "highlights": [
+        "Đánh giá tổng quan tài chính, kiến thức, kinh nghiệm đầu tư, mục tiêu cá nhân",
+        "Đồng thuận mục tiêu tài chính dài hạn",
+        "Thiết lập ngân sách, quỹ chung – quỹ riêng",
+        "Kỹ năng giao tiếp & ra quyết định tài chính cùng nhau",
+        "Gợi ý kế hoạch tiết kiệm mua nhà, sinh con, đầu tư"
+      ],
+      "price": "6.000.000 VNĐ",
+      "bonus": "File kế hoạch chung 12 tháng"
     }
-  ]
+  ],
+  "free_services": [
+    {
+      "name": "GÓI TRẢI NGHIỆM MIỄN PHÍ",
+      "duration": "30 phút",
+      "description": "Tư vấn giúp bạn xác định nhu cầu và chọn đúng gói dịch vụ",
+      "register": ["Fanpage", "Zalo", "Form online"]
+    },
+    {
+      "name": "THẨM ĐỊNH GIÁ BĐS MIỄN PHÍ",
+      "duration": "30 phút",
+      "description": "Tư vấn mức giá thị trường, gợi ý gói vay, giải pháp tái cơ cấu tài sản (Hà Nội, Tp.HCM, Khánh Hòa, Đà Nẵng...)",
+      "register": ["Fanpage", "Zalo", "Form online"]
+    },
+    {
+      "name": "THẨM ĐỊNH DANH MỤC TÀI SẢN MIỄN PHÍ",
+      "duration": "45 phút",
+      "description": "Tối ưu hiệu suất lợi nhuận và kiểm soát rủi ro theo từng giai đoạn tài chính",
+      "register": ["Fanpage", "Zalo", "Form online"]
+    }
+  ],
+  "hashtags": [
+    "#QuanTriTaiChinh", "#TuVanTaiChinh", "#QuanLyTaiChinh", "#TaiChinhCaNhan",
+    "#TietKiemHieuQua", "#DauTuThongMinh", "#TaiChinhChoNguoiTre",
+    "#TuDoTaiChinh", "#ChiTieuHopLy", "#TaiChinhDoanhNghiep",
+    "#DocLapTaiChinh", "#KeHoachTaiChinhGiaDinh"
+  ],
+  "slogan": "Mua căn nhà đầu tiên không phải là giấc mơ vượt tầm với!",
+  "philosophy": {
+    "spendingMethod": "Phương pháp quản lý chi tiêu 3 KHÔNG (không app, không excel, không ghi chép)",
+    "surplusGrowth": "Luôn có thặng dư ổn định và tăng trưởng khi thu nhập tăng",
+    "assetReallocation": "Tái cơ cấu tài sản theo chu kỳ kinh tế",
+    "financialSafety": "Bảo vệ tài chính trước những tình huống bất ngờ",
+    "riskManagement": "Đánh giá nhân khẩu học tài chính và rủi ro khi vay đầu tư"
+  }
 }

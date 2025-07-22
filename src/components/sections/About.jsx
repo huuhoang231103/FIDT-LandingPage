@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 const About = () => {
   const stats = [
-    { target: 500, suffix: "+", label: "Projects Completed" },
-    { target: 100, suffix: "+", label: "Happy Clients" },
+    { target: 300, suffix: "+", label: "Đã tư vấn khách hàng" },
+    { target: 900, suffix: " tỉ +", label: "Tài sản quản lý" },
     { target: 50, suffix: "+", label: "Team Members" },
     { target: 15, suffix: "+", label: "Years Experience" },
   ];
@@ -76,8 +76,7 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-900">Tầm nhìn</h3>
                 <p className="text-gray-600 mt-2">
-                  Trở thành chuyên gia tư vấn tài chính cá nhân được tin tưởng hàng đầu tại Việt Nam, góp phần nâng cao nhận thức tài chính cho cộng đồng và đồng hành cùng khách hàng trên hành trình xây dựng cuộc sống tự do tài chính, chủ động tương lai.
-                </p>
+Trở thành chuyên gia tư vấn tài chính cá nhân đáng tin cậy tại Việt Nam, góp phần nâng cao nhận thức tài chính cho cộng đồng và đồng hành cùng khách hàng trên hành trình xây dựng cuộc sống tự do tài chính, hướng tới tương lai chủ động.                </p>
               </div>
             </div>
           </motion.div>

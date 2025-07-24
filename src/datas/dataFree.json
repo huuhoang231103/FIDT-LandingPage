@@ -1,0 +1,37 @@
+{
+  "freeServices": [
+    {
+      "name": "GÓI TRẢI NGHIỆM MIỄN PHÍ",
+      "target": "Cá nhân",
+      "duration": "30 phút",
+      "price": "Miễn phí",
+      "highlights": [
+        "Tư vấn giúp bạn xác định nhu cầu và chọn đúng gói dịch vụ",
+        "Phân tích tình hình tài chính hiện tại",
+        "Đưa ra lộ trình phát triển phù hợp"
+      ]
+    },
+    {
+      "name": "THẨM ĐỊNH GIÁ BẤT ĐỘNG SẢN MIỄN PHÍ",
+      "target": "Cá nhân", 
+      "duration": "30 phút",
+      "price": "Miễn phí",
+      "highlights": [
+        "Tư vấn mức giá thị trường để tham khảo cho việc mua hoặc bán BĐS",
+        "Hỗ trợ khu vực: Hà Nội, TP.HCM, Khánh Hòa, Đà Nẵng",
+        "Tư vấn gói vay + Giải pháp tái cơ cấu tài sản"
+      ]
+    },
+    {
+      "name": "THẨM ĐỊNH DANH MỤC TÀI SẢN MIỄN PHÍ",
+      "target": "Cá nhân",
+      "duration": "45 phút", 
+      "price": "Miễn phí",
+      "highlights": [
+        "Thẩm định danh mục tài sản giúp tối ưu hiệu suất lợi nhuận",
+        "Kiểm soát rủi ro phù hợp với từng giai đoạn tài chính",
+        "Tư vấn tái cân bằng danh mục đầu tư"
+      ]
+    }
+  ]
+}

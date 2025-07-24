@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ServiceCard from '../common/ServiceCard';
+import FreeServiceCard from '../common/FreeServiceCard'; // Import component mới
 import servicesData from '../../datas/DataService.json';
+import freeServicesData from '../../datas/dataFree.json'; // Import data free services
 
 import { FaUserTie, FaBuilding, FaMoneyBillWave, FaChartLine } from 'react-icons/fa';
 
@@ -22,6 +24,13 @@ const ProjectsServices = () => {
     setActiveCard(null);
   };
 
+  // Tách riêng free services và paid services
+  const freeServices = freeServicesData.freeServices; // Lấy từ file dataFree.json
+  
+  const paidServices = servicesData.services.filter(service => 
+    service.price !== 'Miễn phí' && service.price !== 'Free' && service.isFree !== true
+  );
+
   return (
     <section id="services" className="scroll-mt-24 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,8 +41,46 @@ const ProjectsServices = () => {
           Dịch vụ tư vấn tài chính cá nhân & doanh nghiệp toàn diện, hiệu quả.
         </p>
 
+        {/* Free Services Section */}
+        {freeServices.length > 0 && (
+          <div className="mb-12">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-2">
+                🎁 Sản phẩm miễn phí đặc biệt
+              </h3>
+              <p className="text-gray-600">Trải nghiệm ngay các công cụ hữu ích hoàn toàn miễn phí</p>
+            </div>
+            
+            <div className="flex justify-center mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl">
+                {freeServices.map((service, idx) => (
+                  <FreeServiceCard
+                    key={`free-${idx}`}
+                    title={service.name}
+                    category={service.target}
+                    description={service.highlights?.[0] || 'Dịch vụ miễn phí hữu ích'}
+                    highlights={service.highlights?.slice(1) || []}
+                    duration={service.duration}
+                    onLearnMore={() => handleCardClick(`free-${idx}`)}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Divider */}
+        {freeServices.length > 0 && paidServices.length > 0 && (
+          <div className="flex items-center justify-center mb-8">
+            <div className="flex-grow border-t border-gray-300 max-w-xs"></div>
+            <div className="mx-6 text-gray-500 font-medium text-lg">Dịch vụ chuyên nghiệp</div>
+            <div className="flex-grow border-t border-gray-300 max-w-xs"></div>
+          </div>
+        )}
+
+        {/* Paid Services Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {servicesData.services.map((service, idx) => {
+          {paidServices.map((service, idx) => {
             const {
               name,
               target,
@@ -50,7 +97,6 @@ const ProjectsServices = () => {
 
             const fullDescription = [
               `🕐 Thời lượng: ${duration}`,
-              `🎯 Phù hợp với: ${suitability}`,
               `🔍 Nội dung nổi bật:\n${formattedHighlights}`,
               `📌 Chi phí: ${price}`,
               ...(bonus ? [`✅ Tặng kèm: ${bonus}`] : [])
@@ -60,14 +106,14 @@ const ProjectsServices = () => {
 
             return (
               <ServiceCard
-                key={idx}
+                key={`paid-${idx}`}
                 title={name}
                 category={target}
                 icon={icon}
                 description={description}
                 fullDescription={fullDescription}
-                isActive={activeCard === idx}
-                onClick={() => handleCardClick(idx)}
+                isActive={activeCard === `paid-${idx}`}
+                onClick={() => handleCardClick(`paid-${idx}`)}
                 onClose={handleCardClose}
               />
             );

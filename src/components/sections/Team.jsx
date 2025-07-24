@@ -48,10 +48,10 @@ Chuyên gia hoạch định tài chính giúp bạn chủ động tương lai.  
 
                             <div className="bg-white p-6 rounded-lg shadow-sm mb-6 border-l-4 border-blue-300 max-h-60 overflow-y-auto lg:max-h-none lg:overflow-visible">
                                 <p className="text-blue-800 text-lg leading-relaxed mb-4">
-                                    Chị Ms. Hana Trần là một trong những Hội viên Chuyên gia tiêu biểu đầu tiên của Hiệp hội Tài chính Việt Nam (VFCA). Bằng sự tận tâm trong việc phục vụ Khách hàng cũng như sự tâm huyết với lĩnh vực Hoạch định Tài chính cá nhân, chị Ms. Hana Trần đã nhận vinh danh vào các năm 2022-2024 cho sự đóng góp xuất sắc tại FIDT.
-                                </p>
+                                    Chị Hana Tran là một trong những Hội viên Chuyên gia tiêu biểu đầu tiên của Hiệp hội Tài chính Việt Nam (VFCA). Bằng sự tận tâm trong việc phục vụ Khách hàng cũng như sự tâm huyết với lĩnh vực Hoạch định Tài chính cá nhân, chị Hana Trần đã nhận vinh danh vào các năm 2022-2024 cho sự đóng góp xuất sắc tại Công ty CP Tư vấn Đầu tư và Quản lý Tài sản FIDT.                                </p>
                                 <p className="text-blue-800 text-lg leading-relaxed mb-4">
-                                    Với bề dày hoạt động trong lĩnh vực kế toán, thuế, tài chính cũng như là một nhà đầu tư cá nhân giàu kinh nghiệm, chị Ms. Hana Trần có thế mạnh toàn diện trong cả Tài chính Doanh nghiệp và Tài chính Cá nhân. Đặc biệt, chị chuyên tâm phục vụ các cá nhân đang tìm kiếm giải pháp hoạch định tài chính phù hợp với từng giai đoạn cuộc sống, hỗ trợ xây dựng kế hoạch tài chính hiệu quả và bền vững.                                </p>
+Với bề dày hoạt động trong lĩnh vực tài chính và tư vấn, cũng như là một nhà đầu tư cá nhân giàu kinh nghiệm, chị Hana Tran có thế mạnh toàn diện trong cả Tài chính Doanh nghiệp và Tài chính Cá nhân. Chị luôn đặt lợi ích khách hàng lên hàng đầu, và sẵn sàng đồng hành cùng các khách hàng để xây dựng giải pháp hoạch định tài chính, để các khách hàng đạt được thịnh vượng tài chính bền vững.
+                                </p>
                             </div>
 
                             <div className="bg-blue-100 p-4 rounded-lg mb-6 border border-blue-200">

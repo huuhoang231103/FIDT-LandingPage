@@ -1,7 +1,19 @@
 import React from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import SocialButton from '../common/SocialButton';
 
-const ServiceCard = ({ title, category, description, fullDescription, isActive, onClick, onClose }) => {
+const ServiceCard = ({ 
+  title, 
+  category, 
+  description, 
+  fullDescription, 
+  isActive, 
+  onClick, 
+  onClose, 
+  zaloUrl, 
+  facebookUrl, 
+  onContactClick 
+}) => {
   return (
     <div className="relative cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-500 hover:shadow-2xl hover:scale-105 min-h-[400px] bg-white group">
       {/* Nội dung mặc định - Tên dịch vụ */}
@@ -11,13 +23,8 @@ const ServiceCard = ({ title, category, description, fullDescription, isActive, 
       >
         <div className="mb-6">
           <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto relative">
-            {/* Chấm xanh chính */}
             <div className="w-8 h-8 bg-blue-600 rounded-full relative z-10"></div>
-            
-            {/* Hiệu ứng chớp chóp - vòng 1 */}
             <div className="absolute inset-0 bg-blue-500 rounded-full opacity-0 group-hover:opacity-40 group-hover:animate-ping"></div>
-            
-            {/* Hiệu ứng chớp chóp - vòng 2 */}
             <div className="absolute inset-0 bg-blue-400 rounded-full opacity-0 group-hover:opacity-25 group-hover:animate-ping animation-delay-150"></div>
           </div>
         </div>
@@ -42,10 +49,9 @@ const ServiceCard = ({ title, category, description, fullDescription, isActive, 
         </button>
       </div>
 
-      {/* Nội dung chi tiết - Ghi đè lên card */}
+      {/* Nội dung chi tiết */}
       <div className={`absolute inset-0 bg-white transition-all duration-500 ${isActive ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
         <div className="h-full flex flex-col">
-          {/* Header với nút đóng */}
           <div className="flex items-center justify-between p-4 border-b border-gray-100">
             <div className="flex-1">
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1 leading-tight">
@@ -63,28 +69,30 @@ const ServiceCard = ({ title, category, description, fullDescription, isActive, 
               <span className="hidden sm:inline text-xs">Quay lại</span>
             </button>
           </div>
-          {/* Nội dung chi tiết */}
+
           <div className="flex-1 p-4 overflow-y-auto">
             <div className="text-gray-800 text-sm leading-relaxed whitespace-pre-wrap">
               {fullDescription}
             </div>
           </div>
-          {/* Footer với CTA */}
+
+          {/* Social Contact Buttons */}
           <div className="p-4 border-t border-gray-100 bg-gray-50">
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-4 rounded-lg transition-colors text-sm">
-              Liên hệ tư vấn
-            </button>
+            <div className="flex gap-3">
+              <SocialButton type="zalo" url={zaloUrl} />
+              <SocialButton type="facebook" url={facebookUrl} />
+              <SocialButton type="contact" onClick={onContactClick} />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* CSS tùy chỉnh cho animation delays */}
+      {/* Custom animation delay */}
       <style jsx>{`
         .animation-delay-150 {
           animation-delay: 150ms;
         }
-        
-        /* Tùy chỉnh animate-ping để nhanh và mượt hơn */
+
         @keyframes custom-ping {
           0% {
             transform: scale(1);
@@ -99,7 +107,7 @@ const ServiceCard = ({ title, category, description, fullDescription, isActive, 
             opacity: 0;
           }
         }
-        
+
         .group:hover .group-hover\\:animate-ping {
           animation: custom-ping 0.8s cubic-bezier(0, 0, 0.2, 1) infinite;
         }

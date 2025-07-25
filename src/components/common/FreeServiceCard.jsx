@@ -1,9 +1,18 @@
 import React from 'react';
-import { FaGift, FaStar, FaFacebookF, FaClock } from 'react-icons/fa';
-import { SiZalo } from 'react-icons/si';
-import { HiMail } from 'react-icons/hi';
+import { FaGift, FaStar, FaClock } from 'react-icons/fa';
+import SocialButton from '../common/SocialButton';
 
-const FreeServiceCard = ({ title, category, description, highlights = [], duration, onLearnMore }) => {
+const FreeServiceCard = ({ 
+  title, 
+  category, 
+  description, 
+  highlights = [], 
+  duration, 
+  zaloUrl,
+  facebookUrl,
+  onContactClick
+}) => {
+
   return (
     <div className="relative group h-full">
       {/* Gradient Border Animation */}
@@ -21,7 +30,11 @@ const FreeServiceCard = ({ title, category, description, highlights = [], durati
           {/* Premium Stars */}
           <div className="flex justify-center mb-3">
             {[...Array(5)].map((_, i) => (
-              <FaStar key={i} className="text-yellow-400 text-base mx-0.5 animate-pulse" style={{animationDelay: `${i * 0.1}s`}} />
+              <FaStar 
+                key={i} 
+                className="text-yellow-400 text-base mx-0.5 animate-pulse" 
+                style={{animationDelay: `${i * 0.1}s`}} 
+              />
             ))}
           </div>
 
@@ -88,39 +101,11 @@ const FreeServiceCard = ({ title, category, description, highlights = [], durati
             </div>
           </div>
 
-          {/* Action Buttons */}
+          {/* Social Action Buttons */}
           <div className="flex gap-3">
-            {/* Zalo Button */}
-            <button
-              onClick={() => window.open('https://zalo.me/your-zalo-id', '_blank')}
-              className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-2 px-2 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center group text-xs"
-              title="Liên hệ qua Zalo"
-            >
-              <SiZalo className="text-sm group-hover:animate-bounce" />
-            </button>
-
-            {/* Facebook Button */}
-            <button
-              onClick={() => window.open('https://facebook.com/your-facebook-page', '_blank')}
-              className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium py-2 px-2 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center group text-xs"
-              title="Liên hệ qua Facebook"
-            >
-              <FaFacebookF className="text-sm group-hover:animate-bounce" />
-            </button>
-
-            {/* Contact Form Button */}
-            <button
-              onClick={() => {
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium py-2 px-2 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center group text-xs"
-              title="Gửi liên hệ"
-            >
-              <HiMail className="text-sm group-hover:animate-bounce" />
-            </button>
+            <SocialButton type="zalo" url={zaloUrl} />
+            <SocialButton type="facebook" url={facebookUrl} />
+            <SocialButton type="contact" onClick={onContactClick} />
           </div>
         </div>
 

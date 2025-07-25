@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import ServiceCard from '../common/ServiceCard';
-import FreeServiceCard from '../common/FreeServiceCard'; // Import component mới
+import FreeServiceCard from '../common/FreeServiceCard';
 import servicesData from '../../datas/DataService.json';
-import freeServicesData from '../../datas/dataFree.json'; // Import data free services
+import freeServicesData from '../../datas/dataFree.json';
 
 import { FaUserTie, FaBuilding, FaMoneyBillWave, FaChartLine } from 'react-icons/fa';
 
+// Map service categories to icons
 const iconMap = {
   'Cá nhân': <FaUserTie className="text-blue-600 text-2xl" />,
   'Doanh nghiệp': <FaBuilding className="text-green-600 text-2xl" />,
@@ -14,26 +15,25 @@ const iconMap = {
 };
 
 const ProjectsServices = () => {
-  const [activeCard, setActiveCard] = useState(null);
+  const [activeCards, setActiveCards] = useState([]); // State for multiple active cards
 
-  const handleCardClick = (index) => {
-    setActiveCard(index);
+  // Toggle card open/close
+  const handleCardClick = (key) => {
+    setActiveCards((prev) =>
+      prev.includes(key) ? prev.filter((item) => item !== key) : [...prev, key]
+    );
   };
 
-  const handleCardClose = () => {
-    setActiveCard(null);
-  };
-
-  // Tách riêng free services và paid services
-  const freeServices = freeServicesData.freeServices; // Lấy từ file dataFree.json
-  
-  const paidServices = servicesData.services.filter(service => 
-    service.price !== 'Miễn phí' && service.price !== 'Free' && service.isFree !== true
+  // Get free and paid services from data
+  const freeServices = freeServicesData.freeServices;
+  const paidServices = servicesData.services.filter(
+    (service) => service.price !== 'Miễn phí' && service.price !== 'Free' && service.isFree !== true
   );
 
   return (
     <section id="services" className="scroll-mt-24 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Title */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
           <span className="text-blue-600">Sản phẩm và Dịch vụ</span> của chúng tôi
         </h2>
@@ -48,9 +48,13 @@ const ProjectsServices = () => {
               <h3 className="text-2xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-2">
                 🎁 Ưu Đãi Đặc Biệt – Gói Tư Vấn Miễn Phí
               </h3>
-              <p className="text-gray-600">Trải nghiệm ngay dịch vụ tư vấn cá nhân hóa, hoàn toàn miễn phí – giúp bạn định hướng rõ ràng và tự tin trong từng quyết định tài chính.</p>
+              <p className="text-gray-600">
+                Trải nghiệm ngay dịch vụ tư vấn cá nhân hóa, hoàn toàn miễn phí – giúp bạn định
+                hướng rõ ràng và tự tin trong từng quyết định tài chính.
+              </p>
             </div>
-            
+
+            {/* Free service cards */}
             <div className="flex justify-center mb-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl">
                 {freeServices.map((service, idx) => (
@@ -61,6 +65,7 @@ const ProjectsServices = () => {
                     description={service.highlights?.[0] || 'Dịch vụ miễn phí hữu ích'}
                     highlights={service.highlights?.slice(1) || []}
                     duration={service.duration}
+                    isActive={activeCards.includes(`free-${idx}`)}
                     onLearnMore={() => handleCardClick(`free-${idx}`)}
                   />
                 ))}
@@ -69,14 +74,13 @@ const ProjectsServices = () => {
           </div>
         )}
 
-        {/* Divider */}
+        {/* Divider between free and paid services */}
         {freeServices.length > 0 && paidServices.length > 0 && (
           <div className="flex items-center justify-center mb-8">
             <div className="flex-grow border-t border-gray-300 max-w-xs"></div>
-          <div className="mx-6 text-blue-900 font-semibold text-3xl tracking-wide">
-            🎯 Dịch vụ Tư Vấn Chuyên Nghiệp
-          </div>
-
+            <div className="mx-6 text-blue-900 font-semibold text-3xl tracking-wide">
+              🎯 Dịch vụ Tư Vấn Chuyên Nghiệp
+            </div>
             <div className="flex-grow border-t border-gray-300 max-w-xs"></div>
           </div>
         )}
@@ -91,19 +95,19 @@ const ProjectsServices = () => {
               price,
               bonus,
               duration = 'Không xác định',
-              suitability = 'Chưa rõ'
+              suitability = 'Chưa rõ',
             } = service;
 
             const description = highlights[0] || 'Chi tiết đang cập nhật...';
 
-            const formattedHighlights = highlights.map(item => `• ${item}`).join('\n');
+            const formattedHighlights = highlights.map((item) => `• ${item}`).join('\n');
 
             const fullDescription = [
               `🕐 Thời lượng: ${duration}`,
               `🔍 Nội dung nổi bật:\n${formattedHighlights}`,
               `📌 Chi phí: ${price}`,
-              ...(bonus ? [`✅ Tặng kèm: ${bonus}`] : [])
-            ].join('\n\n');
+              ...(bonus ? [`✅ Tặng kèm: ${bonus}`] : []),
+            ].join('\n');
 
             const icon = iconMap[target] || <FaChartLine className="text-gray-500 text-2xl" />;
 
@@ -115,9 +119,9 @@ const ProjectsServices = () => {
                 icon={icon}
                 description={description}
                 fullDescription={fullDescription}
-                isActive={activeCard === `paid-${idx}`}
+                isActive={activeCards.includes(`paid-${idx}`)}
                 onClick={() => handleCardClick(`paid-${idx}`)}
-                onClose={handleCardClose}
+                onClose={() => handleCardClick(`paid-${idx}`)}
               />
             );
           })}

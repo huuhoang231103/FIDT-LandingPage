@@ -3,6 +3,13 @@ import { motion } from 'framer-motion';
 import avatar from '../../assets/avatar/avatar.jpg';
 
 const TeamSection = () => {
+    const scrollToContact = () => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <section id="team" className="scroll-mt-24 py-16 md:py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,7 +57,7 @@ Chuyên gia hoạch định tài chính giúp bạn chủ động tương lai.  
                                 <p className="text-blue-800 text-lg leading-relaxed mb-4">
                                     Chị Hana Tran là một trong những Hội viên Chuyên gia tiêu biểu đầu tiên của Hiệp hội Tài chính Việt Nam (VFCA). Bằng sự tận tâm trong việc phục vụ Khách hàng cũng như sự tâm huyết với lĩnh vực Hoạch định Tài chính cá nhân, chị Hana Trần đã nhận vinh danh vào các năm 2022-2024 cho sự đóng góp xuất sắc tại Công ty CP Tư vấn Đầu tư và Quản lý Tài sản FIDT.                                </p>
                                 <p className="text-blue-800 text-lg leading-relaxed mb-4">
-Với bề dày hoạt động trong lĩnh vực tài chính và tư vấn, cũng như là một nhà đầu tư cá nhân giàu kinh nghiệm, chị Hana Tran có thế mạnh toàn diện trong cả Tài chính Doanh nghiệp và Tài chính Cá nhân. Chị luôn đặt lợi ích khách hàng lên hàng đầu, và sẵn sàng đồng hành cùng các khách hàng để xây dựng giải pháp hoạch định tài chính, để các khách hàng đạt được thịnh vượng tài chính bền vững.
+                                    Với bề dày hoạt động trong lĩnh vực tài chính và tư vấn, cũng như là một nhà đầu tư cá nhân giàu kinh nghiệm, chị Hana Tran có thế mạnh toàn diện trong cả Tài chính Doanh nghiệp và Tài chính Cá nhân. Chị luôn đặt lợi ích khách hàng lên hàng đầu, và sẵn sàng đồng hành cùng các khách hàng để xây dựng giải pháp hoạch định tài chính, để các khách hàng đạt được thịnh vượng tài chính bền vững.
                                 </p>
                             </div>
 
@@ -61,7 +68,10 @@ Với bề dày hoạt động trong lĩnh vực tài chính và tư vấn, cũn
                             </div>
 
                             <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4">
-                                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full transition-all hover:shadow-lg text-lg">
+                                <button 
+                                    onClick={scrollToContact}
+                                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full transition-all hover:shadow-lg text-lg"
+                                >
                                     Liên hệ tư vấn
                                 </button>
                                 <button className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-full transition-all hover:shadow-lg text-lg">

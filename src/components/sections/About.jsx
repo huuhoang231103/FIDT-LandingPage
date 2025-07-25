@@ -6,8 +6,8 @@ const About = () => {
   const stats = [
     { target: 300, suffix: "+", label: "Đã tư vấn khách hàng" },
     { target: 900, suffix: " tỉ +", label: "Tài sản quản lý" },
-    { target: 50, suffix: "+", label: "Team Members" },
-    { target: 15, suffix: "+", label: "Years Experience" },
+    { target: 50, suffix: "+", label: "Số thành viên" },
+    { target: 15, suffix: "+", label: "Năm kinh nghiệm" },
   ];
 
   const [counts, setCounts] = useState(stats.map(() => 0));

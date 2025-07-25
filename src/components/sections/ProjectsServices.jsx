@@ -46,13 +46,13 @@ const ProjectsServices = () => {
           <div className="mb-12">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-2">
-                🎁 Sản phẩm miễn phí đặc biệt
+                🎁 Ưu Đãi Đặc Biệt – Gói Tư Vấn Miễn Phí
               </h3>
-              <p className="text-gray-600">Trải nghiệm ngay các công cụ hữu ích hoàn toàn miễn phí</p>
+              <p className="text-gray-600">Trải nghiệm ngay dịch vụ tư vấn cá nhân hóa, hoàn toàn miễn phí – giúp bạn định hướng rõ ràng và tự tin trong từng quyết định tài chính.</p>
             </div>
             
             <div className="flex justify-center mb-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl">
                 {freeServices.map((service, idx) => (
                   <FreeServiceCard
                     key={`free-${idx}`}
@@ -73,7 +73,10 @@ const ProjectsServices = () => {
         {freeServices.length > 0 && paidServices.length > 0 && (
           <div className="flex items-center justify-center mb-8">
             <div className="flex-grow border-t border-gray-300 max-w-xs"></div>
-            <div className="mx-6 text-gray-500 font-medium text-lg">Dịch vụ chuyên nghiệp</div>
+          <div className="mx-6 text-blue-900 font-semibold text-3xl tracking-wide">
+            🎯 Dịch vụ Tư Vấn Chuyên Nghiệp
+          </div>
+
             <div className="flex-grow border-t border-gray-300 max-w-xs"></div>
           </div>
         )}

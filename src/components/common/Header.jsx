@@ -13,14 +13,14 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Why Choose Us', href: '#why-choose' },
-    { name: 'Services', href: '#services' },
-    // { name: 'Training', href: '#training' },
-    { name: 'Team', href: '#team' },
-    { name: 'Contact', href: '#contact' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'Trang chủ', href: '#home' },
+    { name: 'Giới thiệu', href: '#about' },
+    { name: 'Tại sao chọn Ms. Hana Trần?', href: '#why-choose' },
+    { name: 'Dịch vụ', href: '#services' },
+    // { name: 'Đào tạo', href: '#training' }, // dòng này đang bị ẩn
+    { name: 'Ms. Hana', href: '#team' },
+    { name: 'Liên hệ', href: '#contact' },
+    { name: 'Câu hỏi thường gặp', href: '#faq' },
   ];
 
   return (
@@ -29,7 +29,7 @@ const Header = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-blue-100 shadow-lg' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

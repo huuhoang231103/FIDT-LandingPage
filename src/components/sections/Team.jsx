@@ -74,9 +74,9 @@ Chuyên gia hoạch định tài chính giúp bạn chủ động tương lai.  
                                 >
                                     Liên hệ tư vấn
                                 </button>
-                                <button className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-full transition-all hover:shadow-lg text-lg">
+                                {/* <button className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-full transition-all hover:shadow-lg text-lg">
                                     Tìm hiểu thêm
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     </div>

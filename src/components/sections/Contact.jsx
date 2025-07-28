@@ -138,25 +138,27 @@ const Contact = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-8 relative">
               Thông tin liên hệ
             </h3>
-            <div className="space-y-6">
-              {contactItems.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.href}
-                  target={item.href.startsWith('http') ? '_blank' : '_self'}
-                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : ''}
-                  className="flex items-center group hover:bg-white hover:shadow-lg rounded-xl p-4 transition-all duration-300 cursor-pointer transform hover:scale-105"
-                >
-                  <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl mr-4 transform group-hover:rotate-12 transition-transform duration-300">
+            <div className="bg-blue-200 p-6 rounded-2xl space-y-6 shadow-md">
+                {contactItems.map((item, index) => (
+                  <a
+                    key={index}
+                    href={item.href}
+                    target={item.href.startsWith('http') ? '_blank' : '_self'}
+                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : ''}
+                    className="flex items-center group hover:bg-white hover:shadow-lg rounded-xl p-4 transition-all duration-300 cursor-pointer transform hover:scale-105"
+                  >
+                  <div className="flex items-center justify-center w-12 h-12 min-w-[3rem] min-h-[3rem] bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl mr-4">
                     <item.icon className="w-6 h-6 text-white" />
                   </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">{item.title}</p>
-                    <p className="text-gray-600">{item.value}</p>
-                  </div>
-                </a>
-              ))}
-            </div>
+
+                    <div>
+                      <p className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">{item.title}</p>
+                      <p className="text-gray-700">{item.value}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+
 
             <div className="mt-12 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-2xl opacity-20 animate-pulse"></div>

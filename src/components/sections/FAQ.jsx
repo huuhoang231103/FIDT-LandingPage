@@ -8,12 +8,12 @@ const faqData = [
     category: "I. Câu hỏi về Quản lý chi tiêu",
     questions: [
       {
-        question: "Lương em có 10 triệu, nên phân bổ như thế nào để tiết kiệm và đầu tư?",
-        answer: `Một nguyên tắc phổ biến là 50-30-20:\n\n• 50% cho nhu cầu thiết yếu (ăn, ở, đi lại)\n• 30% cho mong muốn cá nhân (mua sắm, giải trí)\n• 20% để tiết kiệm hoặc đầu tư.\n\nTuy nhiên, nếu bạn muốn đạt mục tiêu tài chính nhanh hơn, nên đẩy tỷ lệ tiết kiệm lên 30–40%.`
+        question: "Phương pháp phổ biến là 50-30-20:",
+        answer: `• 50% cho nhu cầu thiết yếu (ăn, ở, đi lại)\n• 30% cho mong muốn cá nhân (mua sắm, giải trí)\n• 20% để tiết kiệm hoặc đầu tư.\n\nTuy nhiên, chúng ta cần điều chỉnh số liệu cho phù hợp với thu nhập, chứ không áp dụng cứng nhắc 50/30/20. Với mức thu nhập 10 triệu đồng của bạn, tỉ lệ phù hợp lần lượt là:\n• 10-20% để tiết kiệm hoặc đầu tư (tiết kiệm trước, chi tiêu sau)\n• 10% cho mong muốn cá nhân (mua sắm, giải trí)\n• 70-80% cho nhu cầu thiết yếu (ăn, ở, đi lại)`
       },
       {
-        question: "Làm sao để theo dõi chi tiêu hiệu quả?",
-        answer: `Bạn có thể dùng ứng dụng như Money Lover, Sổ Thu Chi Misa, hoặc Google Sheet.\nQuan trọng là phân loại chi tiêu (thiết yếu – không thiết yếu) và **review mỗi tuần** để điều chỉnh kịp thời.`
+        question: "Làm sao để Quản lý chi tiêu hiệu quả ?",
+        answer: `CÁCH THỰC HIỆN QUẢN LÝ CHI TIÊU 3 KHÔNG (KHÔNG APP, KHÔNG EXCEL, KHÔNG GHI CHÉP):\n\n• Lập 2 tài khoản riêng cho CP Hưởng thụ và CP Thiết yếu\n• Hàng tháng chuyển tiền theo định mức vào 2 tài khoản này\n\n📌 CP HƯỞNG THỤ:\nCứ đều đặn chuyển tiền vào, cho dù sử dụng không hết vẫn tích lũy ở đó. Bất cứ khi nào chi tiêu cho hưởng thụ, có thể nhìn vào số dư tài khoản mà xác định được mức tiền có thể chi tiêu. Muốn chi tiêu cho cả A và B, thì tiêu cho A nhiều thì B phải ít đi, và ngược lại. CHI TIÊU TRONG HẠN MỨC CHO PHÉP.\n\n📌 CP THIẾT YẾU:\nGồm các chi phí cố định (tiền thuê nhà, tiền học, tiền điện nước…), phần còn lại là tiền chợ, tiêu vặt... không cố định. Chia chi phí không cố định theo tuần. Tuần trước chi nhiều, tuần sau đó cân đối lại, chi ít hơn.\n\n🎯 LỢI ÍCH:\n• 3 KHÔNG: không app, không excel, không ghi chép\n• Tiết kiệm thời gian nên có thể áp dụng lâu dài\n• Vào bất cứ thời điểm nào trong năm cũng có thể xác định được tổng chi phí phát sinh và đã chi tiêu\n• Ngay tại thời điểm chi tiêu, nhìn số dư có thể lựa chọn và quyết định chi tiêu vào mục gì, bao nhiêu – dựa trên số tiền còn lại trong tài khoản. Đây mới là QUẢN LÝ.`
       }
     ]
   },
@@ -22,7 +22,7 @@ const faqData = [
     questions: [
       {
         question: "Nên bắt đầu đầu tư từ đâu nếu chưa có nhiều tiền?",
-        answer: `Bắt đầu nhỏ với:\n\n• Gửi tiết kiệm online lãi suất cao\n• Quỹ đầu tư mở (chỉ cần từ 100.000đ)\n• Chứng chỉ quỹ ETF (rủi ro thấp, thanh khoản tốt)\n• Vàng vật chất (nếu muốn giữ an toàn)\n\nQuan trọng nhất là: **hiểu sản phẩm – không “đu trend”**.`
+        answer: `Bắt đầu nhỏ với:\n• Gửi tiết kiệm online lãi suất cao\n• Quỹ đầu tư mở (chỉ cần từ 100.000đ)\n• Chứng chỉ quỹ ETF (rủi ro thấp, thanh khoản tốt)\n• Vàng vật chất (nếu muốn giữ an toàn)\n\nQuan trọng nhất là: **hiểu sản phẩm – không “đu trend”**.`
       },
       {
         question: "Em mới bắt đầu, nên đầu tư hay tiết kiệm trước?",
@@ -35,11 +35,11 @@ const faqData = [
     questions: [
       {
         question: "Nợ xấu có ảnh hưởng gì đến kế hoạch tài chính không?",
-        answer: `Rất nhiều. Nợ xấu ảnh hưởng tới:\n\n• Điểm tín dụng (khó vay ngân hàng)\n• Áp lực tâm lý – tài chính\n• Mất cơ hội đầu tư trong tương lai\n\nCần ưu tiên xử lý triệt để nợ xấu, rồi mới tính đến tiết kiệm hay đầu tư.`
+        answer: `Rất nhiều. Nợ xấu ảnh hưởng tới:\n• Điểm tín dụng (khó vay ngân hàng)\n• Áp lực tâm lý – tài chính\n• Mất cơ hội đầu tư trong tương lai\n\nCần ưu tiên xử lý triệt để nợ xấu, rồi mới tính đến tiết kiệm hay đầu tư.`
       },
       {
         question: "Vay tiền mua nhà có hợp lý không?",
-        answer: `Có, nếu:\n\n• Khoản vay < 40% thu nhập hàng tháng\n• Có sẵn ít nhất 30% giá trị nhà\n• Tài chính ổn định, có nguồn thu rõ ràng\n\nKhông nên vay để “đu” bất động sản nếu chưa rõ mục tiêu tài chính.`
+        answer: `Có, nếu:\n• Khoản trả gốc lãi hàng tháng < 50% thu nhập hàng tháng\n• Có sẵn ít nhất 40-45% giá trị nhà\n• Tài chính ổn định\n\nCần tận dụng đòn bẩy tài chính khi lãi vay thấp và phải có biện pháp quản trị rủi ro trước khi vay.`
       }
     ]
   },
@@ -48,11 +48,11 @@ const faqData = [
     questions: [
       {
         question: "Em có cần mua bảo hiểm nhân thọ không?",
-        answer: `Có, nếu:\n\n• Bạn là trụ cột gia đình\n• Có người phụ thuộc vào thu nhập của bạn\n\nTuy nhiên, phải hiểu kỹ hợp đồng và **không nên xem bảo hiểm là kênh đầu tư**.`
+        answer: `Có, nếu:\n• Bạn muốn tự bảo vệ bản thân, không trở thành gánh nặng cho người khác khi có sự cố xảy ra\n• Bạn là trụ cột gia đình, có người phụ thuộc vào thu nhập của bạn\n\nTuy nhiên, phải hiểu kỹ hợp đồng và **không nên xem bảo hiểm là kênh đầu tư**.`
       },
       {
         question: "Nên có những loại bảo hiểm nào cơ bản?",
-        answer: `• Bảo hiểm y tế (bắt buộc)\n• Bảo hiểm sức khỏe (chi trả viện phí)\n• Bảo hiểm nhân thọ (phòng rủi ro tử vong, bệnh hiểm nghèo)\n• Bảo hiểm tài sản (nhà, xe...)`
+        answer: `• Bảo hiểm y tế (bắt buộc)\n• Bảo hiểm sức khỏe (chi trả viện phí)\n• Bảo hiểm tai nạn\n• Bảo hiểm bệnh lý nghiêm trọng (bệnh hiểm nghèo)\n• Bảo hiểm nhân thọ\n• Bảo hiểm tài sản (nhà, xe...)`
       }
     ]
   },
@@ -61,15 +61,16 @@ const faqData = [
     questions: [
       {
         question: "Làm sao để lập mục tiêu tài chính rõ ràng?",
-        answer: `Áp dụng mô hình SMART:\n\n• Specific (cụ thể): Mua nhà, đi du học, nghỉ hưu sớm...\n• Measurable (đo lường): Cần bao nhiêu tiền?\n• Achievable (khả thi)\n• Relevant (phù hợp với cuộc sống bạn)\n• Time-bound (có thời hạn)`
+        answer: `Áp dụng mô hình SMART:\n• Specific (cụ thể): Mua nhà, đi du học, nghỉ hưu sớm...\n• Measurable (đo lường): Cần bao nhiêu tiền?\n• Attainable (khả thi): Lập kế hoạch tài chính để xác nhận tính khả thi\n• Relevant (mục tiêu phù hợp với nguồn lực)\n• Time-bound (khung thời gian cụ thể thực hiện mục tiêu)`
       },
       {
         question: "Em muốn đạt tự do tài chính, bắt đầu từ đâu?",
-        answer: `• Ghi lại thu nhập – chi tiêu\n• Tạo quỹ khẩn cấp\n• Tăng thu nhập chủ động và thu nhập thụ động\n• Đầu tư sớm – đều – dài hạn\n• Xây dựng lối sống tối giản và đầu tư vào tri thức`
+        answer: `• Quản lý chi tiêu\n• Lập quỹ dự phòng và có bảo hiểm đầy đủ\n• Tăng thu nhập chủ động và thu nhập thụ động\n• Đầu tư sớm – đều – dài hạn\n• Xây dựng lối sống tối giản và đầu tư vào tri thức`
       }
     ]
   }
 ];
+
 
 // Animation configs
 const containerVariants = {

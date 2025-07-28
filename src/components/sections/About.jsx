@@ -93,7 +93,7 @@ Trở thành chuyên gia tư vấn tài chính cá nhân đáng tin cậy tại 
               transition={{ delay: 0.2 * index, duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="text-5xl font-bold text-blue-600 mb-2">
+              <div className="text-4xl font-bold text-blue-600 mb-2">
                 {counts[index]}{stat.suffix}
               </div>
               <div className="text-gray-700">{stat.label}</div>

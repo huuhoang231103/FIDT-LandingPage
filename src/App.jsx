@@ -18,27 +18,22 @@ const App = () => {
     <div className="min-h-screen">
       <Header />
       <Hero />
-      <div 
-        className="bg-cover bg-center bg-fixed relative"
-        style={{
-          backgroundImage: `url(${backgroundImage})`
-        }}
-      >
-        <div className="bg-blue-100 bg-opacity-80">
-          <About />
-          <WhyChooseUs />
-          <Testimonial />
-          <ProjectsServices />
-          {/* <Training /> */}
-          <Team />
-        </div>
+      
+      <div className="bg-white bg-opacity-80">
+        <About />
+        <WhyChooseUs />
+        <Testimonial />
+        <ProjectsServices />
+        {/* <Training /> */}
+        <Team />
       </div>
-        <Contact />
-        <FAQ />
-        <Footer />
 
+      <Contact />
+      <FAQ />
+      <Footer />
     </div>
   );
 };
+
 
 export default App;

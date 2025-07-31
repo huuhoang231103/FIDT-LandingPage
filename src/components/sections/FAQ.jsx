@@ -65,7 +65,7 @@ const faqData = [
       },
       {
         question: "Em muốn đạt tự do tài chính, bắt đầu từ đâu?",
-        answer: `• Quản lý chi tiêu\n• Lập quỹ dự phòng và có bảo hiểm đầy đủ\n• Tăng thu nhập chủ động và thu nhập thụ động\n• Đầu tư sớm – đều – dài hạn\n• Xây dựng lối sống tối giản và đầu tư vào tri thức`
+        answer: `• Quản lý chi tiêu\n• Lập quỹ dự phòng và có bảo hiểm đầy đủ\n• Tăng thu nhập chủ động và thu nhập thụ động\n• Đầu tư sớm – đều – dài hạn\n• Xây dựng lối sống tối giản và đầu tư vào tri thức\n• Lập kế hoạch tài chính và có lộ trình thực thi rõ ràng\n• Định kì đánh giá kế hoạch tài chính và có những điều chỉnh phù hợp, đảm bảo đạt mục tiêu `
       }
     ]
   }

@@ -28,7 +28,7 @@ const WhyChooseHana = () => {
       icon: <Heart className="w-12 h-12 text-blue-600" />,
       title: "Khả năng truyền cảm hứng",
       description:
-        "Ngoài tư vấn, cô còn là diễn giả truyền cảm hứng, giúp nhiều cá nhân vượt qua khủng hoảng hoặc mất phương hướng.",
+        "Ngoài tư vấn, chị còn là diễn giả truyền cảm hứng, giúp nhiều cá nhân vượt qua khủng hoảng hoặc mất phương hướng.",
     },
     {
       icon: <ThumbsUp className="w-12 h-12 text-blue-600" />,

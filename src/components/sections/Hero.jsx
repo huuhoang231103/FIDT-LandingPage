@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Play } from 'lucide-react';
-
-// Nếu bạn dùng cả 3 ảnh thì mở dòng này
-// import img1 from '../../assets/Img_Slider/1.jpg';
 import img2 from '../../assets/Img_Slider/2.jpg';
 import img3 from '../../assets/Img_Slider/3.jpg';
 
@@ -24,12 +21,18 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden transition-all duration-1000"
     >
-      {/* Backgrounds */}
       {backgrounds.map((bg, index) => (
         <div
           key={index}
@@ -40,11 +43,8 @@ const Hero = () => {
         />
       ))}
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black/20 z-10" />
 
-
-      {/* Content */}
       <div className="relative z-20 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="text-center max-w-4xl mx-auto">
@@ -69,12 +69,18 @@ const Hero = () => {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2">
+              <button
+                onClick={scrollToAbout}
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2"
+              >
                 Get Started <ArrowRight className="w-5 h-5" />
               </button>
+
+              {/* 
               <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-900 font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2">
                 <Play className="w-5 h-5" /> Watch Demo
-              </button>
+              </button> 
+              */}
             </div>
           </div>
         </div>

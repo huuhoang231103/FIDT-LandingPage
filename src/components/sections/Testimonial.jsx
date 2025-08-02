@@ -24,7 +24,7 @@ const testimonials = [
     position: "35 tuổi, Gia đình",
     image: img3,
     content:
-      "Gia đình tôi có hai con nhỏ, thu nhập hai vợ chồng cũng ổn định nhưng luôn cảm thấy áp lực vì nhiều khoản chi: học phí, nhà cửa, sức khỏe... Chúng tôi từng nghĩ rằng việc lập kế hoạch tài chính chỉ dành cho người nhiều tiền.\nSau khi được chị Hana Trần tư vấn, vợ chồng tôi mới ‘vỡ ra’ rằng tài chính cá nhân không liên quan đến việc kiếm bao nhiêu, mà là cách mình dùng tiền như thế nào.\nChị Hana rất nhẹ nhàng nhưng sâu sắc, giúp chúng tôi nhìn rõ tình hình tài chính của gia đình, sắp xếp lại thứ tự ưu tiên, xây dựng các quỹ dự phòng và mục tiêu dài hạn như quỹ học vấn cho con, quỹ hưu trí,...\nNhờ có chị, hai vợ chồng đã cùng nhau ngồi xuống, nói chuyện tài chính một cách thoải mái và đồng lòng hơn. Một trải nghiệm thực sự ý nghĩa và thay đổi tư duy!",
+      "Gia đình tôi có hai con nhỏ, thu nhập hai vợ chồng cũng ổn định nhưng luôn cảm thấy áp lực vì nhiều khoản chi: học phí, nhà cửa, sức khỏe... Chúng tôi từng nghĩ rằng việc lập kế hoạch tài chính chỉ dành cho người nhiều tiền.\nSau khi được chị Hana Trần tư vấn, vợ chồng tôi mới 'vỡ ra' rằng tài chính cá nhân không liên quan đến việc kiếm bao nhiêu, mà là cách mình dùng tiền như thế nào.\nChị Hana rất nhẹ nhàng nhưng sâu sắc, giúp chúng tôi nhìn rõ tình hình tài chính của gia đình, sắp xếp lại thứ tự ưu tiên, xây dựng các quỹ dự phòng và mục tiêu dài hạn như quỹ học vấn cho con, quỹ hưu trí,...\nNhờ có chị, hai vợ chồng đã cùng nhau ngồi xuống, nói chuyện tài chính một cách thoải mái và đồng lòng hơn. Một trải nghiệm thực sự ý nghĩa và thay đổi tư duy!",
   },
 ];
 
@@ -37,7 +37,7 @@ const Testimonial = () => {
     const interval = setInterval(() => {
       const maxIndex = testimonials.length - (isMobile ? 1 : 2);
       setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-    }, 5000);
+    }, 20000);
     return () => clearInterval(interval);
   }, [isMobile]);
 

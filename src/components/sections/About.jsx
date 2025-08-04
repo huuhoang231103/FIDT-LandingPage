@@ -45,7 +45,7 @@ const About = () => {
             </h2>
 
             <p className="text-lg text-gray-700 mb-6">
-              Chị Ms. Hana Trần là một trong những Hội viên Chuyên gia tiêu biểu đầu tiên của Hiệp hội Tài chính Việt Nam (VFCA). 
+              Ms. Hana Trần là một trong những Hội viên Chuyên gia tiêu biểu đầu tiên của Hiệp hội Tài chính Việt Nam (VFCA). 
               Hiện là Cố vấn Tài chính tại Công ty CP Tư vấn đầu tư và Quản lý Tài sản FIDT, chị đã tư vấn cho hơn 300 khách hàng cá nhân, với giá trị tài sản đang quản lý hơn 900 tỉ đồng.
             </p>
 

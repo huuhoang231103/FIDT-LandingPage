@@ -61,9 +61,11 @@ const WhyChooseHana = () => {
               <span className="block md:inline text-blue-300">Ms. Hana Trần?</span>
             </h2>
 
-            <p className="text-lg max-w-3xl mx-auto">
-              Uy tín – Kinh nghiệm – Truyền cảm hứng. Tư vấn đi vào thực tiễn, giúp bạn thay đổi rõ rệt.
-            </p>
+          <p className="text-lg max-w-3xl mx-auto">
+            Uy tín – Kinh nghiệm – Truyền cảm hứng.<br />
+            Tư vấn đi vào thực tiễn, giúp bạn thay đổi rõ rệt.
+          </p>
+
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">

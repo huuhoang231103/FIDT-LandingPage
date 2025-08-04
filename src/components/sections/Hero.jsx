@@ -61,7 +61,7 @@ const Hero = () => {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              Ms. Hana Trần là một chuyên gia tài chính đáng tin cậy, giúp bạn hiểu rõ tài chính cá nhân và xây dựng tương lai vững chắc.
+              Ms. Hana Trần là một cố vấn tài chính đáng tin cậy, giúp bạn hiểu rõ tài chính cá nhân và xây dựng tương lai vững chắc.
             </p>
 
             <div

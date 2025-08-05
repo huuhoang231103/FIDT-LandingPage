@@ -71,7 +71,7 @@ const FreeServiceCard = ({
           </div>
 
           {/* Highlights - Fixed Height */}
-          <div className="flex-grow" style={{minHeight: '100px'}}>
+          <div className="flex-grow" style={{minHeight: '75px'}}>
             {highlights && highlights.length > 0 ? (
               <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-3 border border-green-200 h-full flex flex-col justify-center">
                 <ul className="text-xs text-gray-700 space-y-1.5">

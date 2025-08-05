@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <p className="text-white mb-6 max-w-md">
               Đồng hành cùng bạn trên hành trình làm chủ tài chính cá nhân.<br />
-              Ms. Hana Trần – chuyên gia tài chính đồng hành cùng bạn xây dựng tương lai vững chắc.
+              Ms. Tran – chuyên gia tài chính đồng hành cùng bạn xây dựng tương lai vững chắc.
             </p>
 
             <div className="flex space-x-4">
@@ -37,11 +37,11 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#about" className="text-white hover:text-blue-400 transition-colors">Giới thiệu</a></li>
               <li><a href="#why-choose" className="text-white hover:text-blue-400 transition-colors whitespace-nowrap">
-                  Tại sao chọn Ms. Hana Trần?
+                  Tại sao chọn Ms. Tran?
                 </a>
               </li>
               <li><a href="#services" className="text-white hover:text-blue-400 transition-colors">Dịch vụ</a></li>
-              <li><a href="#team" className="text-white hover:text-blue-400 transition-colors">Đội ngũ</a></li>
+              {/* <li><a href="#team" className="text-white hover:text-blue-400 transition-colors">Ms. Hana Tran</a></li> */}
               <li><a href="#contact" className="text-white hover:text-blue-400 transition-colors">Liên hệ</a></li>
               <li><a href="#FAQ" className="text-white hover:text-blue-400 transition-colors">FAQ</a></li>
             </ul>

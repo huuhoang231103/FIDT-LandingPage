@@ -15,10 +15,10 @@ const Header = () => {
   const navLinks = [
     { name: 'Trang chủ', href: '#home' },
     { name: 'Giới thiệu', href: '#about' },
-    { name: 'Tại sao chọn Ms. Hana Trần?', href: '#why-choose' },
+    { name: 'Tại sao chọn Ms. Hana Tran?', href: '#why-choose' },
     { name: 'Dịch vụ', href: '#services' },
     // { name: 'Đào tạo', href: '#training' }, // dòng này đang bị ẩn
-    { name: 'Ms. Hana', href: '#team' },
+    { name: 'Ms. Hana Tran', href: '#team' },
     { name: 'Liên hệ', href: '#contact' },
     { name: 'Câu hỏi thường gặp', href: '#faq' },
   ];

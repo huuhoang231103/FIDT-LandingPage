@@ -10,7 +10,7 @@ const WhyChooseHana = () => {
       icon: <Users className="w-12 h-12 text-blue-600" />,
       title: "Kinh nghiệm thực chiến",
       description:
-        "Ms. Hana Trần từng đồng hành cùng nhiều doanh nhân, CEO và startup tại Việt Nam, mang lại kinh nghiệm tư vấn đa lĩnh vực.",
+        "Ms. Hana Tran từng đồng hành cùng nhiều doanh nhân, CEO và startup tại Việt Nam, mang lại kinh nghiệm tư vấn đa lĩnh vực.",
     },
     {
       icon: <MessageSquare className="w-12 h-12 text-blue-600" />,
@@ -58,7 +58,7 @@ const WhyChooseHana = () => {
           >
             <h2 className="text-4xl font-bold mb-4 text-center">
               <span className="block md:inline">Tại sao chọn </span>
-              <span className="block md:inline text-blue-300">Ms. Hana Trần?</span>
+              <span className="block md:inline text-blue-300">Ms. Hana Tran?</span>
             </h2>
 
           <p className="text-lg max-w-3xl mx-auto">

@@ -47,13 +47,17 @@ const Hero = () => {
 
       <div className="relative z-20 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center max-w-6xl mx-auto">
             <h1
               className={`text-4xl md:text-6xl font-bold text-white mb-6 leading-tight transition-all duration-1000 transform hover:scale-105 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <span className="text-blue-500">Ms. Hana Trần</span> – Định hướng tài chính, dẫn lối tương lai
+              <div>
+                <span className="text-blue-500">Ms. Hana Tran</span>
+                <div>Định hướng tài chính, dẫn lối tương lai</div>
+              </div>
+
             </h1>
 
             <p
@@ -61,7 +65,7 @@ const Hero = () => {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              Ms. Hana Trần là một cố vấn tài chính đáng tin cậy, giúp bạn hiểu rõ tài chính cá nhân và xây dựng tương lai vững chắc.
+              Ms. Hana Tran là một Cố vấn Tài chính đáng tin cậy, giúp bạn hiểu rõ tài chính cá nhân và xây dựng tương lai vững chắc.
             </p>
 
             <div

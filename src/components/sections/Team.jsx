@@ -23,7 +23,7 @@ const TeamSection = () => {
                     className="text-center mb-10"
                 >
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                        Gặp gỡ <span className="text-white bg-gradient-to-r from-blue-600 to-blue-500 px-4 py-2 rounded-full shadow-md">Cố vấn tài chính</span>
+                        Gặp gỡ <span className="text-white bg-gradient-to-r from-blue-600 to-blue-500 px-4 py-2 rounded-full shadow-md">Cố vấn Tài chính</span>
                     </h2>
                     <p className="text-lg text-blue-800 max-w-xl mx-auto">
 Chuyên gia hoạch định tài chính giúp bạn chủ động tương lai.                    </p>
@@ -42,7 +42,7 @@ Chuyên gia hoạch định tài chính giúp bạn chủ động tương lai.  
                         <div className="flex-shrink-0">
                             <img
                             src={avatar}
-                            alt="Portrait of Ms. Hana Trần"
+                            alt="Portrait of Ms. Tran"
                             className="rounded-full border-4 border-blue-200 w-40 h-40 object-cover"
                             />
 
@@ -50,12 +50,12 @@ Chuyên gia hoạch định tài chính giúp bạn chủ động tương lai.  
 
                         {/* Content */}
                         <div className="flex-1 text-center lg:text-left">
-                            <h3 className="text-3xl font-bold text-blue-900 mb-3">Ms. Hana Trần</h3>
-                            <p className="text-blue-600 font-semibold mb-6 text-2xl">Cố vấn tài chính</p>
+                            <h3 className="text-3xl font-bold text-blue-900 mb-3">Ms. Hana Tran</h3>
+                            <p className="text-blue-600 font-semibold mb-6 text-2xl">Cố vấn Tài chính</p>
 
                             <div className="bg-white p-6 rounded-lg shadow-sm mb-6 border-l-4 border-blue-300 max-h-60 overflow-y-auto lg:max-h-none lg:overflow-visible">
                                 <p className="text-blue-800 text-lg leading-relaxed mb-4">
-                                    Chị Hana Tran là một trong những Hội viên Chuyên gia tiêu biểu đầu tiên của Hiệp hội Tài chính Việt Nam (VFCA). Bằng sự tận tâm trong việc phục vụ Khách hàng cũng như sự tâm huyết với lĩnh vực Hoạch định Tài chính cá nhân, chị Hana Trần đã nhận vinh danh vào các năm 2022-2024 cho sự đóng góp xuất sắc tại Công ty CP Tư vấn Đầu tư và Quản lý Tài sản FIDT.                                </p>
+                                    Chị Hana Tran ( Trần Thị Mai Hân ) là một trong những Hội viên Chuyên gia tiêu biểu đầu tiên của Hiệp hội Tài chính Việt Nam (VFCA). Bằng sự tận tâm trong việc phục vụ Khách hàng cũng như sự tâm huyết với lĩnh vực Hoạch định Tài chính cá nhân, chị Hana Tran đã nhận vinh danh vào các năm 2022-2024 cho sự đóng góp xuất sắc tại Công ty CP Tư vấn Đầu tư và Quản lý Tài sản FIDT.                                </p>
                                 <p className="text-blue-800 text-lg leading-relaxed mb-4">
                                     Với bề dày hoạt động trong lĩnh vực tài chính và tư vấn, cũng như là một nhà đầu tư cá nhân giàu kinh nghiệm, chị Hana Tran có thế mạnh toàn diện trong cả Tài chính Doanh nghiệp và Tài chính Cá nhân. Chị luôn đặt lợi ích khách hàng lên hàng đầu, và sẵn sàng đồng hành cùng các khách hàng để xây dựng giải pháp hoạch định tài chính, để các khách hàng đạt được thịnh vượng tài chính bền vững.
                                 </p>
@@ -74,9 +74,9 @@ Chuyên gia hoạch định tài chính giúp bạn chủ động tương lai.  
                                 >
                                     Liên hệ tư vấn
                                 </button>
-                                {/* <button className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-full transition-all hover:shadow-lg text-lg">
-                                    Tìm hiểu thêm
-                                </button> */}
+                            <button className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-full transition-all hover:shadow-lg text-lg">
+                                    Chỉnh sửa
+                                </button> 
                             </div>
                         </div>
                     </div>

@@ -83,7 +83,7 @@ const About = () => {
                 </h4>
                 <div className="space-y-2 text-gray-700">
                   <p>🥇 <span className="font-medium">"Ngôi sao Toàn năng 2024"</span> – Team leader đạt KPI cao nhất tại <span className="text-red-600 font-bold">FIDT</span></p>
-                  <p>🥇 <span className="font-medium">"Financial Planner xuất sắc 2023" tại </span> <span className="text-red-600 font-bold">FIDT</span></p>
+                  <p>🥇 <span className="font-medium">"Financial Planner xuất sắc 2023"</span> tại <span className="text-red-600 font-bold">FIDT</span></p>
                   <p>🥇 <span className="font-medium">"Financial Planner cống hiến 2022–2024"</span> – với số lượng khách hàng và NAV quản lý cao nhất</p>
                 </div>
               </div>

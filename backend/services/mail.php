@@ -29,9 +29,8 @@ EOD;
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-    $parameters = "-f no-reply@surishops.com";
     
-    if (mail($to, $subject, $message, $headers, $parameters)) {
+    if (mail($to, $subject, $message, $headers)) {
         return true;
     } else {
         return "Không gửi được email. Hãy kiểm tra cấu hình máy chủ.";

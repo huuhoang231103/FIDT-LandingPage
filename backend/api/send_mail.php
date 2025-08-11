@@ -5,7 +5,8 @@
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
 
-require_once __DIR__ . '/../mail.php';
+require_once __DIR__ . '/../services/mail.php';
+
 
 
 // Nhận dữ liệu JSON từ client

@@ -1,0 +1,19 @@
+{
+    "name": "landingpage/be-ld",
+    "description": "Backend for landing page contact form",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Landingpage\\BeLd\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "huuhoang231103",
+            "email": "nguyenhuuhoangdl2003@gmail.com"
+        }
+    ]
+}

@@ -3,5 +3,13 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  server: {
+    proxy: {
+      '/services': {
+        target: 'http://localhost/be-ld',
+        changeOrigin: true,
+        secure: false,
+      }
+    }
+  }
 })

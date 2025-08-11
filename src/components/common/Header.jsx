@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const Header = () => {
+const Header = ({ onLoginClick, isLoggedIn }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -17,7 +17,6 @@ const Header = () => {
     { name: 'Giới thiệu', href: '#about' },
     { name: 'Tại sao chọn Ms. Hana Tran?', href: '#why-choose' },
     { name: 'Dịch vụ', href: '#services' },
-    // { name: 'Đào tạo', href: '#training' }, // dòng này đang bị ẩn
     { name: 'Ms. Hana Tran', href: '#team' },
     { name: 'Liên hệ', href: '#contact' },
     { name: 'Câu hỏi thường gặp', href: '#faq' },
@@ -33,7 +32,8 @@ const Header = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center items-center h-16 relative">
+        <div className="flex justify-between items-center h-16 relative">
+          
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navLinks.map(link => (
@@ -49,9 +49,21 @@ const Header = () => {
             ))}
           </nav>
 
+          {/* Nút đăng nhập/đăng xuất Desktop */}
+          <button
+            onClick={onLoginClick}
+            className={`hidden md:inline-block px-4 py-2 rounded-md text-sm font-semibold transition-colors ${
+              isScrolled
+                ? 'bg-blue-600 text-white hover:bg-blue-700'
+                : 'bg-white text-blue-600 hover:bg-gray-200'
+            }`}
+          >
+            {isLoggedIn ? 'Đăng xuất' : 'Đăng nhập'}
+          </button>
+
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 absolute right-0"
+            className="md:hidden p-2"
             onClick={() => setIsMenuOpen(true)}
           >
             <Menu
@@ -87,18 +99,17 @@ const Header = () => {
               </a>
             ))}
           </nav>
-          <div className="mt-6">
-            <p className="text-sm mb-1 flex items-center gap-2">
-              <span>📧</span> hana@thinhvuongtaichinh.net
-            </p>
-            <p className="text-sm">📞 0936903949</p>
-            <div className="flex gap-3 mt-4 text-white">
-              <i className="fab fa-facebook-f" />
-              <i className="fab fa-twitter" />
-              <i className="fab fa-pinterest-p" />
-              <i className="fab fa-instagram" />
-            </div>
-          </div>
+
+          {/* Nút đăng nhập/đăng xuất Mobile */}
+          <button
+            onClick={() => {
+              setIsMenuOpen(false);
+              onLoginClick();
+            }}
+            className="mt-4 w-full bg-white text-blue-900 font-semibold py-2 rounded-md hover:bg-gray-200"
+          >
+            {isLoggedIn ? 'Đăng xuất' : 'Đăng nhập'}
+          </button>
         </div>
 
         {/* Overlay */}

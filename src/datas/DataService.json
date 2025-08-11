@@ -95,38 +95,40 @@
       "bonus": "File kế hoạch chung 12 tháng"
     }
   ],
-  "free_services": [
+  "freeServices": [
     {
       "name": "GÓI TRẢI NGHIỆM MIỄN PHÍ",
+      "target": "Cá nhân",
       "duration": "30 phút",
-      "description": "Tư vấn giúp bạn xác định nhu cầu và chọn đúng gói dịch vụ",
-      "register": ["Fanpage", "Zalo", "Form online"]
+      "price": "Miễn phí",
+      "highlights": [
+        "Tư vấn giúp bạn xác định nhu cầu và chọn đúng gói dịch vụ",
+        "Phân tích nhu cầu ",
+        "Đề xuất gói dịch vụ phù hợp"
+      ]
     },
     {
-      "name": "THẨM ĐỊNH GIÁ BĐS MIỄN PHÍ",
+      "name": "THẨM ĐỊNH GIÁ BẤT ĐỘNG SẢN MIỄN PHÍ",
+      "target": "Cá nhân", 
       "duration": "30 phút",
-      "description": "Tư vấn mức giá thị trường, gợi ý gói vay, giải pháp tái cơ cấu tài sản (Hà Nội, Tp.HCM, Khánh Hòa, Đà Nẵng...)",
-      "register": ["Fanpage", "Zalo", "Form online"]
+      "price": "Miễn phí",
+      "highlights": [
+        "Tư vấn mức giá thị trường để tham khảo cho việc mua hoặc bán BĐS",
+        "Đánh giá Danh mục tài sản hiện tại",
+        "Đánh giá tổng quan về quản trị rủi ro"
+      ]
     },
     {
       "name": "THẨM ĐỊNH DANH MỤC TÀI SẢN MIỄN PHÍ",
-      "duration": "45 phút",
-      "description": "Tối ưu hiệu suất lợi nhuận và kiểm soát rủi ro theo từng giai đoạn tài chính",
-      "register": ["Fanpage", "Zalo", "Form online"]
+      "target": "Cá nhân",
+      "duration": "45 phút", 
+      "price": "Miễn phí",
+      "highlights": [
+        "Thẩm định danh mục tài sản giúp tối ưu hiệu suất lợi nhuận",
+        "Kiểm soát rủi ro phù hợp với từng giai đoạn tài chính",
+        "Tư vấn tái cân bằng danh mục đầu tư"
+      ]
     }
-  ],
-  "hashtags": [
-    "#QuanTriTaiChinh", "#TuVanTaiChinh", "#QuanLyTaiChinh", "#TaiChinhCaNhan",
-    "#TietKiemHieuQua", "#DauTuThongMinh", "#TaiChinhChoNguoiTre",
-    "#TuDoTaiChinh", "#ChiTieuHopLy", "#TaiChinhDoanhNghiep",
-    "#DocLapTaiChinh", "#KeHoachTaiChinhGiaDinh"
-  ],
-  "slogan": "Mua căn nhà đầu tiên không phải là giấc mơ vượt tầm với!",
-  "philosophy": {
-    "spendingMethod": "Phương pháp quản lý chi tiêu 3 KHÔNG (không app, không excel, không ghi chép)",
-    "surplusGrowth": "Luôn có thặng dư ổn định và tăng trưởng khi thu nhập tăng",
-    "assetReallocation": "Tái cơ cấu tài sản theo chu kỳ kinh tế",
-    "financialSafety": "Bảo vệ tài chính trước những tình huống bất ngờ",
-    "riskManagement": "Đánh giá nhân khẩu học tài chính và rủi ro khi vay đầu tư"
-  }
+  ]
+
 }

@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ServiceCard from '../common/ServiceCard';
 import FreeServiceCard from '../common/FreeServiceCard';
-import servicesData from '../../datas/DataService.json';
-import freeServicesData from '../../datas/dataFree.json';
-
+import EditButton from '../common/EditButton';
+import PopupEditService from '../common/PopupEditService';
 import { FaUserTie, FaBuilding, FaMoneyBillWave, FaChartLine } from 'react-icons/fa';
 
 // Map service categories to icons
@@ -14,8 +13,64 @@ const iconMap = {
   'Đầu tư': <FaChartLine className="text-purple-500 text-2xl" />,
 };
 
-const ProjectsServices = () => {
+const ProjectsServices = ({ isLoggedIn }) => {
   const [activeCards, setActiveCards] = useState([]); // State for multiple active cards
+
+  // Backend integrated state
+  const [paidServices, setPaidServices] = useState([]);
+  const [freeServices, setFreeServices] = useState([]);
+
+  // Edit functionality state
+  const [isEditOpen, setIsEditOpen] = useState(false);
+  const [editData, setEditData] = useState(null);
+  const [editIndex, setEditIndex] = useState(null);
+  const [editType, setEditType] = useState('services');
+
+  // Normalize array data from backend
+  const normalizeArrayFromBE = (arr = []) => {
+    return arr.map((item, idx) => {
+      const s = item && item.service ? item.service : item;
+      return { ...s, __origIndex: idx };
+    });
+  };
+
+  // Fetch services from backend
+  const fetchServices = async () => {
+    try {
+      const res = await fetch('http://localhost/BE-LD/get_services.php', {
+        credentials: 'include',
+        cache: 'no-store',
+      });
+      const result = await res.json();
+      if (result.success && result.data) {
+        const beServices = result.data.services || [];
+        const normalized = normalizeArrayFromBE(beServices);
+
+        // Filter paid services
+        setPaidServices(
+          normalized.filter(
+            s =>
+              s.price !== 'Miễn phí' &&
+              s.price !== 'Free' &&
+              s.isFree !== true
+          )
+        );
+
+        // Free services from backend
+        const beFree = result.data.free_services || result.data.freeServices || [];
+        const normalizedFree = normalizeArrayFromBE(beFree);
+        setFreeServices(normalizedFree);
+      } else {
+        console.warn('get_services trả về không success:', result);
+      }
+    } catch (err) {
+      console.error('Lỗi khi tải dịch vụ:', err);
+    }
+  };
+
+  useEffect(() => {
+    fetchServices();
+  }, []);
 
   // Toggle card open/close
   const handleCardClick = (key) => {
@@ -24,11 +79,76 @@ const ProjectsServices = () => {
     );
   };
 
-  // Get free and paid services from data
-  const freeServices = freeServicesData.freeServices;
-  const paidServices = servicesData.services.filter(
-    (service) => service.price !== 'Miễn phí' && service.price !== 'Free' && service.isFree !== true
-  );
+  // Handle edit paid service
+  const handleEditPaidService = (idx) => {
+    const svc = paidServices[idx];
+    if (!svc) return;
+    const copy = JSON.parse(JSON.stringify(svc));
+    delete copy.__origIndex;
+    setEditData(copy);
+    setEditIndex(svc.__origIndex);
+    setEditType('services');
+    setIsEditOpen(true);
+  };
+
+  // Handle edit free service
+  const handleEditFreeService = (idx) => {
+    const svc = freeServices[idx];
+    if (!svc) return;
+    const copy = JSON.parse(JSON.stringify(svc));
+    delete copy.__origIndex;
+    setEditData(copy);
+    setEditIndex(svc.__origIndex);
+    setEditType('free_services');
+    setIsEditOpen(true);
+  };
+
+  // Handle save service
+  const handleSaveService = async (payload) => {
+    if (
+      !payload ||
+      typeof payload.index !== 'number' ||
+      !payload.type ||
+      !payload.service
+    ) {
+      alert('Dữ liệu gửi đi không hợp lệ.');
+      return;
+    }
+
+    const serviceToSend = { ...payload.service };
+    if (serviceToSend.__origIndex !== undefined) {
+      delete serviceToSend.__origIndex;
+    }
+    if (serviceToSend.index !== undefined && payload.type === 'services') {
+      delete serviceToSend.index;
+    }
+
+    try {
+      const res = await fetch('http://localhost/BE-LD/update_service.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({
+          index: payload.index,
+          type: payload.type,
+          service: serviceToSend,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        await fetchServices();
+        setIsEditOpen(false);
+        setEditData(null);
+        setEditIndex(null);
+        alert('Cập nhật thành công!');
+      } else {
+        alert(data.message || 'Cập nhật thất bại');
+      }
+    } catch (err) {
+      console.error('Error while updating service:', err);
+      alert('Lỗi mạng hoặc server.');
+    }
+  };
 
   return (
     <section id="services" className="scroll-mt-24 py-8 sm:py-12 md:py-16 lg:py-24 relative overflow-hidden">
@@ -129,16 +249,27 @@ const ProjectsServices = () => {
                 <div className="flex justify-center">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-6xl w-full">
                     {freeServices.map((service, idx) => (
-                      <FreeServiceCard
-                        key={`free-${idx}`}
-                        title={service.name}
-                        category={service.target}
-                        description={service.highlights?.[0] || 'Dịch vụ miễn phí hữu ích'}
-                        highlights={service.highlights?.slice(1) || []}
-                        duration={service.duration}
-                        isActive={activeCards.includes(`free-${idx}`)}
-                        onLearnMore={() => handleCardClick(`free-${idx}`)}
-                      />
+                      <div key={`free-${idx}`} className="relative">
+                        <FreeServiceCard
+                          title={service.name}
+                          category={service.target || service.description}
+                          description={service.description || 'Dịch vụ miễn phí hữu ích'}
+                          highlights={service.highlights || []}
+                          duration={service.duration}
+                          zaloUrl={service.zaloUrl}
+                          facebookUrl={service.facebookUrl}
+                          onContactClick={() => console.log('Contact clicked for:', service.name)}
+                        />
+                        {isLoggedIn && (
+                          <div className="absolute top-2 right-2 z-20">
+                            <EditButton
+                              onClick={() => handleEditFreeService(idx)}
+                              className="text-xs px-2 py-1"
+                              isVisible={isLoggedIn}
+                            />
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -192,23 +323,49 @@ const ProjectsServices = () => {
                 const icon = iconMap[target] || <FaChartLine className="text-gray-400 text-2xl" />;
 
                 return (
-                  <ServiceCard
-                    key={`paid-${idx}`}
-                    title={name}
-                    category={target}
-                    icon={icon}
-                    description={description}
-                    fullDescription={fullDescription}
-                    isActive={activeCards.includes(`paid-${idx}`)}
-                    onClick={() => handleCardClick(`paid-${idx}`)}
-                    onClose={() => handleCardClick(`paid-${idx}`)}
-                  />
+                  <div key={`paid-${idx}`} className="relative">
+                    <ServiceCard
+                      title={name}
+                      category={target}
+                      icon={icon}
+                      description={description}
+                      fullDescription={fullDescription}
+                      isActive={activeCards.includes(`paid-${idx}`)}
+                      onClick={() => handleCardClick(`paid-${idx}`)}
+                      onClose={() => handleCardClick(`paid-${idx}`)}
+                    />
+                    {isLoggedIn && (
+                      <div className="absolute top-2 right-2 z-20">
+                        <EditButton
+                          onClick={() => handleEditPaidService(idx)}
+                          className="text-xs px-2 py-1"
+                          isVisible={isLoggedIn}
+                        />
+                      </div>
+                    )}
+                  </div>
                 );
               })}
             </div>
           </div>
         </div>
       </div>
+
+      {/* Popup Edit Service */}
+      <PopupEditService
+        isOpen={isEditOpen}
+        onClose={() => setIsEditOpen(false)}
+        onSave={(edited) => {
+          handleSaveService({
+            index: editIndex,
+            type: editType,
+            service: edited,
+          });
+        }}
+        serviceData={editData}
+        type={editType}
+        index={editIndex}
+      />
     </section>
   );
 };

@@ -1,10 +1,4 @@
 {
-    "consultant": {
-        "name": "Ms. Trần Thị Mai Hân",
-        "title": "Chuyên gia đồng hành tài chính",
-        "hotline": "09369 03949",
-        "email": "maihan.1104@gmail.com"
-    },
     "services": [
         {
             "type": "services",
@@ -12,7 +6,15 @@
                 "name": "MUA BĐS ĐẦU TIÊN",
                 "duration": "1 buổi (60 phút)",
                 "target": "Cá nhân \/ Gia đình trẻ lập kế hoạch mua BĐS đầu tiên",
-                "highlights": [],
+                "highlights": [
+                    "Rà soát toàn bộ tài chính cá nhân \/ gia đình",
+                    "Thiết lập mục tiêu mua BĐS phù hợp với khả năng",
+                    "Kết nối ngân hàng có gói vay tốt trên thị trường",
+                    "Tư vấn rổ hàng BĐS miễn phí",
+                    "Lập dòng tiền cho kế hoạch vay mua BĐS",
+                    "Lập kế hoạch bảo vệ an toàn tài chính",
+                    "Cố vấn tư duy tài chính lành mạnh và bền vững"
+                ],
                 "price": "5.000.000 VNĐ",
                 "bonus": "Template theo dõi ngân sách 12 tháng"
             }
@@ -54,7 +56,7 @@
             "highlights": [
                 "Thăm khám sức khỏe tài chính của cá nhân và doanh nghiệp",
                 "Định hình vấn đề tài chính và nhu cầu tư vấn",
-                "Đánh giá nguồn lực và định hướng cách thức xử lý vấn đề tài chính cụ thể",
+                "Đánh giá nguồn lực và Định hướng cách thức xử lý vấn đề tài chính cụ thể",
                 "Quản trị rủi ro",
                 "Cố vấn tư duy tài chính chủ động, vững mạnh"
             ],
@@ -101,7 +103,7 @@
                 "price": "Miễn phí",
                 "highlights": [
                     "Tư vấn giúp bạn xác định nhu cầu và chọn đúng gói dịch vụ",
-                    "Phân tích nhu cầu",
+                    "Phân tích nhu cầu ",
                     "Đề xuất gói dịch vụ phù hợp"
                 ]
             }

@@ -8,9 +8,9 @@ import Testimonial from './components/sections/Testimonial';
 import ProjectsServices from './components/sections/ProjectsServices';
 import Training from './components/sections/Training';
 import Team from './components/sections/Team';
-import Contact from './components/sections/Contact'; // Giữ nguyên đường dẫn gốc
+import Contact from './components/sections/Contact';
 import FAQ from './components/sections/FAQ';
-import Popup from './components/common/Popup';
+import Popup from './components/common/Popup_Login';
 
 import backgroundImage from './assets/background_2.jpg';
 
@@ -68,7 +68,7 @@ const App = () => {
         <WhyChooseUs isLoggedIn={isLoggedIn} />
         <Testimonial isLoggedIn={isLoggedIn} />
         <ProjectsServices isLoggedIn={isLoggedIn} />
-        {/* <Training /> */}
+        <Training isLoggedIn={isLoggedIn} />
         <Team isLoggedIn={isLoggedIn} />
       </div>
 

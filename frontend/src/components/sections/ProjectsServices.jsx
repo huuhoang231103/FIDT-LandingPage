@@ -37,7 +37,7 @@ const ProjectsServices = ({ isLoggedIn }) => {
   // Fetch services from backend
   const fetchServices = async () => {
     try {
-      const res = await fetch('http://localhost/BE-LD/get_services.php', {
+      const res = await fetch('http://localhost:8000/get_services.php', {
         credentials: 'include',
         cache: 'no-store',
       });
@@ -124,7 +124,7 @@ const ProjectsServices = ({ isLoggedIn }) => {
     }
 
     try {
-      const res = await fetch('http://localhost/BE-LD/update_service.php', {
+      const res = await fetch('http://localhost:8000/update_service.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',

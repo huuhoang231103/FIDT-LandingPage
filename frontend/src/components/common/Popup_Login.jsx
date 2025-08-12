@@ -12,7 +12,7 @@ const Popup = ({ isOpen, onClose, onLoginSuccess }) => {
     setError("");
 
     try {
-        const res = await fetch("http://localhost/be-ld/login.php", {
+        const res = await fetch("http://localhost:8000/login.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include", // 👈 Thêm dòng này

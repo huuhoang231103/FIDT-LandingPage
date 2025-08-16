@@ -1,4 +1,11 @@
 {
+    "section_titles": {
+        "main_title": "Dịch vụ của chúng tôi",
+        "main_subtitle": "Dịch vụ tư vấn tài chính cá nhân & doanh nghiệp toàn diện, hiệu quả.",
+        "free_services_title": "🎁 Ưu Đãi Đặc Biệt – Gói Tư Vấn Miễn Phí",
+        "free_services_subtitle": "Trải nghiệm ngay dịch vụ tư vấn cá nhân hóa, hoàn toàn miễn phí – giúp bạn định hướng rõ ràng và tự tin trong từng quyết định tài chính.",
+        "paid_services_title": "Dịch vụ Tư Vấn Chuyên Nghiệp"
+    },
     "services": [
         {
             "type": "services",
@@ -20,20 +27,23 @@
             }
         },
         {
-            "name": "GỠ NÚT THẮT TÀI CHÍNH",
-            "duration": "1 buổi (60 phút)",
-            "target": "Cá nhân \/ Gia đình gặp vấn đề tài chính, kẹt vốn BĐS, áp lực nợ vay",
-            "highlights": [
-                "Rà soát toàn bộ tài chính cá nhân \/ gia đình",
-                "Nhận diện lỗ hổng tài chính",
-                "Xây dựng kế hoạch tiết kiệm, đầu tư",
-                "Thiết lập phương án xử lý nợ",
-                "Hướng dẫn thiết lập quỹ dự phòng & ngân sách cho bảo hiểm",
-                "Khuyến nghị phương án và hành động sát với vấn đề tài chính hiện có",
-                "Cố vấn tư duy tài chính lành mạnh và bền vững"
-            ],
-            "price": "5.000.000 VNĐ",
-            "bonus": "File Excel quản lý tài chính cá nhân"
+            "type": "services",
+            "service": {
+                "name": "GỠ NÚT THẮT TÀI CHÍNH",
+                "duration": "1 buổi (60 phút)",
+                "target": "Cá nhân \/ Gia đình gặp vấn đề tài chính, kẹt vốn BĐS, áp lực nợ vay",
+                "highlights": [
+                    "Rà soát toàn bộ tài chính cá nhân \/ gia đình",
+                    "Nhận diện lỗ hổng tài chính",
+                    "Xây dựng kế hoạch tiết kiệm, đầu tư",
+                    "Thiết lập phương án xử lý nợ",
+                    "Hướng dẫn thiết lập quỹ dự phòng & ngân sách cho bảo hiểm",
+                    "Khuyến nghị phương án và hành động sát với vấn đề tài chính hiện có",
+                    "Cố vấn tư duy tài chính lành mạnh và bền vững"
+                ],
+                "price": "5.000.000 VNĐ",
+                "bonus": "File Excel quản lý tài chính cá nhân"
+            }
         },
         {
             "name": "KHAI MỞ TÀI CHÍNH",
@@ -50,32 +60,39 @@
             "bonus": "File Excel theo dõi tiến độ tăng trưởng tài sản"
         },
         {
-            "name": "TÀI CHÍNH CHỦ ĐỘNG",
-            "duration": "1 buổi (60 phút)",
-            "target": "Chủ Doanh nghiệp hướng tới tài chính chủ động, vững mạnh",
-            "highlights": [
-                "Thăm khám sức khỏe tài chính của cá nhân và doanh nghiệp",
-                "Định hình vấn đề tài chính và nhu cầu tư vấn",
-                "Đánh giá nguồn lực và Định hướng cách thức xử lý vấn đề tài chính cụ thể",
-                "Quản trị rủi ro",
-                "Cố vấn tư duy tài chính chủ động, vững mạnh"
-            ],
-            "price": "5.000.000 VNĐ"
+            "index": 3,
+            "type": "services",
+            "service": {
+                "name": "TÀI CHÍNH CHỦ ĐỘNG",
+                "duration": "1 buổi (60 phút)",
+                "target": "Chủ Doanh nghiệp hướng tới tài chính chủ động, vững mạnh",
+                "highlights": [
+                    "Thăm khám sức khỏe tài chính của cá nhân và doanh nghiệp",
+                    "Định hình vấn đề tài chính và nhu cầu tư vấn",
+                    "Đánh giá nguồn lực và Định hướng cách thức xử lý vấn đề tài chính cụ thể",
+                    "Quản trị rủi ro",
+                    "Cố vấn tư duy tài chính chủ động, vững mạnh"
+                ],
+                "price": "5.000.000 VNĐ"
+            }
         },
         {
-            "name": "TÀI CHÍNH TOÀN DIỆN (12 THÁNG)",
-            "duration": "1 buổi chuyên sâu (120 phút\/buổi) + group Zalo tư vấn + đánh giá định kỳ mỗi 6 tháng",
-            "target": "Cá nhân, gia đình mong muốn tăng trưởng tổng tài sản và củng cố pháp lý tài chính",
-            "highlights": [
-                "Rà soát toàn diện tài chính cá nhân\/gia đình",
-                "Xác định mục tiêu tài chính ngắn - dài hạn và hồ sơ rủi ro",
-                "Chiến lược tài chính chủ động cho từng giai đoạn cuộc đời",
-                "Xây dựng kế hoạch tài chính dài hạn (đầu tư, tín dụng, thuế, bảo hiểm, ...)",
-                "Đồng hành thực thi kế hoạch tài chính",
-                "Tư vấn tối ưu thuế, tham vấn luật về hôn nhân gia đình, thừa kế",
-                "Cố vấn tư duy tài chính lành mạnh và bền vững"
-            ],
-            "price": "0.35% giá trị tài sản quản lý, thấp nhất 25.900.000 VNĐ"
+            "type": "services",
+            "service": {
+                "name": "TÀI CHÍNH TOÀN DIỆN (12 THÁNG)",
+                "duration": "1 buổi chuyên sâu (120 phút\/buổi) + group Zalo tư vấn + đánh giá định kỳ mỗi 6 tháng",
+                "target": "Cá nhân, gia đình mong muốn tăng trưởng tổng tài sản và củng cố pháp lý tài chính",
+                "highlights": [
+                    "Rà soát toàn diện tài chính cá nhân\/gia đình",
+                    "Xác định mục tiêu tài chính ngắn - dài hạn và hồ sơ rủi ro",
+                    "Chiến lược tài chính chủ động cho từng giai đoạn cuộc đời",
+                    "Xây dựng kế hoạch tài chính dài hạn (đầu tư, tín dụng, thuế, bảo hiểm, ...)",
+                    "Đồng hành thực thi kế hoạch tài chính",
+                    "Tư vấn tối ưu thuế, tham vấn luật về hôn nhân gia đình, thừa kế",
+                    "Cố vấn tư duy tài chính lành mạnh và bền vững"
+                ],
+                "price": "0.35% giá trị tài sản quản lý, thấp nhất 25.900.000 VNĐ"
+            }
         },
         {
             "name": "TÀI CHÍNH HẠNH PHÚC (CHO CẶP ĐÔI, VỢ CHỒNG)",
@@ -103,21 +120,25 @@
                 "price": "Miễn phí",
                 "highlights": [
                     "Tư vấn giúp bạn xác định nhu cầu và chọn đúng gói dịch vụ",
-                    "Phân tích nhu cầu ",
+                    "Phân tích nhu cầu",
                     "Đề xuất gói dịch vụ phù hợp"
                 ]
             }
         },
         {
-            "name": "THẨM ĐỊNH GIÁ BẤT ĐỘNG SẢN MIỄN PHÍ",
-            "target": "Cá nhân",
-            "duration": "30 phút",
-            "price": "Miễn phí",
-            "highlights": [
-                "Tư vấn mức giá thị trường để tham khảo cho việc mua hoặc bán BĐS",
-                "Đánh giá Danh mục tài sản hiện tại",
-                "Đánh giá tổng quan về quản trị rủi ro"
-            ]
+            "index": 1,
+            "type": "free_services",
+            "service": {
+                "name": "THẨM ĐỊNH GIÁ BẤT ĐỘNG SẢN MIỄN PHÍ",
+                "target": "Cá nhân",
+                "duration": "30 phút",
+                "price": "Miễn phí",
+                "highlights": [
+                    "Tư vấn mức giá thị trường để tham khảo cho việc mua hoặc bán BĐS",
+                    "Đánh giá Danh mục tài sản hiện tại",
+                    "Đánh giá tổng quan về quản trị rủi ro"
+                ]
+            }
         },
         {
             "name": "THẨM ĐỊNH DANH MỤC TÀI SẢN MIỄN PHÍ",

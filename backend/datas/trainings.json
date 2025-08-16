@@ -1,0 +1,41 @@
+{
+    "trainingTitle": "📚 Chương trình đào tạo",
+    "trainingSubtitle": "Cập nhật kiến thức đầu tư & tài chính.",
+    "trainings": [
+        {
+            "name": "Khóa học Đầu ",
+            "target": "Người mới bắt đầu",
+            "duration": "4 tuần",
+            "price": "2,000,000 VND",
+            "highlights": [
+                "Hiểu các nguyên tắc đầu tư cơ bản",
+                "Cách quản lý rủi ro",
+                "Lập kế hoạch tài chính",
+                "hjkhjk"
+            ],
+            "__origIndex": 0
+        },
+        {
+            "name": "Khóa học Phân tích Kỹ thuật",
+            "target": "Nhà đầu tư trung cấp",
+            "duration": "6 tuần",
+            "price": "3,500,000 VND",
+            "highlights": [
+                "Sử dụng biểu đồ giá",
+                "Các chỉ báo kỹ thuật quan trọng",
+                "Xây dựng chiến lược giao dịch"
+            ]
+        },
+        {
+            "name": "Khóa học Phân tích Kỹ thuật",
+            "target": "Nhà đầu tư trung cấp",
+            "duration": "6 tuần",
+            "price": "3,500,000 VND",
+            "highlights": [
+                "Sử dụng biểu đồ giá",
+                "Các chỉ báo kỹ thuật quan trọng",
+                "Xây dựng chiến lược giao dịch"
+            ]
+        }
+    ]
+}

@@ -5,7 +5,6 @@ header("Access-Control-Allow-Credentials: true");
 
 $jsonFile = __DIR__ . "/datas/DataService.json";
 
-
 if (!file_exists($jsonFile)) {
     echo json_encode([
         "success" => false,
@@ -23,8 +22,13 @@ if ($data === null) {
     ], JSON_UNESCAPED_UNICODE);
     exit;
 }
-
+// Đảm bảo trả về thêm section_titles
 echo json_encode([
     "success" => true,
-    "data" => $data
+    "data" => [
+        "services" => $data["services"] ?? [],
+        "free_services" => $data["free_services"] ?? [],
+        "section_titles" => $data["section_titles"] ?? []
+    ]
 ], JSON_UNESCAPED_UNICODE);
+

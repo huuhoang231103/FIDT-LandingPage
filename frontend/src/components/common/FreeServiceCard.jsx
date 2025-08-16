@@ -85,9 +85,6 @@ const FreeServiceCard = ({
               </div>
             ) : (
               <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-lg p-4 border border-gray-200 flex items-center justify-center">
-                <p className="text-sm text-gray-500 italic text-center">
-                  Liên hệ để biết thêm chi tiết
-                </p>
               </div>
             )}
           </div>

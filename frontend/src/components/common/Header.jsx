@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const Header = ({ onLoginClick, isLoggedIn }) => {
+const Header = ({ onLoginClick, isLoggedIn, navLinkVisibility = {} }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -12,15 +12,21 @@ const Header = ({ onLoginClick, isLoggedIn }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Trang chủ', href: '#home' },
-    { name: 'Giới thiệu', href: '#about' },
-    { name: 'Tại sao chọn Ms. Hana Tran?', href: '#why-choose' },
-    { name: 'Dịch vụ', href: '#services' },
-    { name: 'Ms. Hana Tran', href: '#team' },
-    { name: 'Liên hệ', href: '#contact' },
-    { name: 'Câu hỏi thường gặp', href: '#faq' },
+  const allNavLinks = [
+    { name: 'Trang chủ', href: '#home', key: 'home' },
+    { name: 'Giới thiệu', href: '#about', key: 'about' },
+    { name: 'Tại sao chọn Ms. Hana Tran?', href: '#why-choose', key: 'whyChoose' },
+    { name: 'Dịch vụ', href: '#services', key: 'services' },
+    { name: 'Khóa học', href: '#training', key: 'training' },
+    { name: 'Ms. Hana Tran', href: '#team', key: 'team' },
+    { name: 'Liên hệ', href: '#contact', key: 'contact' },
+    { name: 'Câu hỏi thường gặp', href: '#faq', key: 'faq' },
   ];
+
+  // Filter navigation links based on visibility
+  const navLinks = allNavLinks.filter(link => 
+    navLinkVisibility[link.key] !== false // Show if not explicitly hidden
+  );
 
   return (
     <motion.header

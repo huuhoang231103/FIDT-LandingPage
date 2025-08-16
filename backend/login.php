@@ -1,29 +1,74 @@
 <?php
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Origin: http://localhost:5173"); // FE URL
-header("Access-Control-Allow-Credentials: true");
-header("Access-Control-Allow-Headers: Content-Type");
-header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+// Add CORS headers to allow cross-origin requests
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
+header('Content-Type: application/json');
 
-// Xử lý preflight OPTIONS
+// Handle preflight OPTIONS request
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    exit(0);
+    http_response_code(200);
+    exit();
 }
 
-// Đảm bảo cookie session cross-site được gửi
-ini_set('session.cookie_samesite', 'None');
-ini_set('session.cookie_secure', 'false'); // Để test HTTP local, production cần true
+// Enable error reporting for development
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Start session for authentication
 session_start();
 
-// Giả sử user/pass mặc định
-$input = json_decode(file_get_contents("php://input"), true);
-$username = $input['username'] ?? '';
-$password = $input['password'] ?? '';
+// Check if it's a POST request
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Method not allowed'
+    ]);
+    exit;
+}
 
-if ($username === 'admin' && $password === '123') {
+// Get JSON input
+$input = file_get_contents('php://input');
+$data = json_decode($input, true);
+
+// Validate input
+if (!$data || !isset($data['username']) || !isset($data['password'])) {
+    http_response_code(400);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Username and password are required'
+    ]);
+    exit;
+}
+
+$username = trim($data['username']);
+$password = trim($data['password']);
+
+// Simple authentication (for development)
+// In production, use proper password hashing and database
+if ($username === 'admin' && $password === 'admin123') {
+    // Set session variables
     $_SESSION['logged_in'] = true;
     $_SESSION['username'] = $username;
-    echo json_encode(['success' => true, 'message' => 'Đăng nhập thành công']);
+    $_SESSION['login_time'] = time();
+    
+    // Return success response
+    echo json_encode([
+        'success' => true,
+        'message' => 'Đăng nhập thành công',
+        'user' => [
+            'username' => $username,
+            'login_time' => date('Y-m-d H:i:s')
+        ]
+    ]);
 } else {
-    echo json_encode(['success' => false, 'message' => 'Sai tài khoản hoặc mật khẩu']);
+    // Return error response
+    http_response_code(401);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Tên đăng nhập hoặc mật khẩu không đúng'
+    ]);
 }
+?>

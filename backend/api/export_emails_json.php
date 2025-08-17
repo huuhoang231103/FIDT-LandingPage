@@ -5,7 +5,7 @@ header('Content-Disposition: attachment; filename="emails_' . date('Y-m-d_H-i-s'
 header('Cache-Control: max-age=0');
 
 try {
-    $jsonFile = __DIR__ . '/../data/emails.json';
+    $jsonFile = __DIR__ . '/../data_consolidated/emails.json';
     
     if (!file_exists($jsonFile)) {
         echo "Chưa có email nào để xuất";

@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
   exit();
 }
 
-$file = __DIR__ . '/../data_consolidated/trainings.json';
+$file = __DIR__ . '/../data_consolidated/DataService.json';
 
 if (!file_exists($file)) {
   echo json_encode(['success' => false, 'message' => 'Không tìm thấy file dữ liệu'], JSON_UNESCAPED_UNICODE);
@@ -36,11 +36,14 @@ if (!is_array($data)) {
 }
 
 /**
- * Trường hợp 1: Update 1 item training theo index
+ * Trường hợp 1: Update 1 item service theo index
  */
-if (isset($payload['index']) && array_key_exists('training', $payload)) {
-  if (!isset($data['trainings']) || !is_array($data['trainings'])) {
-    echo json_encode(['success' => false, 'message' => 'Không tìm thấy danh sách trainings'], JSON_UNESCAPED_UNICODE);
+if (isset($payload['index']) && array_key_exists('service', $payload)) {
+  $type = $payload['type'] ?? 'services';
+  $targetArray = $type === 'free_services' ? 'free_services' : 'services';
+  
+  if (!isset($data[$targetArray]) || !is_array($data[$targetArray])) {
+    echo json_encode(['success' => false, 'message' => 'Không tìm thấy danh sách ' . $targetArray], JSON_UNESCAPED_UNICODE);
     exit;
   }
 
@@ -48,35 +51,36 @@ if (isset($payload['index']) && array_key_exists('training', $payload)) {
   $isNew = isset($payload['isNew']) && $payload['isNew'] === true;
   $isDelete = isset($payload['isDelete']) && $payload['isDelete'] === true;
 
-  // Handle training deletion
+  // Handle service deletion
   if ($isDelete) {
-    if (!isset($data['trainings'][$index])) {
+    if (!isset($data[$targetArray][$index])) {
       echo json_encode(['success' => false, 'message' => 'Index không tồn tại'], JSON_UNESCAPED_UNICODE);
       exit;
     }
-    // Remove the training from the array
-    array_splice($data['trainings'], $index, 1);
+    // Remove the service from the array
+    array_splice($data[$targetArray], $index, 1);
   }
-  // Handle new training creation
+  // Handle new service creation
   else if ($isNew && $index === -1) {
-    // Add new training to the end of the array
-    $data['trainings'][] = $payload['training'];
+    // Add new service to the end of the array
+    $data[$targetArray][] = $payload['service'];
   } else {
-    // Update existing training
-    if (!isset($data['trainings'][$index])) {
+    // Update existing service
+    if (!isset($data[$targetArray][$index])) {
       echo json_encode(['success' => false, 'message' => 'Index không tồn tại'], JSON_UNESCAPED_UNICODE);
       exit;
     }
-    $data['trainings'][$index] = $payload['training'];
+    $data[$targetArray][$index] = $payload['service'];
   }
-
 }
 /**
- * Trường hợp 2: Update tiêu đề và subtitle
+ * Trường hợp 2: Update section_titles
  */
-elseif (isset($payload['trainingTitle']) && isset($payload['trainingSubtitle'])) {
-  $data['trainingTitle'] = $payload['trainingTitle'];
-  $data['trainingSubtitle'] = $payload['trainingSubtitle'];
+elseif (isset($payload['type']) && $payload['type'] === 'section_titles' && isset($payload['section_titles'])) {
+  $data['section_titles'] = array_merge(
+    $data['section_titles'] ?? [],
+    $payload['section_titles']
+  );
 }
 /**
  * Không khớp yêu cầu nào
@@ -92,3 +96,4 @@ if (file_put_contents($file, json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PR
 } else {
   echo json_encode(['success' => false, 'message' => 'Lỗi khi ghi file'], JSON_UNESCAPED_UNICODE);
 }
+?>

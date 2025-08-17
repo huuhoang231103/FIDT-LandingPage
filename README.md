@@ -1,4 +1,4 @@
-# FIDT Landing Page - Refactored Architecture
+# FIDT Landing Page - Clean & Organized Architecture
 
 A modern, clean, and maintainable landing page with comprehensive content management capabilities.
 
@@ -13,15 +13,34 @@ frontend/
 │   │   ├── useAuthManager.js     # Authentication state management
 │   │   ├── useVisibilityManager.js # Section/link visibility management
 │   │   ├── useServicesAPI.js     # Services API integration
-│   │   └── useTrainingsAPI.js    # Trainings API integration
+│   │   ├── useTrainingsAPI.js    # Trainings API integration
+│   │   └── useFaqsAPI.js        # FAQs API integration
 │   ├── components/
 │   │   ├── common/               # Reusable components
 │   │   │   ├── Toast.jsx         # Notification component
 │   │   │   ├── MinimalAuthButton.jsx # Fallback auth button
+│   │   │   ├── EditButton.jsx    # Edit functionality button
+│   │   │   ├── ServiceCard.jsx   # Service display card
+│   │   │   ├── TrainingCard.jsx  # Training display card
+│   │   │   ├── SocialButton.jsx  # Social media buttons
 │   │   │   └── SectionVisibilityToggle.jsx # Visibility controls
 │   │   ├── layout/               # Layout components
 │   │   │   └── PageLayout.jsx    # Main page layout
+│   │   ├── popup/                # Modal components
+│   │   │   ├── Popup_Login.jsx   # Login modal
+│   │   │   ├── PopupEditService.jsx # Service edit modal
+│   │   │   └── PopupEditFaq.jsx  # FAQ edit modal
 │   │   └── sections/             # Page sections
+│   │       ├── Hero.jsx          # Hero section
+│   │       ├── About.jsx         # About section
+│   │       ├── ProjectsServices.jsx # Services section
+│   │       ├── Training.jsx      # Training section
+│   │       ├── Team.jsx          # Team section
+│   │       ├── Contact.jsx       # Contact form
+│   │       ├── FAQ.jsx           # FAQ section
+│   │       └── WhyChooseUs.jsx   # Why choose us section
+│   ├── services/                 # API services
+│   │   └── sendMail.js           # Contact form submission
 │   └── App.jsx                   # Main application component
 ```
 
@@ -29,15 +48,30 @@ frontend/
 
 ```
 backend/
-├── config/
-│   └── database.php              # Database configuration & file management
-├── services/
-│   └── DataService.php           # Centralized data operations
-├── utils/
-│   └── ResponseHandler.php       # Standardized API responses
-├── datas/                        # JSON data files
-├── trainings/                    # Training-specific endpoints
-└── FAQ/                         # FAQ-specific endpoints
+├── data_consolidated/            # All data files in one place
+│   ├── DataService.json          # Services data
+│   ├── trainings.json            # Training data
+│   ├── faqData.json              # FAQ data
+│   └── emails.json               # Email submissions
+├── service_apis/                 # Service management APIs
+│   ├── get_services.php          # Get services
+│   └── update_service.php        # Update services
+├── auth/                         # Authentication APIs
+│   ├── login.php                 # Login endpoint
+│   └── check_login.php           # Check login status
+├── api/                          # Email management APIs
+│   ├── send_mail.php             # Send contact form email
+│   ├── get_emails_json.php       # Get email list
+│   └── export_emails_json.php    # Export emails to Excel
+├── services/                     # Core services
+│   └── mail.php                  # Mail functions
+├── trainings/                    # Training APIs
+│   ├── get_trainings.php         # Get training data
+│   └── update_training.php       # Update training data
+├── FAQ/                          # FAQ APIs
+│   ├── get_faqs.php              # Get FAQ data
+│   └── update_faq.php            # Update FAQ data
+└── admin/                        # Admin functionality
 ```
 
 ## 🚀 Key Features
@@ -59,9 +93,9 @@ backend/
 - **Bulk Operations**: Show/hide all sections or links at once
 
 ### 4. **Robust Backend Architecture**
-- **Service Layer**: Centralized data operations through `DataService`
-- **Error Handling**: Consistent error responses and validation
-- **Configuration Management**: Centralized database configuration
+- **Organized Structure**: Clean folder organization for easy maintenance
+- **Centralized Data**: All data files in one location
+- **API Management**: Grouped APIs by functionality
 - **CORS Support**: Proper cross-origin request handling
 
 ## 🛠️ Technical Implementation
@@ -93,148 +127,302 @@ const {
 } = useVisibilityManager();
 ```
 
-### Backend Service Layer
-
-#### `DataService`
-```php
-$dataService = new DataService('services');
-$data = $dataService->getAll();
-$updatedData = $dataService->updateArrayItem('services', $index, $item, $isNew, $isDelete);
+#### `useServicesAPI`
+```javascript
+const {
+  paidServices,
+  freeServices,
+  sectionTitles,
+  updateService,
+  updateSectionTitles
+} = useServicesAPI();
 ```
 
-#### `ResponseHandler`
-```php
-ResponseHandler::success($data, 'Operation successful');
-ResponseHandler::error('Operation failed', 400);
-ResponseHandler::validationError($errors);
-```
+### Backend API Structure
 
-## 📁 File Structure
+#### Service Management
+- `GET /service_apis/get_services.php` - Retrieve all services
+- `POST /service_apis/update_service.php` - Update service data
 
-### Frontend Components
+#### Authentication
+- `POST /auth/login.php` - User login
+- `GET /auth/check_login.php` - Check login status
 
-| Component | Purpose |
-|-----------|---------|
-| `PageLayout.jsx` | Main page layout with conditional rendering |
-| `Toast.jsx` | Reusable notification component |
-| `MinimalAuthButton.jsx` | Fallback auth button when header is hidden |
-| `SectionVisibilityToggle.jsx` | Visibility control panel with tabs |
-
-### Backend Services
-
-| Service | Purpose |
-|---------|---------|
-| `DatabaseConfig` | File paths, default structures, data validation |
-| `DataService` | CRUD operations for all data types |
-| `ResponseHandler` | Standardized API responses and CORS handling |
+#### Email Management
+- `POST /api/send_mail.php` - Send contact form email
+- `GET /api/get_emails_json.php` - Get email submissions
+- `GET /api/export_emails_json.php` - Export emails to Excel
 
 ## 🔧 Configuration
 
-### Default Data Structures
-```php
-const DEFAULT_STRUCTURES = [
-    'services' => [
-        'services' => [],
-        'free_services' => [],
-        'section_titles' => [...]
-    ],
-    'trainings' => [
-        'trainings' => [],
-        'trainingTitle' => '...',
-        'trainingSubtitle' => '...'
-    ]
-];
+### Environment Setup
+
+#### Frontend (.env)
+```env
+VITE_API_BASE_URL=http://localhost:8000
+VITE_APP_NAME=FIDT Landing Page
+VITE_APP_VERSION=1.0.0
 ```
 
-### Storage Keys
-```javascript
-const STORAGE_KEYS = {
-    SECTION_VISIBILITY: 'sectionVisibility',
-    NAV_LINK_VISIBILITY: 'navLinkVisibility',
-    AUTH_TOKEN: 'token'
-};
-```
+#### Backend Configuration
+- **Server**: PHP 8.0+ Development Server
+- **Port**: 8000 (configurable)
+- **CORS**: Configured for localhost:5173 (frontend)
 
-## 🎯 Benefits of Refactoring
+### Data Management
 
-### 1. **Maintainability**
-- Clear separation of concerns
-- Consistent code patterns
-- Easy to understand and modify
-
-### 2. **Scalability**
-- Modular architecture allows easy extension
-- Reusable components and services
-- Centralized configuration management
-
-### 3. **Reliability**
-- Comprehensive error handling
-- Data validation at multiple levels
-- Graceful fallbacks for edge cases
-
-### 4. **Developer Experience**
-- Clean, readable code
-- Consistent API responses
-- Well-documented structure
-
-## 🚀 Getting Started
-
-1. **Frontend Setup**
-   ```bash
-   cd frontend
-   npm install
-   npm run dev
-   ```
-
-2. **Backend Setup**
-   ```bash
-   cd backend
-   php -S localhost:8000
-   ```
-
-3. **Access the Application**
-   - Frontend: http://localhost:5173
-   - Backend API: http://localhost:8000
-
-## 🔄 Migration Guide
-
-### From Old Architecture
-1. **State Management**: Replace individual useState calls with custom hooks
-2. **API Calls**: Use centralized service classes instead of direct file operations
-3. **Error Handling**: Implement ResponseHandler for consistent error responses
-4. **Component Structure**: Organize components into logical folders
-
-### Benefits
-- **Reduced Code Duplication**: Common functionality is centralized
-- **Improved Error Handling**: Consistent error responses across all endpoints
-- **Better Maintainability**: Clear structure makes debugging and updates easier
-- **Enhanced User Experience**: Smooth animations and consistent UI patterns
-
-## 📝 API Documentation
-
-### Services API
-- `GET /get_services.php` - Retrieve all services data
-- `POST /update_service.php` - Update services, free services, or section titles
-
-### Trainings API
-- `GET /trainings/get_trainings.php` - Retrieve all trainings data
-- `POST /trainings/update_training.php` - Update trainings or training headers
-
-### Response Format
+#### Services Data Structure
 ```json
 {
-  "success": true,
-  "message": "Operation successful",
-  "data": { ... }
+  "section_titles": {
+    "main_title": "Our Services",
+    "main_subtitle": "Comprehensive financial consulting services",
+    "free_services_title": "Free Consultation Package",
+    "paid_services_title": "Professional Consulting Services"
+  },
+  "services": [...],
+  "free_services": [...]
 }
 ```
 
-## 🎨 UI/UX Features
+#### Training Data Structure
+```json
+{
+  "trainingTitle": "Training Programs",
+  "trainingSubtitle": "Investment & Financial Knowledge Updates",
+  "trainings": [...]
+}
+```
 
-- **Responsive Design**: Works on all screen sizes
-- **Smooth Animations**: Framer Motion for fluid transitions
-- **Accessibility**: Proper ARIA labels and keyboard navigation
-- **Visual Feedback**: Toast notifications and loading states
-- **Intuitive Controls**: Clear icons and tooltips
+## 🚀 Getting Started
 
-This refactored architecture provides a solid foundation for future development while maintaining all existing functionality in a clean, maintainable codebase.
+### Prerequisites
+- **PHP**: 8.0 or higher
+- **Node.js**: 18 or higher
+- **npm**: Latest version
+
+### Installation
+
+#### 1. Clone Repository
+```bash
+git clone <repository-url>
+cd FIDT-LandingPage
+```
+
+#### 2. Backend Setup
+```bash
+cd backend
+# Start PHP development server
+php -S localhost:8000 -t .
+```
+
+#### 3. Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### Development Workflow
+
+#### 1. Start Backend Server
+```bash
+# From project root
+php -S localhost:8000 -t backend
+```
+
+#### 2. Start Frontend Development Server
+```bash
+# From frontend directory
+npm run dev
+```
+
+#### 3. Access Application
+- **Frontend**: http://localhost:5173
+- **Backend**: http://localhost:8000
+
+## 📝 Content Management
+
+### Admin Access
+- **Username**: `admin`
+- **Password**: `admin123`
+- **Access**: Edit buttons appear when logged in
+
+### Editable Content
+- **Services**: Add, edit, delete services
+- **Trainings**: Manage training programs
+- **FAQs**: Update frequently asked questions
+- **Section Titles**: Customize page headings
+
+### Data Persistence
+- **JSON Storage**: All data stored in JSON files
+- **Real-time Updates**: Changes reflect immediately
+- **Backup**: Data files can be easily backed up
+
+## 🔒 Security Features
+
+### Authentication
+- **Session-based**: Secure login system
+- **Admin Only**: Edit functionality restricted to authenticated users
+- **CORS Protection**: Proper cross-origin request handling
+
+### Input Validation
+- **Client-side**: React form validation
+- **Server-side**: PHP input sanitization
+- **XSS Prevention**: HTML escaping for user input
+
+## 🧪 Testing
+
+### API Testing
+```bash
+# Test backend connectivity
+curl http://localhost:8000/test_connection.php
+
+# Test services API
+curl http://localhost:8000/service_apis/get_services.php
+
+# Test authentication
+curl http://localhost:8000/auth/check_login.php
+```
+
+### Frontend Testing
+- **Component Testing**: React Testing Library
+- **Hook Testing**: Custom hook validation
+- **Integration Testing**: API communication
+
+## 📊 Performance
+
+### Optimization Features
+- **Code Splitting**: Lazy loading for components
+- **Image Optimization**: Optimized asset loading
+- **Bundle Optimization**: Vite build optimization
+- **Caching**: API response caching
+
+### Monitoring
+- **Error Tracking**: Comprehensive error logging
+- **Performance Metrics**: Load time monitoring
+- **User Analytics**: Usage tracking
+
+## 🚀 Deployment
+
+### Production Build
+```bash
+# Frontend build
+cd frontend
+npm run build
+
+# Backend deployment
+# Copy backend folder to server
+# Configure web server (Apache/Nginx)
+```
+
+### Environment Configuration
+- **Development**: `.env.development`
+- **Production**: `.env.production`
+- **Staging**: `.env.staging`
+
+### Server Requirements
+- **PHP**: 8.0+
+- **Web Server**: Apache/Nginx
+- **SSL**: HTTPS recommended
+- **CORS**: Configure for production domain
+
+## 📚 API Documentation
+
+### Authentication Endpoints
+
+#### Login
+```http
+POST /auth/login.php
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
+```
+
+#### Check Login Status
+```http
+GET /auth/check_login.php
+```
+
+### Service Management
+
+#### Get Services
+```http
+GET /service_apis/get_services.php
+```
+
+#### Update Service
+```http
+POST /service_apis/update_service.php
+Content-Type: application/json
+
+{
+  "index": 0,
+  "type": "services",
+  "service": {
+    "name": "Service Name",
+    "target": "Individual",
+    "price": "5,000,000 VND"
+  }
+}
+```
+
+### Email Management
+
+#### Send Contact Form
+```http
+POST /api/send_mail.php
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "phone": "+84 123 456 789",
+  "email": "john@example.com",
+  "service": "Financial Consultation",
+  "message": "I need help with investment planning",
+  "subscribe": true
+}
+```
+
+#### Get Email List
+```http
+GET /api/get_emails_json.php?page=1&limit=20
+```
+
+## 🤝 Contributing
+
+### Code Standards
+- **ESLint**: JavaScript/React linting
+- **Prettier**: Code formatting
+- **PHP Standards**: PSR-12 coding standards
+
+### Development Guidelines
+1. **Feature Branches**: Create separate branches for features
+2. **Code Review**: All changes require review
+3. **Testing**: Test all functionality before commit
+4. **Documentation**: Update README for new features
+
+## 📞 Support
+
+### Contact Information
+- **Email**: cskh@newtoyovn.com
+- **Technical Support**: Available for deployment issues
+- **Documentation**: Comprehensive guides provided
+
+### Common Issues
+- **CORS Errors**: Check backend CORS configuration
+- **File Permissions**: Ensure JSON files are writable
+- **Port Conflicts**: Verify no other services use port 8000
+
+## 📄 License
+
+This project is proprietary software. All rights reserved.
+
+---
+
+**Last Updated**: August 2025
+**Version**: 2.0.0
+**Status**: Production Ready

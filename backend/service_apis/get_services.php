@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
   exit();
 }
 
-$file = __DIR__ . '/../data_consolidated/trainings.json';
+$file = __DIR__ . '/../data_consolidated/DataService.json';
 
 if (!file_exists($file)) {
   echo json_encode(['success' => false, 'message' => 'Không tìm thấy file dữ liệu'], JSON_UNESCAPED_UNICODE);
@@ -20,14 +20,18 @@ if (!file_exists($file)) {
 $raw = file_get_contents($file);
 $data = json_decode($raw, true);
 
-if (!is_array($data) || !isset($data['trainings']) || !is_array($data['trainings'])) {
+if (!is_array($data)) {
   echo json_encode(['success' => false, 'message' => 'Dữ liệu JSON không hợp lệ'], JSON_UNESCAPED_UNICODE);
   exit;
 }
+
+// Return data in the structure that frontend expects
 echo json_encode([
   'success' => true,
-  'trainingTitle' => $data['trainingTitle'] ?? '',
-  'trainingSubtitle' => $data['trainingSubtitle'] ?? '',
-  'data' => $data['trainings']
+  'data' => [
+    'section_titles' => $data['section_titles'] ?? [],
+    'services' => $data['services'] ?? [],
+    'free_services' => $data['free_services'] ?? []
+  ]
 ], JSON_UNESCAPED_UNICODE);
-
+?>

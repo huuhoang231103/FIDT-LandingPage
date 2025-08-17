@@ -88,30 +88,31 @@ const ServiceCard = ({
       </div>
 
       {/* Custom animation delay */}
-      <style jsx>{`
-        .animation-delay-150 {
-          animation-delay: 150ms;
-        }
+      <style>{`
+      .animation-delay-150 {
+        animation-delay: 150ms;
+      }
 
-        @keyframes custom-ping {
-          0% {
-            transform: scale(1);
-            opacity: 0.4;
-          }
-          50% {
-            transform: scale(1.15);
-            opacity: 0.2;
-          }
-          100% {
-            transform: scale(1.4);
-            opacity: 0;
-          }
+      @keyframes custom-ping {
+        0% {
+          transform: scale(1);
+          opacity: 0.4;
         }
+        50% {
+          transform: scale(1.15);
+          opacity: 0.2;
+        }
+        100% {
+          transform: scale(1.4);
+          opacity: 0;
+        }
+      }
 
-        .group:hover .group-hover\\:animate-ping {
-          animation: custom-ping 0.8s cubic-bezier(0, 0, 0.2, 1) infinite;
-        }
-      `}</style>
+      .group:hover .group-hover\\:animate-ping {
+        animation: custom-ping 0.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+      }
+    `}</style>
+
     </div>
   );
 };

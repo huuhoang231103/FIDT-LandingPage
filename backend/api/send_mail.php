@@ -93,7 +93,7 @@ function sanitizeInput($data) {
 function validateRequiredFields($data, $requiredFields) {
     $missingFields = [];
     foreach ($requiredFields as $field) {
-        if (empty($data[$field]) || $data[$field] === 'Chọn dịch vụ hoặc khóa học') {
+        if (empty($data[$field])) {
             $missingFields[] = $field;
         }
     }
@@ -116,8 +116,8 @@ try {
         $sanitizedData[$key] = sanitizeInput($value);
     }
 
-    // Required fields validation
-    $requiredFields = ['name', 'phone', 'email', 'service', 'message'];
+    // Required fields validation - only name, phone, email are required
+    $requiredFields = ['name', 'phone', 'email'];
     $missingFields = validateRequiredFields($sanitizedData, $requiredFields);
 
     if (!empty($missingFields)) {
@@ -134,18 +134,16 @@ try {
         throw new Exception('Số điện thoại không hợp lệ. Vui lòng sử dụng định dạng Việt Nam.');
     }
 
-    // Validate service selection
-    if ($sanitizedData['service'] === 'Chọn dịch vụ hoặc khóa học') {
-        throw new Exception('Vui lòng chọn dịch vụ hoặc khóa học.');
+    // Service is now optional - only validate if provided
+    if (isset($sanitizedData['service']) && $sanitizedData['service'] === 'Chọn dịch vụ hoặc khóa học') {
+        $sanitizedData['service'] = ''; // Set to empty if default option selected
     }
 
-    // Validate message length
-    if (strlen($sanitizedData['message']) < 10) {
-        throw new Exception('Nội dung tin nhắn phải có ít nhất 10 ký tự.');
-    }
-
-    if (strlen($sanitizedData['message']) > 1000) {
-        throw new Exception('Nội dung tin nhắn không được vượt quá 1000 ký tự.');
+    // Message is now optional - only validate length if provided
+    if (isset($sanitizedData['message']) && !empty($sanitizedData['message'])) {
+        if (strlen($sanitizedData['message']) > 1000) {
+            throw new Exception('Nội dung tin nhắn không được vượt quá 1000 ký tự.');
+        }
     }
 
     // Validate name length

@@ -5,7 +5,10 @@
  */
 function saveEmailToJSON(array $data): bool {
     try {
-        $jsonFile = __DIR__ . '/../data/emails.json';
+        // Set timezone to Vietnam (GMT+7)
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        
+        $jsonFile = __DIR__ . '/../data_consolidated/emails.json';
         
         // Read existing data
         if (file_exists($jsonFile)) {
@@ -90,21 +93,39 @@ function buildEmailContent(array $data): string {
 /**
  * Build email headers
  * Using the exact same format as the user's proven code
+ * 
+ * CONFIGURATION REQUIRED:
+ * Update these email addresses with your actual domain and email:
+ * - From: your-email@yourdomain.com
+ * - Reply-To: noreply@yourdomain.com
+ * 
+ * Example:
+ * - From: admin@fidt.com
+ * - Reply-To: contact@fidt.com
  */
 function buildEmailHeaders(string $customerEmail): string {
     return 'MIME-Version: 1.0' . "\r\n" .
            'Content-type: text/html; charset=UTF-8' . "\r\n" .
-           'From: cskh@newtoyovn.com' . "\r\n" .
-           'Reply-To: cskh@newtoyovn.com' . "\r\n";
+           'From: your-email@yourdomain.com' . "\r\n" .  // TODO: Update with your email
+           'Reply-To: noreply@yourdomain.com' . "\r\n"; // TODO: Update with your email
 }
 
 /**
  * Send contact form email
  * Using the exact same mail() function approach as the user's proven code
+ * 
+ * CONFIGURATION REQUIRED:
+ * Update the destination email with your actual email address:
+ * - $mailto: your-email@yourdomain.com
+ * 
+ * Example:
+ * - $mailto: admin@fidt.com
+ * - $mailto: contact@fidt.com
+ * - $mailto: info@fidt.com
  */
 function sendContactMailWithPHPMail(array $data): bool|string {
     // Set destination email (same as user's code)
-    $mailto = "nguyenhuuhoangdl2003@gmail.com";
+    $mailto = "your-email@yourdomain.com"; // TODO: Update with your email
     
     // Prepare email data using the exact same format
     $sub = "Query From Contact Us Form - " . htmlspecialchars($data['service']);

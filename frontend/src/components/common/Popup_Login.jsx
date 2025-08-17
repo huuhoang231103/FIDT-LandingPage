@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const Popup = ({ isOpen, onClose, onLoginSuccess }) => {
-  const [username, setUsername] = useState("admin");
-  const [password, setPassword] = useState("admin123");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -14,10 +14,10 @@ const Popup = ({ isOpen, onClose, onLoginSuccess }) => {
     setIsLoading(true);
 
     try {
-      console.log("Attempting login to:", "http://localhost:8000/login.php");
+             console.log("Attempting login to:", "http://localhost:8000/auth/login.php");
       console.log("Login data:", { username, password });
 
-      const res = await fetch("http://localhost:8000/login.php", {
+             const res = await fetch("http://localhost:8000/auth/login.php", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -116,11 +116,6 @@ const Popup = ({ isOpen, onClose, onLoginSuccess }) => {
           </button>
         </form>
 
-        <div className="mt-4 text-xs text-gray-500 text-center">
-          <p>Thông tin đăng nhập:</p>
-          <p>Username: <strong>admin</strong></p>
-          <p>Password: <strong>admin123</strong></p>
-        </div>
       </div>
     </div>
   );

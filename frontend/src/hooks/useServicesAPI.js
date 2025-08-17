@@ -23,7 +23,7 @@ const useServicesAPI = () => {
     setError(null);
 
     try {
-      const res = await fetch('http://localhost:8000/get_services.php', {
+      const res = await fetch('http://localhost:8000/service_apis/get_services.php', {
         credentials: 'include',
         cache: 'no-store',
       });
@@ -91,7 +91,7 @@ const useServicesAPI = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:8000/update_service.php', {
+      const res = await fetch('http://localhost:8000/service_apis/update_service.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -130,7 +130,7 @@ const useServicesAPI = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:8000/update_service.php', {
+      const res = await fetch('http://localhost:8000/service_apis/update_service.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',

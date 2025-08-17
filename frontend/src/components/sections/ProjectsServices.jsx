@@ -226,7 +226,7 @@ const ProjectsServices = ({ isLoggedIn }) => {
       </div>
 
       {/* CSS animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
           50% { transform: translateY(-15px) rotate(5deg); opacity: 0.6; }
@@ -250,6 +250,7 @@ const ProjectsServices = ({ isLoggedIn }) => {
           50% { opacity: 0.3; }
         }
       `}</style>
+
 
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
         {/* Edit Mode Toggle */}

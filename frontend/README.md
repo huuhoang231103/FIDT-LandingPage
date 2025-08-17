@@ -44,9 +44,18 @@ frontend/
 ### Environment Variables
 Create a `.env` file in the frontend directory:
 ```env
-VITE_API_BASE_URL=http://localhost/backend/api
+# API Configuration
+VITE_API_BASE_URL=http://localhost:8000
 VITE_APP_NAME=FIDT Landing Page
 VITE_APP_VERSION=1.0.0
+
+# Email Configuration (Example - Update with your actual values)
+VITE_CONTACT_EMAIL=your-email@domain.com
+VITE_REPLY_TO_EMAIL=noreply@yourdomain.com
+
+# Domain Configuration (Example - Update with your actual domain)
+VITE_DOMAIN=yourdomain.com
+VITE_SITE_URL=https://yourdomain.com
 ```
 
 ## 🧩 Component Architecture
@@ -69,8 +78,8 @@ VITE_APP_VERSION=1.0.0
 ### Section Components
 - `Hero.jsx` - Hero section
 - `About.jsx` - About section
-- `Services.jsx` - Services section
-- `Trainings.jsx` - Training courses section
+- `ProjectsServices.jsx` - Services section
+- `Training.jsx` - Training courses section
 - `Team.jsx` - Team members section
 - `Testimonial.jsx` - Customer testimonials
 - `FAQ.jsx` - Frequently asked questions
@@ -99,10 +108,10 @@ VITE_APP_VERSION=1.0.0
 - `sendMail.js` - Contact form submission service
 
 ### Data Management
-- `apiService.js` - Base API service with error handling
-- `servicesService.js` - Services data management
-- `trainingsService.js` - Trainings data management
-- `faqsService.js` - FAQs data management
+- Custom hooks handle API integration directly
+- `useServicesAPI.js` - Services data management
+- `useTrainingsAPI.js` - Trainings data management
+- `useFaqsAPI.js` - FAQs data management
 
 ## 🎨 Styling
 
@@ -173,9 +182,9 @@ VITE_APP_VERSION=1.0.0
 3. Deploy to hosting service
 
 ### Environment Configuration
-- Development: `.env.development`
-- Production: `.env.production`
-- Staging: `.env.staging`
+- **Development**: `.env.development`
+- **Production**: `.env.production`
+- **Staging**: `.env.staging`
 
 ## 📝 Code Standards
 
@@ -226,3 +235,80 @@ VITE_APP_VERSION=1.0.0
 - Error boundaries
 - Error logging
 - User-friendly error messages
+
+## 📧 Email Configuration
+
+### Contact Form Setup
+The contact form sends emails to the configured email address. Update the following in your environment:
+
+```env
+# Example email configuration
+VITE_CONTACT_EMAIL=admin@yourdomain.com
+VITE_REPLY_TO_EMAIL=noreply@yourdomain.com
+```
+
+### Email Templates
+- HTML formatted emails
+- Responsive design
+- Professional styling
+- Automatic timezone handling (Vietnam time)
+
+## 🌐 Domain Configuration
+
+### Production Setup
+When deploying to production, update these environment variables:
+
+```env
+# Example domain configuration
+VITE_DOMAIN=yourdomain.com
+VITE_SITE_URL=https://yourdomain.com
+VITE_API_BASE_URL=https://yourdomain.com/backend
+```
+
+### CORS Configuration
+- Backend CORS headers configured for production domain
+- Secure cross-origin requests
+- Proper authentication handling
+
+## 🔐 Authentication
+
+### Admin Access
+- **Username**: `admin`
+- **Password**: `admin123`
+- **Access Level**: Full content management
+
+### Security Features
+- Session-based authentication
+- Secure login/logout
+- Protected edit functionality
+- CORS protection
+
+## 📱 Mobile Optimization
+
+### Touch Interactions
+- Touch-friendly buttons
+- Swipe gestures
+- Mobile-optimized forms
+
+### Performance
+- Optimized images
+- Lazy loading
+- Minimal bundle size
+
+## 🌍 Internationalization
+
+### Language Support
+- Vietnamese (primary)
+- English (secondary)
+- Easy to add more languages
+
+### Date/Time Handling
+- Vietnam timezone (GMT+7)
+- Localized date formats
+- Timezone-aware timestamps
+
+---
+
+**Last Updated**: August 2025
+**Version**: 2.0.0
+**Status**: Production Ready

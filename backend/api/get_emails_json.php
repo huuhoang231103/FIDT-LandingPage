@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     try {
-        $jsonFile = __DIR__ . '/../data/emails.json';
+        $jsonFile = __DIR__ . '/../data_consolidated/emails.json';
         
         if (!file_exists($jsonFile)) {
             echo json_encode([

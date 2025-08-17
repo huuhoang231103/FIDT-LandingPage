@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
-$jsonFile = __DIR__ . "/../datas/faqData.json";
+$jsonFile = __DIR__ . "/../data_consolidated/faqData.json";
 
 
 if (!file_exists($jsonFile)) {

@@ -21,7 +21,7 @@ if (!$input || !isset($input['type'])) {
     exit;
 }
 
-$filePath = __DIR__ . '/../datas/faqData.json';
+$filePath = __DIR__ . '/../data_consolidated/faqData.json';
 
 if (!file_exists($filePath)) {
     echo json_encode(['success' => false, 'message' => 'Không tìm thấy file dữ liệu FAQ']);

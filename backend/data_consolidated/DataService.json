@@ -1,0 +1,134 @@
+{
+    "section_titles": {
+        "main_title": "Dịch vụ của chúng tôi",
+        "main_subtitle": "Dịch vụ tư vấn tài chính cá nhân & doanh nghiệp toàn diện, hiệu quả.",
+        "free_services_title": "🎁 Ưu Đãi Đặc Biệt – Gói Tư Vấn Miễn Phí",
+        "free_services_subtitle": "Trải nghiệm ngay dịch vụ tư vấn cá nhân hóa, hoàn toàn miễn phí – giúp bạn định hướng rõ ràng và tự tin trong từng quyết định tài chính.",
+        "paid_services_title": "Dịch vụ Tư Vấn Chuyên Nghiệp"
+    },
+    "services": [
+        {
+            "name": "MUA BĐS ĐẦU TIÊN",
+            "duration": "1 buổi (60 phút)",
+            "target": "Cá nhân \/ Gia đình trẻ lập kế hoạch mua BĐS đầu tiên",
+            "highlights": [
+                "Rà soát toàn bộ tài chính cá nhân \/ gia đình",
+                "Thiết lập mục tiêu mua BĐS phù hợp với khả năng",
+                "Kết nối ngân hàng có gói vay tốt trên thị trường",
+                "Tư vấn rổ hàng BĐS miễn phí",
+                "Lập dòng tiền cho kế hoạch vay mua BĐS",
+                "Lập kế hoạch bảo vệ an toàn tài chính",
+                "Cố vấn tư duy tài chính lành mạnh và bền vững"
+            ],
+            "price": "5.000.000 VNĐ",
+            "bonus": "Template theo dõi ngân sách 12 tháng"
+        },
+        {
+            "name": "GỠ NÚT THẮT TÀI CHÍNH",
+            "duration": "1 buổi (60 phút)",
+            "target": "Cá nhân \/ Gia đình gặp vấn đề tài chính, kẹt vốn BĐS, áp lực nợ vay",
+            "highlights": [
+                "Rà soát toàn bộ tài chính cá nhân \/ gia đình",
+                "Nhận diện lỗ hổng tài chính",
+                "Xây dựng kế hoạch tiết kiệm, đầu tư",
+                "Thiết lập phương án xử lý nợ",
+                "Hướng dẫn thiết lập quỹ dự phòng & ngân sách cho bảo hiểm",
+                "Khuyến nghị phương án và hành động sát với vấn đề tài chính hiện có",
+                "Cố vấn tư duy tài chính lành mạnh và bền vững"
+            ],
+            "price": "5.000.000 VNĐ",
+            "bonus": "File Excel quản lý tài chính cá nhân"
+        },
+        {
+            "name": "KHAI MỞ TÀI CHÍNH",
+            "duration": "1 buổi (60 phút)",
+            "target": "Cá nhân \/ Gia đình chưa biết bắt đầu quản lý TCCN từ đâu",
+            "highlights": [
+                "Hướng dẫn quản lý chi tiêu đơn giản, hiệu quả",
+                "Thiết lập mục tiêu tài chính và đánh giá nguồn lực",
+                "Phương án bảo vệ an toàn tài chính",
+                "Đánh giá Danh mục tài sản và khuyến nghị tái cơ cấu",
+                "Định hướng kế hoạch tài chính cá nhân trong 10 năm"
+            ],
+            "price": "5.000.000 VNĐ",
+            "bonus": "File Excel theo dõi tiến độ tăng trưởng tài sản"
+        },
+        {
+            "name": "TÀI CHÍNH CHỦ ĐỘNG",
+            "duration": "1 buổi (60 phút)",
+            "target": "Chủ Doanh nghiệp hướng tới tài chính chủ động, vững mạnh",
+            "highlights": [
+                "Thăm khám sức khỏe tài chính của cá nhân và doanh nghiệp",
+                "Định hình vấn đề tài chính và nhu cầu tư vấn",
+                "Đánh giá nguồn lực và Định hướng cách thức xử lý vấn đề tài chính cụ thể",
+                "Quản trị rủi ro",
+                "Cố vấn tư duy tài chính chủ động, vững mạnh"
+            ],
+            "price": "5.000.000 VNĐ"
+        },
+        {
+            "name": "TÀI CHÍNH TOÀN DIỆN (12 THÁNG)",
+            "duration": "1 buổi chuyên sâu (120 phút\/buổi) + group Zalo tư vấn + đánh giá định kỳ mỗi 6 tháng",
+            "target": "Cá nhân, gia đình mong muốn tăng trưởng tổng tài sản và củng cố pháp lý tài chính",
+            "highlights": [
+                "Rà soát toàn diện tài chính cá nhân\/gia đình",
+                "Xác định mục tiêu tài chính ngắn - dài hạn và hồ sơ rủi ro",
+                "Chiến lược tài chính chủ động cho từng giai đoạn cuộc đời",
+                "Xây dựng kế hoạch tài chính dài hạn (đầu tư, tín dụng, thuế, bảo hiểm, ...)",
+                "Đồng hành thực thi kế hoạch tài chính",
+                "Tư vấn tối ưu thuế, tham vấn luật về hôn nhân gia đình, thừa kế",
+                "Cố vấn tư duy tài chính lành mạnh và bền vững"
+            ],
+            "price": "0.35% giá trị tài sản quản lý, thấp nhất 25.900.000 VNĐ"
+        },
+        {
+            "name": "TÀI CHÍNH HẠNH PHÚC (CHO CẶP ĐÔI, VỢ CHỒNG)",
+            "duration": "2 buổi (90 phút\/buổi)",
+            "target": "Vợ chồng mới cưới, cặp đôi muốn đồng hành tài chính bền vững",
+            "highlights": [
+                "Đánh giá tổng quan tài chính, kiến thức, kinh nghiệm đầu tư, mục tiêu cá nhân",
+                "Đồng thuận mục tiêu tài chính dài hạn",
+                "Thiết lập ngân sách, quỹ chung – quỹ riêng",
+                "Kỹ năng giao tiếp & ra quyết định tài chính cùng nhau",
+                "Gợi ý kế hoạch tiết kiệm mua nhà, sinh con, đầu tư"
+            ],
+            "price": "6.000.000 VNĐ",
+            "bonus": "File kế hoạch chung 12 tháng"
+        }
+    ],
+    "free_services": [
+        {
+            "name": "GÓI TRẢI NGHIỆM MIỄN PHÍ",
+            "target": "Cá nhân",
+            "duration": "30 phút",
+            "price": "Miễn phí",
+            "highlights": [
+                "Tư vấn giúp bạn xác định nhu cầu và chọn đúng gói dịch vụ",
+                "Phân tích nhu cầu",
+                "Đề xuất gói dịch vụ phù hợp"
+            ]
+        },
+        {
+            "name": "THẨM ĐỊNH GIÁ BẤT ĐỘNG SẢN MIỄN PHÍ",
+            "target": "Cá nhân",
+            "duration": "30 phút",
+            "price": "Miễn phí",
+            "highlights": [
+                "Tư vấn mức giá thị trường để tham khảo cho việc mua hoặc bán BĐS",
+                "Đánh giá Danh mục tài sản hiện tại",
+                "Đánh giá tổng quan về quản trị rủi ro"
+            ]
+        },
+        {
+            "name": "THẨM ĐỊNH DANH MỤC TÀI SẢN MIỄN PHÍ",
+            "target": "Cá nhân",
+            "duration": "45 phút",
+            "price": "Miễn phí",
+            "highlights": [
+                "Thẩm định danh mục tài sản giúp tối ưu hiệu suất lợi nhuận",
+                "Kiểm soát rủi ro phù hợp với từng giai đoạn tài chính",
+                "Tư vấn tái cân bằng danh mục đầu tư"
+            ]
+        }
+    ]
+}

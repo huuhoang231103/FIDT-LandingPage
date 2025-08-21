@@ -189,8 +189,16 @@ LOG_FILE=/var/log/fidt/app.log
 <VirtualHost *:80>
     ServerName yourdomain.com
     ServerAlias www.yourdomain.com
-    DocumentRoot /var/www/html/backend
+    # Serve frontend build at root
+    DocumentRoot /var/www/html/frontend
     
+    <Directory /var/www/html/frontend>
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    # Backend PHP app under /backend
+    Alias /backend /var/www/html/backend
     <Directory /var/www/html/backend>
         AllowOverride All
         Require all granted
@@ -252,7 +260,7 @@ npm run build
 
 ### 2. Upload Frontend Files
 ```bash
-# Upload built files
+# Upload built files (ensure .htaccess is included)
 scp -r dist/ user@your-server:/var/www/html/frontend/
 
 # Set permissions
@@ -264,6 +272,22 @@ sudo chmod -R 755 /var/www/html/frontend
 ```env
 # frontend/.env for production
 VITE_API_BASE_URL=https://yourdomain.com/backend
+### 4. Apache SPA History Fallback (.htaccess)
+
+Ensure the following `.htaccess` exists at your frontend root (the repository includes `frontend/public/.htaccess`, copied by Vite to `dist/`):
+
+```apache
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  RewriteRule ^ index.html [L]
+</IfModule>
+```
+
+Also ensure your Apache vhost has `AllowOverride All` for the frontend directory.
 VITE_APP_NAME=FIDT Landing Page
 VITE_APP_VERSION=2.0.0
 

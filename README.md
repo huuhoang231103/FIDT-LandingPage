@@ -241,6 +241,46 @@ npm run dev
 - **Frontend**: http://localhost:5173
 - **Backend**: http://localhost:8000
 
+## 🧭 Routing (React Router)
+
+Client-side routing is handled by React Router.
+
+- Router initialization is in `frontend/src/main.jsx` using `createBrowserRouter` and `RouterProvider`.
+- Current application renders `App` at `/`. You can extend routes as needed.
+
+Example adding a route:
+
+```jsx
+// frontend/src/pages/About.jsx
+export default function About() {
+  return <div>About FIDT</div>;
+}
+
+// frontend/src/main.jsx
+import About from './pages/About.jsx';
+const router = createBrowserRouter([
+  { path: '/', element: <App /> },
+  { path: '/about', element: <About /> },
+]);
+```
+
+### Apache SPA history fallback
+
+For Apache deployments, enable SPA fallback so deep links load correctly. The repository includes `frontend/public/.htaccess`:
+
+```apache
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  RewriteRule ^ index.html [L]
+</IfModule>
+```
+
+Ensure `AllowOverride All` is set for the site root so `.htaccess` is honored.
+
 ## 📝 Content Management
 
 ### Admin Access

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || "http://localhost:8000").replace(/\/$/, "");
 import { X, Download, Search, Filter, AlertCircle } from "lucide-react";
 
 const EmailsPopup = ({ open, onClose }) => {
@@ -34,7 +35,7 @@ const EmailsPopup = ({ open, onClose }) => {
         date_to: dateTo
       });
 
-      const apiUrl = `http://localhost:8000/api/get_emails_json.php?${params}`;
+      const apiUrl = `${API_BASE}/api/get_emails_json.php?${params}`;
       console.log("API URL:", apiUrl);
 
       const response = await fetch(apiUrl, {
@@ -89,7 +90,7 @@ const EmailsPopup = ({ open, onClose }) => {
         date_to: dateTo
       });
 
-      const exportUrl = `http://localhost:8000/api/export_emails_json.php?${params}`;
+      const exportUrl = `${API_BASE}/api/export_emails_json.php?${params}`;
       console.log("Export URL:", exportUrl);
       
       // Create a temporary link to trigger download

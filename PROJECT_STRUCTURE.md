@@ -43,7 +43,7 @@ frontend/
 ├── vite.config.js           # Vite configuration
 ├── tailwind.config.js       # Tailwind CSS configuration
 ├── postcss.config.js        # PostCSS configuration
-└── eslint.config.js         # ESLint configuration
+└── eslint.config.js      =   # ESLint configuration
 ```
 
 ### Component Organization

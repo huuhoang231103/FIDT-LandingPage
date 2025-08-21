@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000').replace(/\/$/, '');
+
 const useContactServices = () => {
   const [serviceOptions, setServiceOptions] = useState(["Chọn dịch vụ hoặc khóa học"]);
   const [isLoadingServices, setIsLoadingServices] = useState(false);
@@ -12,7 +14,7 @@ const useContactServices = () => {
       const allServices = [];
       
       // 1. Load services từ API
-      const servicesResponse = await fetch('http://localhost:8000/service_apis/get_services.php');
+      const servicesResponse = await fetch(`${API_BASE}/service_apis/get_services.php`);
       if (servicesResponse.ok) {
         const servicesData = await servicesResponse.json();
         if (servicesData.success && servicesData.data) {
@@ -38,7 +40,7 @@ const useContactServices = () => {
 
       // 2. Kiểm tra section "Khóa học" có đang hiển thị không
       try {
-        const sectionResponse = await fetch('http://localhost:8000/sections/get_sections.php');
+        const sectionResponse = await fetch(`${API_BASE}/sections/get_sections.php`);
         if (sectionResponse.ok) {
           const sectionData = await sectionResponse.json();
           if (sectionData.success && sectionData.data) {
@@ -48,7 +50,7 @@ const useContactServices = () => {
             
             // Chỉ load courses nếu section đang ON
             if (coursesSection && coursesSection.visible !== false) {
-              const trainingsResponse = await fetch('http://localhost:8000/trainings/get_trainings.php');
+              const trainingsResponse = await fetch(`${API_BASE}/trainings/get_trainings.php`);
               if (trainingsResponse.ok) {
                 const trainingsData = await trainingsResponse.json();
                 if (trainingsData.success && trainingsData.data) {
@@ -66,7 +68,7 @@ const useContactServices = () => {
         console.log('Không thể kiểm tra section visibility:', error);
         // Fallback: load courses nếu không thể kiểm tra section
         try {
-          const trainingsResponse = await fetch('http://localhost:8000/trainings/get_trainings.php');
+          const trainingsResponse = await fetch(`${API_BASE}/trainings/get_trainings.php`);
           if (trainingsResponse.ok) {
             const trainingsData = await trainingsResponse.json();
             if (trainingsData.success && trainingsData.data) {

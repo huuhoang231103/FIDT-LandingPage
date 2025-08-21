@@ -408,7 +408,7 @@ GET /api/get_emails_json.php?page=1&limit=20
 ## 📞 Support
 
 ### Contact Information
-- **Email**: cskh@newtoyovn.com
+- **Email**:
 - **Technical Support**: Available for deployment issues
 - **Documentation**: Comprehensive guides provided
 

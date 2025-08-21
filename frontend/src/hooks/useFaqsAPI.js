@@ -1,7 +1,7 @@
 // src/hooks/useFaqsAPI.js
 import { useState, useEffect, useRef } from "react";
 
-const API_BASE = "http://localhost:8000/FAQ";
+const API_BASE = `${(import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000').replace(/\/$/, '')}/FAQ`;
 
 const useFaqsAPI = () => {
   const [faqData, setFaqData] = useState([]); // [{ category, questions: [{question,answer}], __origIndex }]

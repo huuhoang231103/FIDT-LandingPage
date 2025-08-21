@@ -1,7 +1,8 @@
 import axios from "axios";
 
-// Use the PHP development server URL
-const apiBase = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000/api";
+// Normalize and append /api if not present when using backend root
+const ROOT_BASE = (import.meta.env.VITE_API_BASE_URL || "http://localhost:8000").replace(/\/$/, "");
+const apiBase = ROOT_BASE.endsWith('/api') ? ROOT_BASE : `${ROOT_BASE}/api`;
 
 export const SendMail = async (data) => {
   try {

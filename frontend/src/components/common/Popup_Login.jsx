@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || "http://localhost:8000").replace(/\/$/, "");
 
 const Popup = ({ isOpen, onClose, onLoginSuccess }) => {
   const [username, setUsername] = useState("");
@@ -14,10 +15,10 @@ const Popup = ({ isOpen, onClose, onLoginSuccess }) => {
     setIsLoading(true);
 
     try {
-             console.log("Attempting login to:", "http://localhost:8000/auth/login.php");
+             console.log("Attempting login to:", `${API_BASE}/auth/login.php`);
       console.log("Login data:", { username, password });
 
-             const res = await fetch("http://localhost:8000/auth/login.php", {
+             const res = await fetch(`${API_BASE}/auth/login.php`, {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",

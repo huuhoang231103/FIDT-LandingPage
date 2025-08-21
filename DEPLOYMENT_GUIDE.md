@@ -450,7 +450,7 @@ sudo tail -f /var/log/nginx/error.log
 ### Contact Information
 - **Technical Support**: Available for deployment issues
 - **Documentation**: Comprehensive guides provided
-- **Email**: cskh@newtoyovn.com
+- **Email**: 
 
 ### Emergency Procedures
 1. **Site Down**: Check web server status

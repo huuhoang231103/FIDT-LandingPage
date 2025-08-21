@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || "http://localhost:8000").replace(/\/$/, "");
+
 const useTrainingsAPI = () => {
   const [trainings, setTrainings] = useState([]);
   const [trainingTitle, setTrainingTitle] = useState("");
@@ -21,7 +23,7 @@ const useTrainingsAPI = () => {
 
     try {
       const res = await fetch(
-        "http://localhost:8000/trainings/get_trainings.php",
+        `${API_BASE}/trainings/get_trainings.php`,
         {
           credentials: "include",
           cache: "no-store",
@@ -52,7 +54,7 @@ const useTrainingsAPI = () => {
   const updateTraining = async (payload) => {
     try {
       const res = await fetch(
-        "http://localhost:8000/trainings/update_training.php",
+        `${API_BASE}/trainings/update_training.php`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -86,7 +88,7 @@ const useTrainingsAPI = () => {
   const updateTrainingHeader = async (title, subtitle) => {
     try {
       const res = await fetch(
-        "http://localhost:8000/trainings/update_training.php",
+        `${API_BASE}/trainings/update_training.php`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

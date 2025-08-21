@@ -1,6 +1,8 @@
 // hooks/useServicesAPI.js
 import { useState, useEffect } from 'react';
 
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000').replace(/\/$/, '');
+
 const useServicesAPI = () => {
   const [paidServices, setPaidServices] = useState([]);
   const [freeServices, setFreeServices] = useState([]);
@@ -23,7 +25,7 @@ const useServicesAPI = () => {
     setError(null);
 
     try {
-      const res = await fetch('http://localhost:8000/service_apis/get_services.php', {
+      const res = await fetch(`${API_BASE}/service_apis/get_services.php`, {
         credentials: 'include',
         cache: 'no-store',
       });
@@ -91,7 +93,7 @@ const useServicesAPI = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:8000/service_apis/update_service.php', {
+      const res = await fetch(`${API_BASE}/service_apis/update_service.php`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -130,7 +132,7 @@ const useServicesAPI = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:8000/service_apis/update_service.php', {
+      const res = await fetch(`${API_BASE}/service_apis/update_service.php`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',

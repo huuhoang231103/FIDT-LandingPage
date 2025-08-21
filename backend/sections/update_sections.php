@@ -1,15 +1,10 @@
 <?php
 // update_sections.php
 header('Content-Type: application/json; charset=UTF-8');
-header('Access-Control-Allow-Origin: http://localhost:5173'); // chỉnh theo domain frontend
-header('Access-Control-Allow-Credentials: true');
+require_once __DIR__ . '/../cors.php';
+setup_cors(null, 'POST, OPTIONS', 'Content-Type, Authorization, X-Requested-With, X-Admin-Token');
 
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-  header('Access-Control-Allow-Methods: POST, OPTIONS');
-  header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With, X-Admin-Token');
-  http_response_code(200);
-  exit;
-}
+// Preflight handled by setup_cors
 
 // === (Tùy) AUTH - uncomment / sửa theo hệ thống của bạn ===
 // function isAdmin() {

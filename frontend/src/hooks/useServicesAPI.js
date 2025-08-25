@@ -1,7 +1,7 @@
 // hooks/useServicesAPI.js
 import { useState, useEffect } from 'react';
 
-const API_BASE = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000').replace(/\/$/, '');
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || 'https://thinhvuongtaichinh.net/backend').replace(/\/$/, '');
 
 const useServicesAPI = () => {
   const [paidServices, setPaidServices] = useState([]);

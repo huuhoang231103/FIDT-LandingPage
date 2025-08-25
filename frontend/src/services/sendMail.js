@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Normalize and append /api if not present when using backend root
-const ROOT_BASE = (import.meta.env.VITE_API_BASE_URL || "http://localhost:8000").replace(/\/$/, "");
+const ROOT_BASE = (import.meta.env.VITE_API_BASE_URL || "https://thinhvuongtaichinh.net/backend").replace(/\/$/, "");
 const apiBase = ROOT_BASE.endsWith('/api') ? ROOT_BASE : `${ROOT_BASE}/api`;
 
 export const SendMail = async (data) => {

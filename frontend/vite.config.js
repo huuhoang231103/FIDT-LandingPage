@@ -21,7 +21,7 @@ export default defineConfig({
   // server: {
   //   proxy: {
   //     '/services': {
-  //       target: 'http://localhost/be-ld',
+  //       target: 'https://thinhvuongtaichinh.net/backend',
   //       changeOrigin: true,
   //       secure: false,
   //     }

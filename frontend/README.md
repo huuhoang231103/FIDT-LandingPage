@@ -45,7 +45,7 @@ frontend/
 Create a `.env` file in the frontend directory:
 ```env
 # API Configuration
-VITE_API_BASE_URL=http://localhost:8000
+VITE_API_BASE_URL=https://thinhvuongtaichinh.net/backend
 VITE_APP_NAME=FIDT Landing Page
 VITE_APP_VERSION=1.0.0
 

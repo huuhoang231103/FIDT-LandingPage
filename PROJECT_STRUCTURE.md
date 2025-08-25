@@ -193,7 +193,7 @@ backend/
 
 #### Frontend (.env)
 ```env
-VITE_API_BASE_URL=http://localhost/backend/api
+VITE_API_BASE_URL=https://thinhvuongtaichinh.net/backend
 VITE_APP_NAME=FIDT Landing Page
 VITE_APP_VERSION=1.0.0
 ```

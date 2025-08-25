@@ -159,7 +159,7 @@ const {
 
 #### Frontend (.env)
 ```env
-VITE_API_BASE_URL=http://localhost:8000
+VITE_API_BASE_URL=https://thinhvuongtaichinh.net/backend
 VITE_APP_NAME=FIDT Landing Page
 VITE_APP_VERSION=1.0.0
 ```
@@ -167,7 +167,7 @@ VITE_APP_VERSION=1.0.0
 #### Backend Configuration
 - **Server**: PHP 8.0+ Development Server
 - **Port**: 8000 (configurable)
-- **CORS**: Configured for localhost:5173 (frontend)
+- **CORS**: Configured for https://thinhvuongtaichinh.net (frontend)
 
 ### Data Management
 
@@ -238,8 +238,8 @@ npm run dev
 ```
 
 #### 3. Access Application
-- **Frontend**: http://localhost:5173
-- **Backend**: http://localhost:8000
+- **Frontend**: https://thinhvuongtaichinh.net
+- **Backend**: https://thinhvuongtaichinh.net/backend
 
 ## 🧭 Routing (React Router)
 
@@ -316,13 +316,13 @@ Ensure `AllowOverride All` is set for the site root so `.htaccess` is honored.
 ### API Testing
 ```bash
 # Test backend connectivity
-curl http://localhost:8000/test_connection.php
+curl https://thinhvuongtaichinh.net/backend/test_connection.php
 
 # Test services API
-curl http://localhost:8000/service_apis/get_services.php
+curl https://thinhvuongtaichinh.net/backend/service_apis/get_services.php
 
 # Test authentication
-curl http://localhost:8000/auth/check_login.php
+curl https://thinhvuongtaichinh.net/backend/auth/check_login.php
 ```
 
 ### Frontend Testing

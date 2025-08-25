@@ -1,9 +1,6 @@
 <?php
 header('Content-Type: application/json; charset=UTF-8');
-require_once __DIR__ . '/../cors.php';
-setup_cors(null, 'GET, OPTIONS', 'Content-Type, Authorization, X-Requested-With');
-
-// Preflight handled by setup_cors
+require_once __DIR__ . '/../cors_config.php';
 
 $file = __DIR__ . '/../data_consolidated/DataService.json';
 

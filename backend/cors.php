@@ -6,6 +6,12 @@
 function setup_cors(array $allowed_origins = null, string $allowed_methods = 'GET, POST, OPTIONS', string $allowed_headers = 'Content-Type, Authorization, X-Requested-With', bool $allow_credentials = true): void {
     $origin = $_SERVER['HTTP_ORIGIN'] ?? null;
 
+    // Define production domains
+    $production_domains = [
+        'https://thinhvuongtaichinh.net',
+        'https://www.thinhvuongtaichinh.net'
+    ];
+
     if ($allowed_origins !== null) {
         if ($origin !== null && (in_array('*', $allowed_origins, true) || in_array($origin, $allowed_origins, true))) {
             header('Access-Control-Allow-Origin: ' . $origin);
@@ -13,8 +19,29 @@ function setup_cors(array $allowed_origins = null, string $allowed_methods = 'GE
         }
     } else {
         if ($origin !== null) {
-            header('Access-Control-Allow-Origin: ' . $origin);
-            header('Vary: Origin');
+            // Check if origin is from production domain
+            $is_production = false;
+            foreach ($production_domains as $domain) {
+                if (strpos($origin, $domain) === 0) {
+                    $is_production = true;
+                    break;
+                }
+            }
+            
+            if ($is_production) {
+                header('Access-Control-Allow-Origin: ' . $origin);
+                header('Vary: Origin');
+            } else {
+                // For development, allow localhost origins
+                if (strpos($origin, 'localhost') !== false || strpos($origin, '127.0.0.1') !== false) {
+                    header('Access-Control-Allow-Origin: ' . $origin);
+                    header('Vary: Origin');
+                } else {
+                    // Default fallback
+                    header('Access-Control-Allow-Origin: ' . $origin);
+                    header('Vary: Origin');
+                }
+            }
         } else {
             // Fallback when no Origin header is sent (e.g., same-origin or curl)
             header('Access-Control-Allow-Origin: *');

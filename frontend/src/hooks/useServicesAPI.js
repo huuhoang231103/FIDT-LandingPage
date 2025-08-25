@@ -25,7 +25,7 @@ const useServicesAPI = () => {
     setError(null);
 
     try {
-      const res = await fetch(`${API_BASE}/service_apis/get_services.php`, {
+      const res = await fetch(`${API_BASE}/api/services/get_services.php`, {
         credentials: 'include',
         cache: 'no-store',
       });

@@ -1,0 +1,22 @@
+RewriteEngine On
+
+# Redirect old service_apis paths to new api structure
+RewriteRule ^service_apis/get_services\.php$ /backend/api/services/get_services.php [R=301,L]
+RewriteRule ^service_apis/update_service\.php$ /backend/api/services/update_service.php [R=301,L]
+
+# Redirect old FAQ paths
+RewriteRule ^FAQ/get_faqs\.php$ /backend/api/faq/get_faqs.php [R=301,L]
+RewriteRule ^FAQ/update_faq\.php$ /backend/api/faq/update_faq.php [R=301,L]
+
+# Redirect old training paths
+RewriteRule ^trainings/get_trainings\.php$ /backend/api/trainings/get_trainings.php [R=301,L]
+RewriteRule ^trainings/update_training\.php$ /backend/api/trainings/update_training.php [R=301,L]
+
+# Redirect old auth paths
+RewriteRule ^auth/login\.php$ /backend/api/auth/login.php [R=301,L]
+RewriteRule ^auth/check_login\.php$ /backend/api/auth/check_login.php [R=301,L]
+
+# Redirect old API paths
+RewriteRule ^api/send_mail\.php$ /backend/api/contact/send_mail.php [R=301,L]
+RewriteRule ^api/get_emails_json\.php$ /backend/api/contact/get_emails_json.php [R=301,L]
+RewriteRule ^api/export_emails_json\.php$ /backend/api/contact/export_emails_json.php [R=301,L]

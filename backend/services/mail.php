@@ -125,7 +125,7 @@ function buildEmailHeaders(string $customerEmail): string {
  */
 function sendContactMailWithPHPMail(array $data): bool|string {
     // Set destination email (same as user's code)
-    $mailto = "your-email@yourdomain.com"; // TODO: Update with your email
+    $mailto = "hana@thinhvuongtaichinh.net"; // MAIL_TO
     
     // Prepare email data using the exact same format
     $sub = "Query From Contact Us Form - " . htmlspecialchars($data['service']);

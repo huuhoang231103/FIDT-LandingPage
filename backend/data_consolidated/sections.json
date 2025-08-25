@@ -1,7 +1,13 @@
-[
-  "MUA BĐS ĐẦU TIÊN",
-  "GỠ NÚT THẮT TÀI CHÍNH",
-  "KHAI MỞ TÀI CHÍNH",
-  "TÀI CHÍNH CHỦ ĐỘNG",
-  "TÀI CHÍNH TOÀN DIỆN (12 THÁNG)"
-]
+{
+  "sections": [
+    "MUA BĐS ĐẦU TIÊN",
+    "GỠ NÚT THẮT TÀI CHÍNH",
+    "KHAI MỞ TÀI CHÍNH",
+    "TÀI CHÍNH CHỦ ĐỘNG",
+    "TÀI CHÍNH TOÀN DIỆN (12 THÁNG)",
+    "TÀI CHÍNH HẠNH PHÚC (CHO CẶP ĐÔI, VỢ CHỒNG)",
+    "GÓI TRẢI NGHIỆM MIỄN PHÍ",
+    "THẨM ĐỊNH GIÁ BẤT ĐỘNG SẢN MIỄN PHÍ",
+    "THẨM ĐỊNH DANH MỤC TÀI SẢN MIỄN PHÍ"
+  ]
+}

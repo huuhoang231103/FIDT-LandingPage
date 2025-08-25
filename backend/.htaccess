@@ -1,22 +1,29 @@
 RewriteEngine On
 
-# Redirect old service_apis paths to new api structure
-RewriteRule ^service_apis/get_services\.php$ /backend/api/services/get_services.php [R=301,L]
-RewriteRule ^service_apis/update_service\.php$ /backend/api/services/update_service.php [R=301,L]
+# API v1 endpoints (nếu sau này bạn muốn dùng dạng /api/v1/...)
+RewriteRule ^api/v1/services/get_services\.php$ /backend/api/v1/services/get_services.php [L]
+RewriteRule ^api/v1/services/update_service\.php$ /backend/api/v1/services/update_service.php [L]
 
-# Redirect old FAQ paths
-RewriteRule ^FAQ/get_faqs\.php$ /backend/api/faq/get_faqs.php [R=301,L]
-RewriteRule ^FAQ/update_faq\.php$ /backend/api/faq/update_faq.php [R=301,L]
+RewriteRule ^api/v1/faq/get_faqs\.php$ /backend/api/v1/faq/get_faqs.php [L]
+RewriteRule ^api/v1/faq/update_faq\.php$ /backend/api/v1/faq/update_faq.php [L]
 
-# Redirect old training paths
-RewriteRule ^trainings/get_trainings\.php$ /backend/api/trainings/get_trainings.php [R=301,L]
-RewriteRule ^trainings/update_training\.php$ /backend/api/trainings/update_training.php [R=301,L]
+RewriteRule ^api/v1/trainings/get_trainings\.php$ /backend/api/v1/trainings/get_trainings.php [L]
+RewriteRule ^api/v1/trainings/update_training\.php$ /backend/api/v1/trainings/update_training.php [L]
 
-# Redirect old auth paths
-RewriteRule ^auth/login\.php$ /backend/api/auth/login.php [R=301,L]
-RewriteRule ^auth/check_login\.php$ /backend/api/auth/check_login.php [R=301,L]
+RewriteRule ^api/v1/auth/login\.php$ /backend/api/v1/auth/login.php [L]
+RewriteRule ^api/v1/auth/check_login\.php$ /backend/api/v1/auth/check_login.php [L]
 
-# Redirect old API paths
-RewriteRule ^api/send_mail\.php$ /backend/api/contact/send_mail.php [R=301,L]
-RewriteRule ^api/get_emails_json\.php$ /backend/api/contact/get_emails_json.php [R=301,L]
-RewriteRule ^api/export_emails_json\.php$ /backend/api/contact/export_emails_json.php [R=301,L]
+RewriteRule ^api/v1/contact/send_mail\.php$ /backend/api/v1/contact/send_mail.php [L]
+RewriteRule ^api/v1/contact/get_emails_json\.php$ /backend/api/v1/contact/get_emails_json.php [L]
+RewriteRule ^api/v1/contact/export_emails_json\.php$ /backend/api/v1/contact/export_emails_json.php [L]
+
+# ⚠️ Bỏ hết legacy redirect vì nó gây lỗi Unexpected token '<'
+# (không cần nữa vì frontend đang gọi trực tiếp /backend/FAQ/... , /backend/trainings/..., v.v.)
+
+# CORS headers cho tất cả request API
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin "https://thinhvuongtaichinh.net"
+    Header always set Access-Control-Allow-Credentials "true"
+    Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header always set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With, X-Admin-Token"
+</IfModule>

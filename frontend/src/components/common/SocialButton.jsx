@@ -30,16 +30,21 @@ const SocialButton = ({ type, url, onClick, title, className = "" }) => {
   const IconComponent = config.icon;
 
   const handleClick = () => {
-    if (onClick) {
-      onClick();
-    } else if (url || config.defaultUrl) {
-      window.open(url || config.defaultUrl, '_blank');
-    } else if (type === 'contact') {
-      // Default contact behavior
+    if (type === 'contact') {
+      if (onClick) {
+        try { onClick(); } catch (e) { /* no-op */ }
+      }
       const contactSection = document.getElementById('contact');
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' });
       }
+      return;
+    }
+
+    if (onClick) {
+      onClick();
+    } else if (url || config.defaultUrl) {
+      window.open(url || config.defaultUrl, '_blank');
     }
   };
 

@@ -2,26 +2,30 @@ import React, { useState, useEffect } from "react";
 import ContactForm from "./Contact/ContactForm";
 import ContactInfo from "./Contact/ContactInfo";
 import EmailsPopup from "./Contact/EmailsPopup";
-import useContactServices from "../../hooks/useContactServices";
+import useContactSections from "../../hooks/useContactSections";
+import EditButton from "../common/EditButton";
+import EditSectionsPopup from "../popup/EditSectionsPopup";
 
 const Contact = ({ isLoggedIn = false }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [showEmailsPopup, setShowEmailsPopup] = useState(false);
+  const [showEditSections, setShowEditSections] = useState(false);
   
-  // Use custom hook for services
-                const { serviceOptions, isLoadingServices, lastUpdate } = useContactServices();
+  const { sections, loading, lastUpdate, refresh } = useContactSections();
 
   useEffect(() => setIsVisible(true), []);
 
-  const handleShowEmails = () => {
-    setShowEmailsPopup(true);
-  };
+  const handleShowEmails = () => { setShowEmailsPopup(true); };
 
   return (
     <>
       <EmailsPopup 
         open={showEmailsPopup} 
         onClose={() => setShowEmailsPopup(false)} 
+      />
+      <EditSectionsPopup
+        open={showEditSections}
+        onClose={() => { setShowEditSections(false); refresh?.(); }}
       />
       
       <section
@@ -40,6 +44,11 @@ const Contact = ({ isLoggedIn = false }) => {
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Bạn đã sẵn sàng cho dự án mới? Liên hệ để được tư vấn miễn phí.
             </p>
+            {isLoggedIn && (
+              <div className="mt-4 flex justify-center">
+                <EditButton onClick={() => setShowEditSections(true)} />
+              </div>
+            )}
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -56,13 +65,13 @@ const Contact = ({ isLoggedIn = false }) => {
                 isVisible ? "opacity-100" : "opacity-0"
               }`}
             >
-                                        <ContactForm
-                            isLoggedIn={isLoggedIn}
-                            onShowEmails={handleShowEmails}
-                            serviceOptions={serviceOptions}
-                            isLoadingServices={isLoadingServices}
-                            lastUpdate={lastUpdate}
-                          />
+              <ContactForm
+                isLoggedIn={isLoggedIn}
+                onShowEmails={handleShowEmails}
+                serviceOptions={sections}
+                isLoadingServices={loading}
+                lastUpdate={lastUpdate}
+              />
             </div>
           </div>
         </div>
